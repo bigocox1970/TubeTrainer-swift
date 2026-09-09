@@ -1,0 +1,30 @@
+# Netlify config for the TubeTrainer marketing site (monorepo).
+# Connect this repo to Netlify — it reads this file, builds the `website/`
+# folder with Astro, and publishes the static output. Zero UI config needed.
+
+[build]
+  base = "website"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Long-cache immutable hashed assets; screenshots can be cached a while too.
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/screenshots/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Security headers (safe defaults for a static site).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"

@@ -1,0 +1,240 @@
+/* TubeTrainer website — design tokens mirror the iOS app. Dark-first, red accent. */
+
+:root {
+  --red: #f5322e;
+  --red-press: #c01f1c;
+  --red-soft: rgba(245, 50, 46, 0.12);
+  --success: #34c759;
+
+  /* Dark (default) */
+  --bg: #0a0a0b;
+  --bg-2: #101012;
+  --surface: #17171a;
+  --surface-2: #202024;
+  --text: #f7f7f5;
+  --text-2: #9a9aa2;
+  --text-3: #67676f;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --shadow: rgba(0, 0, 0, 0.5);
+  --glow: rgba(245, 50, 46, 0.18);
+  --nav-bg: rgba(10, 10, 11, 0.72);
+  color-scheme: dark;
+}
+
+html[data-theme='light'] {
+  --bg: #f4f4f6;
+  --bg-2: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #ffffff;
+  --text: #111113;
+  --text-2: #5f5f68;
+  --text-3: #9a9aa2;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.12);
+  --shadow: rgba(20, 20, 30, 0.12);
+  --glow: rgba(245, 50, 46, 0.14);
+  --red: #e01f1b;
+  --nav-bg: rgba(244, 244, 246, 0.75);
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 90px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, .display {
+  font-family: ui-rounded, 'SF Pro Rounded', -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--text);
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+::selection { background: var(--red); color: #fff; }
+
+/* Layout ------------------------------------------------------------------ */
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.section {
+  padding-block: clamp(64px, 9vw, 128px);
+  position: relative;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.section-title {
+  font-size: clamp(30px, 4.6vw, 50px);
+  margin-top: 14px;
+  max-width: 20ch;
+}
+
+.section-lead {
+  color: var(--text-2);
+  font-size: clamp(17px, 2vw, 20px);
+  margin-top: 18px;
+  max-width: 56ch;
+}
+
+/* Buttons ----------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 15px 26px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.2s ease, border-color 0.2s ease;
+  will-change: transform;
+}
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 10px 30px -10px var(--glow);
+}
+.btn-primary:hover { background: var(--red-press); }
+
+.btn-ghost {
+  background: color-mix(in srgb, var(--text) 7%, transparent);
+  color: var(--text);
+  border-color: var(--border);
+}
+.btn-ghost:hover { border-color: var(--border-strong); }
+
+.btn svg { width: 18px; height: 18px; }
+
+/* Cards & badges ---------------------------------------------------------- */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 28px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--red-soft);
+  color: var(--red);
+}
+
+/* Phone frame ------------------------------------------------------------- */
+
+.phone {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1179 / 2556;
+  border-radius: 13% / 6%;
+  padding: 2.6%;
+  background: linear-gradient(145deg, #2a2a30, #0c0c0e);
+  box-shadow:
+    0 2px 2px rgba(255, 255, 255, 0.15) inset,
+    0 -2px 3px rgba(0, 0, 0, 0.6) inset,
+    0 40px 80px -30px var(--shadow),
+    0 20px 40px -25px rgba(0, 0, 0, 0.6);
+}
+.phone::after {
+  /* dynamic island */
+  content: '';
+  position: absolute;
+  top: 4.2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 3.2%;
+  background: #000;
+  border-radius: 999px;
+  z-index: 3;
+}
+.phone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 11% / 5.2%;
+  overflow: hidden;
+  background: #000;
+}
+.phone-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Reveal on scroll -------------------------------------------------------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* Utility ----------------------------------------------------------------- */
+
+.text-2 { color: var(--text-2); }
+.center { text-align: center; }
+.grid { display: grid; gap: 22px; }
+.hide-sm { }
+@media (max-width: 720px) {
+  .hide-sm { display: none !important; }
+}

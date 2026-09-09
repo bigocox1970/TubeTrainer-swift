@@ -1,0 +1,344 @@
+---
+import Base from '../layouts/Base.astro';
+import PhoneFrame from '../components/PhoneFrame.astro';
+
+const screens = [
+  { src: '/screenshots/today.png', alt: 'TubeTrainer Today screen with the next workout and Start Workout button' },
+  { src: '/screenshots/active-coach.png', alt: 'Active workout showing a coaching video attached to Barbell Bench Press' },
+  { src: '/screenshots/active-empty.png', alt: 'Find your coach discovery panel for an exercise with no video yet' },
+  { src: '/screenshots/library.png', alt: 'Exercise library with coaching status and progress' },
+  { src: '/screenshots/history.png', alt: 'Workout history grouped by month' },
+  { src: '/screenshots/you.png', alt: 'Settings with units, rest timer and appearance' },
+  { src: '/screenshots/onboarding.png', alt: 'TubeTrainer onboarding welcome screen' },
+];
+
+const features = [
+  { icon: 'library', title: 'A real exercise catalog', body: '50+ built-in movements across every muscle group, plus custom exercises. Forgiving search — type “RDL” and get Romanian Deadlift.' },
+  { icon: 'chart', title: 'History & personal records', body: 'Every session saved. See last time before every set, track progression, and get honest PRs — heaviest set, estimated 1RM, best volume.' },
+  { icon: 'timer', title: 'Rest timer that just works', body: 'Auto-starts on a completed set, counts down in the background, and notifies you when it’s time — even with the app closed.' },
+  { icon: 'wifi', title: 'Works when the gym doesn’t', body: 'Terrible signal? Logging never blocks. If a video can’t load you still see last time, log sets, and finish — fully offline.' },
+  { icon: 'lock', title: 'Yours, on your device', body: 'No account, no server, no analytics. Everything is local. Export a versioned backup whenever you like and restore it anywhere.' },
+  { icon: 'bolt', title: 'Built to feel physical', body: 'Deliberate haptics, short natural animation, Dynamic Type and full dark & light themes. Fast where it counts.' },
+];
+
+function icon(name) {
+  const map = {
+    library: '<path d="M4 5h6v14H4zM14 5h6v14h-6z"/>',
+    chart: '<path d="M4 19V5M4 19h16M8 15l3-4 3 3 4-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+    timer: '<circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 13V9M9 2h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+    wifi: '<path d="M2 8.5a16 16 0 0 1 20 0M5 12a11 11 0 0 1 14 0M8.5 15.5a6 6 0 0 1 7 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="19" r="1.4"/>',
+    lock: '<rect x="4" y="10" width="16" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2"/>',
+    bolt: '<path d="M13 2 4 14h6l-1 8 9-12h-6z"/>',
+  };
+  return map[name] || '';
+}
+---
+
+<Base>
+  <!-- Hero ---------------------------------------------------------------- -->
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="badge">Free · iPhone · No account</span>
+        <h1 class="hero-title">The best coaching on YouTube, right beside your workout.</h1>
+        <p class="hero-lead">
+          You already have coaches — they’re on YouTube. TubeTrainer turns that scattered coaching
+          into your <strong>personal visual exercise manual</strong>, wrapped around a seriously fast gym tracker.
+        </p>
+        <div class="hero-cta">
+          <a href="#notify" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 0 0-5 5v3a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5zM5 21h14v-2H5z"/></svg>
+            Get notified at launch
+          </a>
+          <a href="#coaching" class="btn btn-ghost">See how it works</a>
+        </div>
+        <p class="hero-note text-2">Local-first · nothing leaves your phone unless you export it.</p>
+      </div>
+      <div class="hero-phones">
+        <div class="hero-phone hero-phone-back" aria-hidden="true">
+          <PhoneFrame src="/screenshots/active-empty.png" alt="" loading="eager" />
+        </div>
+        <div class="hero-phone hero-phone-front">
+          <PhoneFrame src="/screenshots/active-coach.png" alt="Active workout with a coaching video attached to an exercise" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaching ------------------------------------------------------------ -->
+  <section id="coaching" class="section split">
+    <div class="container split-inner">
+      <div class="split-phone reveal">
+        <PhoneFrame src="/screenshots/active-empty.png" alt="Find your coach panel with Recommended, My Coaches and Search" />
+      </div>
+      <div class="split-copy reveal">
+        <span class="eyebrow">The difference</span>
+        <h2 class="section-title">Every exercise gets the coach who makes it click.</h2>
+        <p class="section-lead">
+          One creator for bench, another for squats, another for mobility. Attach the exact video —
+          or the exact moment — to any exercise. No blank rectangles: exercises without a coach show a
+          discovery panel that makes building your library feel like collecting, not configuring.
+        </p>
+        <ul class="ticks">
+          <li>Search YouTube or paste any link — even a Short.</li>
+          <li>Save a start time so you jump straight to the useful part.</li>
+          <li>Prioritise the trainers you already trust with favourite coaches.</li>
+          <li>Compliant embedded playback with a clear “Open in YouTube”.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logging ------------------------------------------------------------- -->
+  <section id="logging" class="section split">
+    <div class="container split-inner reverse">
+      <div class="split-copy reveal">
+        <span class="eyebrow">Frictionless in the gym</span>
+        <h2 class="section-title">Log a set in seconds. One hand. Every time.</h2>
+        <p class="section-lead">
+          Big thumb-friendly controls, values pre-filled from last time, and a rest timer that starts
+          itself. Watching the coach is always one tap away and never gets in the way of logging.
+        </p>
+        <ul class="ticks">
+          <li><strong>Last time</strong> is right there — no screen hopping.</li>
+          <li>Tap to type or nudge with +/– . No hundred-value pickers.</li>
+          <li>Complete a set → haptic → rest timer → next.</li>
+          <li>Finish to a summary that celebrates real PRs.</li>
+        </ul>
+      </div>
+      <div class="split-phone reveal">
+        <PhoneFrame src="/screenshots/active-coach.png" alt="Set logger with previous performance and a coaching video" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Screens gallery ----------------------------------------------------- -->
+  <section id="screens" class="section">
+    <div class="container center">
+      <span class="eyebrow">A look inside</span>
+      <h2 class="section-title center-title">Deliberately designed, top to bottom.</h2>
+      <p class="section-lead center-lead">Dark-first, with a proper light mode. Every screen earns its place.</p>
+    </div>
+    <div class="gallery reveal">
+      {screens.map((s, i) => (
+        <div class="gallery-item"><PhoneFrame src={s.src} alt={s.alt} loading={i < 2 ? 'eager' : 'lazy'} /></div>
+      ))}
+    </div>
+    <p class="gallery-hint text-2 center">Scroll sideways →</p>
+  </section>
+
+  <!-- Feature grid -------------------------------------------------------- -->
+  <section class="section">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">Everything a serious log needs</span>
+        <h2 class="section-title center-title">A full-blooded tracker that happens to be free.</h2>
+      </div>
+      <div class="feature-grid">
+        {features.map((f) => (
+          <div class="feature card reveal">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="currentColor" set:html={icon(f.icon)} /></div>
+            <h3 class="feature-title">{f.title}</h3>
+            <p class="text-2">{f.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Share flow ---------------------------------------------------------- -->
+  <section class="section share">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow">Share → TubeTrainer</span>
+        <h2 class="section-title center-title">Found a great video? Save it without leaving YouTube.</h2>
+      </div>
+      <div class="steps">
+        <div class="step card reveal">
+          <span class="step-num">1</span>
+          <h3 class="feature-title">Tap Share in YouTube</h3>
+          <p class="text-2">On any video or Short, TubeTrainer shows up in the share sheet like any other app.</p>
+        </div>
+        <div class="step card reveal">
+          <span class="step-num">2</span>
+          <h3 class="feature-title">Pick the exercise</h3>
+          <p class="text-2">Search your library right there and choose where it belongs.</p>
+        </div>
+        <div class="step card reveal">
+          <span class="step-num">3</span>
+          <h3 class="feature-title">It’s your coach</h3>
+          <p class="text-2">The video is waiting on that exercise next time you train. Done.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy ------------------------------------------------------------- -->
+  <section id="privacy" class="section">
+    <div class="container privacy card reveal">
+      <div class="privacy-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+      </div>
+      <div>
+        <span class="eyebrow">Privacy by default</span>
+        <h2 class="section-title">Your training stays on your phone.</h2>
+        <p class="section-lead">
+          No account. No server. No analytics SDKs. TubeTrainer talks to YouTube only to find and play the
+          coaching you choose — and never downloads or stores the video itself. Your workout history is yours,
+          and you can export a versioned backup any time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ ----------------------------------------------------------------- -->
+  <section id="faq" class="section">
+    <div class="container faq-wrap">
+      <div class="center">
+        <span class="eyebrow">Questions</span>
+        <h2 class="section-title center-title">Good to know.</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Does it cost anything?</summary><p class="text-2">V1 is free. No subscription, no paywall, no account.</p></details>
+        <details><summary>Do I need a YouTube account or API key?</summary><p class="text-2">No. You can paste any YouTube link or use “Search on YouTube” with zero setup. In-app search is optional and uses your own free YouTube API key if you add one.</p></details>
+        <details><summary>Does it work offline?</summary><p class="text-2">The whole tracker works with no signal. Only playing an online video needs a connection — and if one fails, logging keeps working.</p></details>
+        <details><summary>Are the videos stored on my phone?</summary><p class="text-2">Never. TubeTrainer saves only a reference (link, title, thumbnail) and plays videos through YouTube’s compliant player. It doesn’t download or rehost anything.</p></details>
+        <details><summary>Can I move my data?</summary><p class="text-2">Yes — export a versioned JSON backup and import it to restore or move devices. Your library is portable.</p></details>
+        <details><summary>Which devices?</summary><p class="text-2">iPhone, iOS 18 and later. Dark and light themes included.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notify CTA ---------------------------------------------------------- -->
+  <section id="notify" class="section">
+    <div class="container notify card reveal">
+      <div class="notify-glow" aria-hidden="true"></div>
+      <span class="eyebrow">Almost there</span>
+      <h2 class="section-title center-title">Be first through the door.</h2>
+      <p class="section-lead center-lead">Drop your email and we’ll tell you the moment TubeTrainer hits the App Store. That’s the only thing we’ll ever send.</p>
+      <form name="notify" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="notify-form">
+        <input type="hidden" name="form-name" value="notify" />
+        <p class="hidden-field"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+        <input type="email" name="email" required placeholder="you@email.com" aria-label="Email address" />
+        <button type="submit" class="btn btn-primary">Notify me</button>
+      </form>
+      <p class="notify-note text-2">No spam. One email, at launch.</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* Hero */
+  .hero { position: relative; padding-block: clamp(48px, 8vw, 96px) clamp(40px, 6vw, 72px); overflow: hidden; }
+  .hero-glow {
+    position: absolute; inset: -20% 0 auto 0; height: 620px;
+    background: radial-gradient(60% 60% at 50% 0%, var(--glow), transparent 70%);
+    filter: blur(20px); pointer-events: none;
+  }
+  .hero-inner { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; }
+  .hero-title { font-size: clamp(38px, 6.4vw, 68px); margin-top: 20px; max-width: 15ch; }
+  .hero-lead { font-size: clamp(17px, 2.1vw, 21px); color: var(--text-2); margin-top: 22px; max-width: 52ch; }
+  .hero-lead strong { color: var(--text); }
+  .hero-cta { display: flex; gap: 14px; margin-top: 30px; flex-wrap: wrap; }
+  .hero-note { margin-top: 18px; font-size: 14px; }
+
+  .hero-phones { position: relative; height: 560px; display: flex; align-items: center; justify-content: center; }
+  .hero-phone { position: absolute; }
+  .hero-phone-front { transform: translateX(14%) rotate(3deg); z-index: 2; }
+  .hero-phone-back { transform: translateX(-40%) rotate(-6deg) scale(0.92); opacity: 0.9; z-index: 1; }
+  .hero-phone .phone { max-width: 270px; }
+
+  /* Split sections */
+  .split-inner { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: center; }
+  .split-inner.reverse { grid-template-columns: 1.1fr 0.9fr; }
+  .split-phone { display: flex; justify-content: center; }
+  .split-phone .phone { max-width: 280px; }
+  .ticks { list-style: none; margin-top: 28px; display: grid; gap: 14px; }
+  .ticks li { position: relative; padding-left: 34px; color: var(--text-2); font-size: 17px; }
+  .ticks li strong { color: var(--text); }
+  .ticks li::before {
+    content: ''; position: absolute; left: 0; top: 2px; width: 22px; height: 22px; border-radius: 999px;
+    background: var(--red-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f5322e' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 13px no-repeat;
+  }
+  .center-title { margin-inline: auto; }
+  .center-lead { margin-inline: auto; }
+
+  /* Gallery */
+  .gallery {
+    display: flex; gap: 26px; overflow-x: auto; scroll-snap-type: x mandatory;
+    padding: 40px max(24px, calc((100vw - 1120px) / 2)); scrollbar-width: none;
+  }
+  .gallery::-webkit-scrollbar { display: none; }
+  .gallery-item { flex: 0 0 auto; scroll-snap-align: center; width: 264px; }
+  .gallery-hint { margin-top: 6px; font-size: 14px; }
+
+  /* Feature grid */
+  .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 48px; }
+  .feature-icon {
+    width: 46px; height: 46px; border-radius: 13px; display: grid; place-items: center;
+    background: var(--red-soft); color: var(--red); margin-bottom: 18px;
+  }
+  .feature-icon svg { width: 24px; height: 24px; }
+  .feature-title { font-size: 20px; margin-bottom: 10px; }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 48px; }
+  .step-num {
+    display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 999px;
+    background: var(--red); color: #fff; font-weight: 800; font-size: 18px; margin-bottom: 18px;
+  }
+
+  /* Privacy */
+  .privacy { display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center; padding: clamp(28px, 5vw, 56px); }
+  .privacy-icon { width: 92px; height: 92px; border-radius: 24px; display: grid; place-items: center; background: var(--red-soft); color: var(--red); }
+  .privacy-icon svg { width: 46px; height: 46px; }
+  .privacy .section-title { font-size: clamp(26px, 3.4vw, 40px); }
+
+  /* FAQ */
+  .faq-wrap { max-width: 760px; }
+  .faq { margin-top: 40px; display: grid; gap: 12px; }
+  .faq details {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 4px 20px;
+    transition: border-color 0.2s ease;
+  }
+  .faq details[open] { border-color: var(--border-strong); }
+  .faq summary {
+    cursor: pointer; list-style: none; padding: 16px 0; font-weight: 700; font-size: 17px;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: '+'; color: var(--red); font-size: 24px; font-weight: 700; transition: transform 0.2s ease; }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq p { padding: 0 0 18px; }
+
+  /* Notify */
+  .notify { position: relative; overflow: hidden; text-align: center; padding: clamp(36px, 6vw, 72px); }
+  .notify-glow { position: absolute; inset: auto 0 -60% 0; height: 300px; background: radial-gradient(50% 100% at 50% 100%, var(--glow), transparent 70%); }
+  .notify-form { display: flex; gap: 12px; justify-content: center; margin-top: 30px; flex-wrap: wrap; position: relative; }
+  .notify-form input[type='email'] {
+    flex: 1 1 320px; max-width: 360px; padding: 15px 18px; border-radius: 14px;
+    background: var(--bg-2); border: 1px solid var(--border-strong); color: var(--text); font-size: 16px; font-family: inherit;
+  }
+  .notify-form input[type='email']:focus { outline: 2px solid var(--red); outline-offset: 1px; }
+  .notify-note { margin-top: 16px; font-size: 14px; }
+  .hidden-field { display: none; }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 20px; text-align: center; }
+    .hero-copy .badge, .hero-title, .hero-lead { margin-inline: auto; }
+    .hero-cta { justify-content: center; }
+    .hero-phones { height: 520px; margin-top: 10px; }
+    .split-inner, .split-inner.reverse { grid-template-columns: 1fr; gap: 32px; }
+    .split-inner.reverse .split-copy { order: 2; }
+    .split-inner.reverse .split-phone { order: 1; }
+    .split-copy { text-align: center; }
+    .ticks { text-align: left; max-width: 440px; margin-inline: auto; }
+    .feature-grid, .steps { grid-template-columns: 1fr; }
+    .privacy { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+  }
+  @media (max-width: 480px) {
+    .hero-phone-back { display: none; }
+    .hero-phone-front { transform: none; }
+  }
+</style>

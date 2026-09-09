@@ -1,0 +1,96 @@
+name: TubeTrainer
+options:
+  bundleIdPrefix: app.tubetrainer
+  deploymentTarget:
+    iOS: "18.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "7XY8PA34AM"
+    CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    GENERATE_INFOPLIST_FILE: YES
+targets:
+  TubeTrainer:
+    type: application
+    platform: iOS
+    sources:
+      - path: TubeTrainer
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.tubetrainer.ios
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_KEY_CFBundleDisplayName: TubeTrainer
+        INFOPLIST_KEY_NSUserNotificationsUsageDescription: "TubeTrainer notifies you when your rest timer finishes."
+        CODE_SIGN_ENTITLEMENTS: TubeTrainer/TubeTrainer.entitlements
+    dependencies:
+      - target: TubeTrainerShare
+        embed: true
+  TubeTrainerShare:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: TubeTrainerShare
+      - path: TubeTrainer/Models/Models.swift
+      - path: TubeTrainer/Models/Enums.swift
+      - path: TubeTrainer/Persistence/AppGroup.swift
+      - path: TubeTrainer/Persistence/PersistenceController.swift
+      - path: TubeTrainer/Persistence/SeedCatalog.swift
+      - path: TubeTrainer/Utilities/StringSearch.swift
+      - path: TubeTrainer/Utilities/YouTubeURL.swift
+      - path: TubeTrainer/Services/CoachingLibrary.swift
+      - path: TubeTrainer/Services/VideoDiscovery/VideoDiscoveryService.swift
+      - path: TubeTrainer/Services/VideoDiscovery/YouTubeDiscoveryService.swift
+      - path: TubeTrainer/DesignSystem/Theme.swift
+      - path: TubeTrainer/DesignSystem/Components/TTThumbnail.swift
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.tubetrainer.ios.share
+        CODE_SIGN_ENTITLEMENTS: TubeTrainerShare/TubeTrainerShare.entitlements
+        GENERATE_INFOPLIST_FILE: NO
+        TARGETED_DEVICE_FAMILY: "1"
+    info:
+      path: TubeTrainerShare/Info.plist
+      properties:
+        CFBundleDisplayName: TubeTrainer
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.share-services
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).ShareViewController
+          NSExtensionAttributes:
+            NSExtensionActivationRule:
+              NSExtensionActivationSupportsWebURLWithMaxCount: 1
+              NSExtensionActivationSupportsText: true
+  TubeTrainerTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: TubeTrainerTests
+    dependencies:
+      - target: TubeTrainer
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.tubetrainer.ios.tests
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  TubeTrainer:
+    build:
+      targets:
+        TubeTrainer: all
+        TubeTrainerTests: [test]
+    test:
+      targets:
+        - TubeTrainerTests
+      gatherCoverageData: false
+      disableMainThreadChecker: true
+      environmentVariables:
+        SQLITE_ENABLE_THREAD_ASSERTIONS: "0"
+        SQLITE_ENABLE_LOCKING_STYLE: "0"
