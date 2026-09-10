@@ -128,9 +128,7 @@ struct TTVideoHero: View {
 
 struct TTEmptyCoachView: View {
     let exerciseName: String
-    var onRecommended: () -> Void
-    var onMyCoaches: () -> Void
-    var onSearch: () -> Void
+    var onFind: () -> Void
 
     var body: some View {
         VStack(spacing: TTSpace.md) {
@@ -149,11 +147,21 @@ struct TTEmptyCoachView: View {
                     .multilineTextAlignment(.center)
             }
 
-            HStack(spacing: TTSpace.xs) {
-                discoveryButton("Recommended", "sparkles", action: onRecommended)
-                discoveryButton("My Coaches", "person.2.fill", action: onMyCoaches)
-                discoveryButton("Search", "magnifyingglass", action: onSearch)
+            Button {
+                TTHaptics.lightTick()
+                onFind()
+            } label: {
+                HStack(spacing: TTSpace.xs) {
+                    Image(systemName: "magnifyingglass")
+                    Text("Find a coach")
+                }
+                .font(TTFont.headline())
+                .frame(maxWidth: .infinity)
+                .frame(height: 54)
+                .foregroundStyle(.white)
+                .background(TTColor.brandRed, in: RoundedRectangle(cornerRadius: TTRadius.md, style: .continuous))
             }
+            .buttonStyle(TTCardPressStyle())
         }
         .padding(TTSpace.lg)
         .frame(maxWidth: .infinity)
@@ -169,23 +177,6 @@ struct TTEmptyCoachView: View {
                         )
                 )
         )
-    }
-
-    private func discoveryButton(_ title: String, _ symbol: String, action: @escaping () -> Void) -> some View {
-        Button {
-            TTHaptics.lightTick()
-            action()
-        } label: {
-            VStack(spacing: 6) {
-                Image(systemName: symbol).font(.system(size: 18, weight: .semibold))
-                Text(title).font(TTFont.caption())
-            }
-            .frame(maxWidth: .infinity)
-            .frame(height: 66)
-            .foregroundStyle(TTColor.textPrimary)
-            .background(TTColor.controlFill, in: RoundedRectangle(cornerRadius: TTRadius.md, style: .continuous))
-        }
-        .buttonStyle(TTCardPressStyle())
     }
 }
 

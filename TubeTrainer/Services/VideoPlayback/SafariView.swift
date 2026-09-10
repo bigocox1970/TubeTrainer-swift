@@ -1,5 +1,31 @@
 import SwiftUI
 import SafariServices
+import UIKit
+
+/// Presents `SFSafariViewController` directly from the top-most view controller.
+///
+/// Presenting Safari through a SwiftUI `.sheet`/`.fullScreenCover` that itself sits
+/// inside another sheet causes a double-dismiss: tapping Done dismisses Safari *and*
+/// cascades into the parent sheet. Presenting via UIKit keeps Safari's lifecycle
+/// self-contained, so Done returns to whatever sheet was underneath — nothing else.
+@MainActor
+enum SafariPresenter {
+    static func present(_ url: URL) {
+        let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+        guard let scene = scenes.first(where: { $0.activationState == .foregroundActive }) ?? scenes.first,
+              let window = scene.windows.first(where: { $0.isKeyWindow }) ?? scene.windows.first,
+              var top = window.rootViewController else { return }
+        while let presented = top.presentedViewController { top = presented }
+
+        let config = SFSafariViewController.Configuration()
+        config.entersReaderIfAvailable = false
+        config.barCollapsingEnabled = true
+        let controller = SFSafariViewController(url: url, configuration: config)
+        controller.preferredControlTintColor = UIColor(TTColor.brandRed)
+        controller.dismissButtonStyle = .done
+        top.present(controller, animated: true)
+    }
+}
 
 /// Apple's in-app Safari (`SFSafariViewController`) wrapped for SwiftUI.
 ///

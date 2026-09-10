@@ -8,7 +8,6 @@ struct ExerciseDetailView: View {
     @Environment(AppSettings.self) private var settings
 
     @State private var discovering = false
-    @State private var discoveryMode: CoachingDiscoveryModel.Mode = .recommended
     @State private var editing = false
     @State private var records = PerformanceStore.Records()
     @State private var history: [ExerciseSession] = []
@@ -52,7 +51,7 @@ struct ExerciseDetailView: View {
             }
         }
         .sheet(isPresented: $discovering) {
-            CoachingDiscoveryView(exercise: exercise, startMode: discoveryMode) { attachCoach($0) }
+            CoachingDiscoveryView(exercise: exercise) { attachCoach($0) }
         }
         .sheet(isPresented: $editing) {
             CustomExerciseEditor(existing: exercise)
@@ -81,9 +80,7 @@ struct ExerciseDetailView: View {
             } else {
                 TTEmptyCoachView(
                     exerciseName: exercise.name,
-                    onRecommended: { discoveryMode = .recommended; discovering = true },
-                    onMyCoaches: { discoveryMode = .myCoaches; discovering = true },
-                    onSearch: { discoveryMode = .search; discovering = true }
+                    onFind: { discovering = true }
                 )
             }
         }

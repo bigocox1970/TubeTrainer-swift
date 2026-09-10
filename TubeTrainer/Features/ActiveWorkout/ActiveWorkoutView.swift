@@ -16,7 +16,6 @@ struct ActiveWorkoutView: View {
     @State private var showFinishConfirm = false
     @State private var showDiscardConfirm = false
     @State private var discovering: ExerciseSession?
-    @State private var discoveryMode: CoachingDiscoveryModel.Mode = .recommended
     @State private var restExpanded = false
 
     private let clock = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -88,7 +87,7 @@ struct ActiveWorkoutView: View {
         .onChange(of: scenePhase) { _, phase in if phase == .active { restTimer.refresh() } }
         .sheet(item: $discovering) { exSession in
             if let exercise = exSession.exercise {
-                CoachingDiscoveryView(exercise: exercise, startMode: discoveryMode) { result in
+                CoachingDiscoveryView(exercise: exercise) { result in
                     attachCoach(result, to: exercise)
                 }
             }
@@ -227,9 +226,7 @@ struct ActiveWorkoutView: View {
         } else {
             TTEmptyCoachView(
                 exerciseName: exSession.displayName,
-                onRecommended: { discoveryMode = .recommended; discovering = exSession },
-                onMyCoaches: { discoveryMode = .myCoaches; discovering = exSession },
-                onSearch: { discoveryMode = .search; discovering = exSession }
+                onFind: { discovering = exSession }
             )
         }
     }
@@ -286,7 +283,10 @@ struct ActiveWorkoutView: View {
 
     private func handleSetCompleted(for exSession: ExerciseSession) {
         guard settings.autoStartRest else { return }
-        let rest = exSession.exercise?.effectiveRestSeconds ?? settings.defaultRestSeconds
+        // The You-tab default rest is the source of truth. Only an explicit
+        // per-exercise override (restOverrideSeconds) takes precedence — the
+        // seeded per-exercise defaultRestSeconds no longer silently wins.
+        let rest = exSession.exercise?.restOverrideSeconds ?? settings.defaultRestSeconds
         if rest > 0 {
             restTimer.start(seconds: rest, playSound: settings.restAlertSound)
         }

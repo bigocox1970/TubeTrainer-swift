@@ -7,6 +7,7 @@ import Observation
 @Observable
 final class OnboardingModel {
     var step = 0
+    var firstName = ""
     var experience: ExperienceLevel = .some
     var structure: TrainingStructure = .pushPullLegs
 
@@ -19,7 +20,7 @@ final class OnboardingModel {
         var exerciseNames: [String]
     }
 
-    let totalSteps = 6
+    let totalSteps = 7
 
     func loadPlan() {
         let plan = SeedCatalog.plan(for: structure)
@@ -48,6 +49,7 @@ final class OnboardingModel {
         }
         try? context.save()
 
+        settings.nickname = firstName.trimmingCharacters(in: .whitespaces)
         settings.onboardingComplete = true
         TTHaptics.workoutCompleted()
     }

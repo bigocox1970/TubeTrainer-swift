@@ -34,10 +34,11 @@ struct OnboardingView: View {
     @ViewBuilder private var content: some View {
         switch model.step {
         case 0: BrandStep(model: model)
-        case 1: ExperienceStep(model: model)
-        case 2: StructureStep(model: model)
-        case 3: CustomizeStep(model: model)
-        case 4: CoachesStep(model: model)
+        case 1: NameStep(model: model)
+        case 2: ExperienceStep(model: model)
+        case 3: StructureStep(model: model)
+        case 4: CustomizeStep(model: model)
+        case 5: CoachesStep(model: model)
         default: CoachingExplainerStep(model: model) {
             model.finish(context: context, settings: settings)
         }
@@ -125,20 +126,50 @@ private struct BrandStep: View {
 
 struct AppIconMark: View {
     var body: some View {
-        // A restrained brand mark (play + dumbbell) — not the full app icon splashed on screen.
-        ZStack {
-            RoundedRectangle(cornerRadius: 26, style: .continuous)
-                .fill(TTColor.brandRed)
-                .frame(width: 108, height: 108)
-                .shadow(color: TTColor.brandRed.opacity(0.4), radius: 20, y: 8)
-            Image(systemName: "dumbbell.fill")
-                .font(.system(size: 46, weight: .black))
-                .foregroundStyle(.white)
+        // The real app icon with a soft red glow behind it.
+        Image("BrandIcon")
+            .resizable()
+            .interpolation(.high)
+            .scaledToFit()
+            .frame(width: 108, height: 108)
+            .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+            .shadow(color: TTColor.brandRed.opacity(0.5), radius: 24, y: 8)
+    }
+}
+
+// MARK: - Step 2: Name
+
+private struct NameStep: View {
+    @Bindable var model: OnboardingModel
+    @FocusState private var focused: Bool
+
+    var body: some View {
+        OnboardingScaffold(
+            title: "What should we call you?",
+            subtitle: "We'll use it to greet you. Optional — you can add or change it anytime in You.",
+            onPrimary: { withAnimation(TTAnim.standard) { model.step = 2 } },
+            onBack: { withAnimation(TTAnim.standard) { model.step = 0 } },
+            secondary: (title: "Skip for now", action: {
+                model.firstName = ""
+                withAnimation(TTAnim.standard) { model.step = 2 }
+            })
+        ) {
+            TextField("Your name", text: $model.firstName)
+                .font(TTFont.title3())
+                .foregroundStyle(TTColor.textPrimary)
+                .textInputAutocapitalization(.words)
+                .autocorrectionDisabled()
+                .submitLabel(.done)
+                .focused($focused)
+                .onSubmit { withAnimation(TTAnim.standard) { model.step = 2 } }
+                .padding(TTSpace.md)
+                .background(TTColor.surface, in: RoundedRectangle(cornerRadius: TTRadius.lg, style: .continuous))
+                .onAppear { focused = true }
         }
     }
 }
 
-// MARK: - Step 2: Experience
+// MARK: - Step 3: Experience
 
 private struct ExperienceStep: View {
     @Bindable var model: OnboardingModel
@@ -146,8 +177,8 @@ private struct ExperienceStep: View {
         OnboardingScaffold(
             title: "How much training have you done?",
             subtitle: "This tunes starting suggestions. You can change anything later.",
-            onPrimary: { withAnimation(TTAnim.standard) { model.step = 2 } },
-            onBack: { withAnimation(TTAnim.standard) { model.step = 0 } }
+            onPrimary: { withAnimation(TTAnim.standard) { model.step = 3 } },
+            onBack: { withAnimation(TTAnim.standard) { model.step = 1 } }
         ) {
             VStack(spacing: TTSpace.sm) {
                 ForEach(ExperienceLevel.allCases) { level in
@@ -162,7 +193,7 @@ private struct ExperienceStep: View {
     }
 }
 
-// MARK: - Step 3: Structure
+// MARK: - Step 4: Structure
 
 private struct StructureStep: View {
     @Bindable var model: OnboardingModel
@@ -172,9 +203,9 @@ private struct StructureStep: View {
             subtitle: "A starting point, not a prescription. Not medical advice.",
             onPrimary: {
                 model.loadPlan()
-                withAnimation(TTAnim.standard) { model.step = 3 }
+                withAnimation(TTAnim.standard) { model.step = 4 }
             },
-            onBack: { withAnimation(TTAnim.standard) { model.step = 1 } }
+            onBack: { withAnimation(TTAnim.standard) { model.step = 2 } }
         ) {
             VStack(spacing: TTSpace.sm) {
                 ForEach(TrainingStructure.allCases) { structure in
@@ -193,7 +224,7 @@ private struct StructureStep: View {
     }
 }
 
-// MARK: - Step 4: Customize
+// MARK: - Step 5: Customize
 
 private struct CustomizeStep: View {
     @Bindable var model: OnboardingModel
@@ -205,8 +236,8 @@ private struct CustomizeStep: View {
         OnboardingScaffold(
             title: "Customize your exercises",
             subtitle: "Add, remove or reorder. Seeded with sensible basics.",
-            onPrimary: { withAnimation(TTAnim.standard) { model.step = 4 } },
-            onBack: { withAnimation(TTAnim.standard) { model.step = 2 } }
+            onPrimary: { withAnimation(TTAnim.standard) { model.step = 5 } },
+            onBack: { withAnimation(TTAnim.standard) { model.step = 3 } }
         ) {
             ScrollView {
                 VStack(spacing: TTSpace.md) {
@@ -269,7 +300,7 @@ private struct DayCard: View {
     }
 }
 
-// MARK: - Step 5: Coaches (optional)
+// MARK: - Step 6: Coaches (optional)
 
 private struct CoachesStep: View {
     @Bindable var model: OnboardingModel
@@ -280,9 +311,9 @@ private struct CoachesStep: View {
         OnboardingScaffold(
             title: "Already have trainers you trust?",
             subtitle: "Add favourite YouTube coaches so their videos get prioritised — or skip and discover as you go.",
-            onPrimary: { withAnimation(TTAnim.standard) { model.step = 5 } },
-            onBack: { withAnimation(TTAnim.standard) { model.step = 3 } },
-            secondary: (title: "Skip for now", action: { withAnimation(TTAnim.standard) { model.step = 5 } })
+            onPrimary: { withAnimation(TTAnim.standard) { model.step = 6 } },
+            onBack: { withAnimation(TTAnim.standard) { model.step = 4 } },
+            secondary: (title: "Skip for now", action: { withAnimation(TTAnim.standard) { model.step = 6 } })
         ) {
             VStack(spacing: TTSpace.sm) {
                 CoachesInlineList()
@@ -312,7 +343,7 @@ private struct CoachesInlineList: View {
     }
 }
 
-// MARK: - Step 6: Coaching explainer
+// MARK: - Step 7: Coaching explainer
 
 private struct CoachingExplainerStep: View {
     @Bindable var model: OnboardingModel
@@ -321,20 +352,41 @@ private struct CoachingExplainerStep: View {
     var body: some View {
         OnboardingScaffold(
             title: "Coaching, built in",
-            subtitle: "Every exercise can hold the one explanation that makes it click for you.",
+            subtitle: "Open any exercise and save the video that explains it best. Three ways to find one:",
             primaryTitle: "Enter TubeTrainer",
             onPrimary: onFinish,
-            onBack: { withAnimation(TTAnim.standard) { model.step = 4 } }
+            onBack: { withAnimation(TTAnim.standard) { model.step = 5 } }
         ) {
-            VStack(alignment: .leading, spacing: TTSpace.md) {
-                Text("Shoulder Press").font(TTFont.title2()).foregroundStyle(TTColor.textPrimary)
-                TTEmptyCoachView(exerciseName: "Shoulder Press",
-                                 onRecommended: {}, onMyCoaches: {}, onSearch: {})
-                    .allowsHitTesting(false)
-                Text("You can change your chosen coaching video whenever you like.")
+            VStack(alignment: .leading, spacing: TTSpace.sm) {
+                explainerRow("sparkles", "Recommended",
+                             "Hand-picked coaching videos for that exercise.")
+                explainerRow("person.2.fill", "My Coaches",
+                             "Prioritise YouTube trainers you already trust.")
+                explainerRow("magnifyingglass", "Search",
+                             "Find any coaching video on YouTube.")
+                Text("You can change your chosen video whenever you like.")
                     .font(TTFont.footnote()).foregroundStyle(TTColor.textTertiary)
+                    .padding(.top, TTSpace.xs)
             }
         }
+    }
+
+    private func explainerRow(_ symbol: String, _ title: String, _ detail: String) -> some View {
+        HStack(spacing: TTSpace.sm) {
+            Image(systemName: symbol)
+                .font(.title3).foregroundStyle(TTColor.brandRed)
+                .frame(width: 44, height: 44)
+                .background(TTColor.brandRedSoft, in: RoundedRectangle(cornerRadius: TTRadius.sm))
+            VStack(alignment: .leading, spacing: 2) {
+                Text(title).font(TTFont.headline()).foregroundStyle(TTColor.textPrimary)
+                Text(detail).font(TTFont.caption()).foregroundStyle(TTColor.textSecondary)
+                    .multilineTextAlignment(.leading)
+            }
+            Spacer(minLength: 0)
+        }
+        .padding(TTSpace.md)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(TTColor.surface, in: RoundedRectangle(cornerRadius: TTRadius.lg, style: .continuous))
     }
 }
 

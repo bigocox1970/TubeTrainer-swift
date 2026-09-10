@@ -4,20 +4,6 @@ import Observation
 @MainActor
 @Observable
 final class CoachingDiscoveryModel {
-    enum Mode: String, CaseIterable, Identifiable {
-        case recommended = "Recommended"
-        case myCoaches = "My Coaches"
-        case search = "Search"
-        var id: String { rawValue }
-        var symbol: String {
-            switch self {
-            case .recommended: return "sparkles"
-            case .myCoaches: return "person.2.fill"
-            case .search: return "magnifyingglass"
-            }
-        }
-    }
-
     enum LoadState: Equatable {
         case idle
         case loading
@@ -31,40 +17,57 @@ final class CoachingDiscoveryModel {
     let exerciseName: String
     private let discovery: VideoDiscoveryService
 
-    var mode: Mode
     var query: String
     var state: LoadState = .idle
     var pasteURL: String = ""
     var pasteState: LoadState = .idle
     var preferShorts = true
 
-    /// The coach filter for My Coaches mode.
+    /// Optional coach filter. nil = search all of YouTube; set = scope to that coach.
     var selectedCoach: Coach?
 
-    init(exerciseName: String, discovery: VideoDiscoveryService, startMode: Mode = .recommended) {
+    init(exerciseName: String, discovery: VideoDiscoveryService) {
         self.exerciseName = exerciseName
         self.discovery = discovery
-        self.mode = startMode
-        self.query = exerciseName
+        self.query = ""
     }
 
     var canSearchInApp: Bool { discovery.canSearch }
 
-    /// Search intent for the exercise.
+    /// Default "recommended" intent when the user hasn't typed anything.
     var recommendedQuery: String {
         preferShorts ? "\(exerciseName) form shorts" : "\(exerciseName) proper form technique"
     }
 
+    /// The query to hand to a web/Safari search when in-app search isn't available.
+    /// (A web search can't constrain by channel, so a coach filter becomes a name scope.)
+    var browseQuery: String {
+        let q = query.trimmingCharacters(in: .whitespaces)
+        let base = q.isEmpty ? exerciseName : q
+        if let coach = selectedCoach { return "\(coach.name) \(base)" }
+        return q.isEmpty ? recommendedQuery : q
+    }
+
+    /// Single entry point. Branches on the optional coach filter and the typed query:
+    /// - coach selected + has channel id → results from that channel only
+    /// - coach selected, no channel id → name-scoped web search
+    /// - no coach, empty query → recommended default
+    /// - no coach, typed query → open search across YouTube
     func load(coaches: [Coach] = []) async {
-        switch mode {
-        case .recommended:
+        let q = query.trimmingCharacters(in: .whitespaces)
+        if let coach = selectedCoach {
+            let base = q.isEmpty ? exerciseName : q
+            if let channelID = coach.channelID, !channelID.isEmpty {
+                await runCoachSearch(channelID: channelID, query: base)
+            } else {
+                await runSearch(query: "\(coach.name) \(base)", shorts: false)
+            }
+            return
+        }
+        if q.isEmpty {
             await runSearch(query: recommendedQuery, shorts: preferShorts)
-        case .search:
-            let q = query.trimmingCharacters(in: .whitespaces)
-            guard !q.isEmpty else { state = .idle; return }
+        } else {
             await runSearch(query: q, shorts: false)
-        case .myCoaches:
-            await loadCoachContent(coaches: coaches)
         }
     }
 
@@ -86,21 +89,11 @@ final class CoachingDiscoveryModel {
         }
     }
 
-    private func loadCoachContent(coaches: [Coach]) async {
-        guard let coach = selectedCoach ?? coaches.first else {
-            state = .empty
-            return
-        }
-        selectedCoach = coach
-        guard let channelID = coach.channelID, !channelID.isEmpty else {
-            // No channel id stored — can still web-search within the channel name.
-            await runSearch(query: "\(coach.name) \(exerciseName)", shorts: false)
-            return
-        }
+    private func runCoachSearch(channelID: String, query: String) async {
         guard discovery.canSearch else { state = .searchUnavailable; return }
         state = .loading
         do {
-            let results = try await discovery.videosForCoach(channelID: channelID, query: exerciseName)
+            let results = try await discovery.videosForCoach(channelID: channelID, query: query)
             state = results.isEmpty ? .empty : .loaded(results)
         } catch let e as VideoDiscoveryError {
             state = e == .notConfigured ? .searchUnavailable : .failed(e.errorDescription ?? "Something went wrong.")
@@ -129,10 +122,5 @@ final class CoachingDiscoveryModel {
             pasteState = .failed("Couldn't load that link.")
             return nil
         }
-    }
-
-    func webSearchFallback() {
-        let q = mode == .recommended ? recommendedQuery : (query.isEmpty ? exerciseName : query)
-        OpenYouTube.search(q)
     }
 }

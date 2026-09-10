@@ -1,11 +1,11 @@
 import SwiftUI
 import SwiftData
 
-/// The three-route coaching discovery sheet: Recommended / My Coaches / Search,
-/// plus a keyless paste-a-link flow. Selecting a video confirms before saving.
+/// Coaching discovery: one search over YouTube with an optional coach filter,
+/// plus a keyless paste-a-link flow. Opens on recommended results for the
+/// exercise; pick a coach chip to scope to that channel. Confirms before saving.
 struct CoachingDiscoveryView: View {
     let exercise: Exercise
-    var startMode: CoachingDiscoveryModel.Mode = .recommended
     var onSelect: (VideoResult) -> Void
 
     @Environment(\.dismiss) private var dismiss
@@ -14,12 +14,13 @@ struct CoachingDiscoveryView: View {
 
     @State private var model: CoachingDiscoveryModel?
     @State private var confirming: VideoResult?
-    @State private var safariURL: URL?
 
-    /// Open a YouTube search inside the app (compliant in-app Safari). From there
-    /// the user can Share → TubeTrainer to save a video without leaving the app.
+    /// Open a YouTube search inside the app (compliant in-app Safari). Presented via
+    /// UIKit so Done returns here — to the paste field — not out to the exercise.
+    /// From there the user can copy a link and paste it below, or Share → TubeTrainer.
     private func browseYouTube(_ query: String) {
-        safariURL = YouTubeURL.searchURL(query: query)
+        guard let url = YouTubeURL.searchURL(query: query) else { return }
+        SafariPresenter.present(url)
     }
 
     var body: some View {
@@ -42,7 +43,7 @@ struct CoachingDiscoveryView: View {
         .presentationDragIndicator(.visible)
         .onAppear {
             if model == nil {
-                model = CoachingDiscoveryModel(exerciseName: exercise.name, discovery: appEnv.discovery, startMode: startMode)
+                model = CoachingDiscoveryModel(exerciseName: exercise.name, discovery: appEnv.discovery)
             }
         }
         .sheet(item: $confirming) { result in
@@ -52,41 +53,29 @@ struct CoachingDiscoveryView: View {
             }
             .presentationDetents([.medium, .large])
         }
-        .fullScreenCover(item: $safariURL) { url in
-            SafariView(url: url) { safariURL = nil }
-                .ignoresSafeArea()
-        }
     }
 
     @ViewBuilder
     private func content(_ model: CoachingDiscoveryModel) -> some View {
         @Bindable var model = model
         VStack(spacing: TTSpace.md) {
-            // Mode switch
-            HStack(spacing: TTSpace.xs) {
-                ForEach(CoachingDiscoveryModel.Mode.allCases) { mode in
-                    TTFilterChip(title: mode.rawValue, isSelected: model.mode == mode) {
-                        model.mode = mode
-                        Task { await model.load(coaches: coaches) }
-                    }
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-
-            // Search field (search mode)
-            if model.mode == .search {
-                TTSearchField(text: $model.query, placeholder: "Search YouTube coaching") {
-                    Task { await model.load(coaches: coaches) }
-                }
+            // One search field. Empty = recommended results for the exercise.
+            TTSearchField(text: $model.query, placeholder: "Search YouTube coaching") {
+                Task { await model.load(coaches: coaches) }
             }
 
-            // My Coaches selector
-            if model.mode == .myCoaches, !coaches.isEmpty {
+            // Optional coach filter: All (everyone) + a chip per saved coach.
+            if !coaches.isEmpty {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: TTSpace.xs) {
+                        TTFilterChip(title: "All", isSelected: model.selectedCoach == nil) {
+                            model.selectedCoach = nil
+                            Task { await model.load(coaches: coaches) }
+                        }
                         ForEach(coaches) { coach in
                             TTFilterChip(title: coach.name, isSelected: model.selectedCoach?.id == coach.id) {
-                                model.selectedCoach = coach
+                                // Tapping the active coach clears the filter.
+                                model.selectedCoach = model.selectedCoach?.id == coach.id ? nil : coach
                                 Task { await model.load(coaches: coaches) }
                             }
                         }
@@ -97,7 +86,7 @@ struct CoachingDiscoveryView: View {
             resultsArea(model)
         }
         .padding(TTSpace.md)
-        .task(id: model.mode) { await model.load(coaches: coaches) }
+        .task { await model.load(coaches: coaches) }
     }
 
     @ViewBuilder
@@ -109,10 +98,7 @@ struct CoachingDiscoveryView: View {
 
                 switch model.state {
                 case .idle:
-                    if model.mode == .search {
-                        TTEmptyState(symbol: "magnifyingglass", title: "Search for coaching",
-                                     message: "Type what you want explained and pick the clip that makes it click.")
-                    }
+                    EmptyView()
                 case .loading:
                     loadingRows
                 case .loaded(let results):
@@ -206,13 +192,12 @@ struct CoachingDiscoveryView: View {
     }
 
     private func searchUnavailableCard(_ model: CoachingDiscoveryModel) -> some View {
-        let query = model.mode == .recommended
-            ? model.recommendedQuery
-            : (model.query.isEmpty ? exercise.name : model.query)
+        let query = model.browseQuery
+        let isDefault = model.selectedCoach == nil && model.query.trimmingCharacters(in: .whitespaces).isEmpty
         return VStack(spacing: TTSpace.sm) {
             Image(systemName: "sparkle.magnifyingglass")
                 .font(.system(size: 36)).foregroundStyle(TTColor.brandRed)
-            Text(model.mode == .recommended ? "Find a \(exercise.name) coach" : "Search YouTube")
+            Text(isDefault ? "Find a \(exercise.name) coach" : "Search YouTube")
                 .font(TTFont.title3()).foregroundStyle(TTColor.textPrimary)
                 .multilineTextAlignment(.center)
             Text("Opens YouTube for “\(query)”. Pick a video you like, tap Share → TubeTrainer (or copy the link and paste it above) to set it as your coach.")
