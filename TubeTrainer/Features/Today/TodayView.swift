@@ -10,6 +10,10 @@ struct TodayView: View {
            sort: \WorkoutSession.startedAt, order: .reverse) private var inProgress: [WorkoutSession]
 
     @State private var path = NavigationPath()
+    @State private var heroIndex = 0
+    @State private var draggingID: UUID?
+
+    private let heroHeight: CGFloat = 262
 
     private var nextTemplate: WorkoutTemplate? {
         // The least-recently-trained template feels like the natural "next".
@@ -29,11 +33,7 @@ struct TodayView: View {
                             if let session = inProgress.first {
                                 continueCard(session)
                             }
-                            if let template = nextTemplate {
-                                heroCard(template)
-                            } else {
-                                noPlansCard
-                            }
+                            heroSection
                             allWorkoutsSection
                             recentCoachingSection
                         }
@@ -91,18 +91,41 @@ struct TodayView: View {
         .buttonStyle(TTCardPressStyle())
     }
 
-    // MARK: Hero — next workout
+    // MARK: Hero — next workout (swipe through all workouts)
 
-    private func heroCard(_ template: WorkoutTemplate) -> some View {
+    @ViewBuilder private var heroSection: some View {
+        if templates.isEmpty {
+            noPlansCard
+        } else if templates.count == 1 {
+            heroCard(templates[0], isNext: true).frame(height: heroHeight)
+        } else {
+            TabView(selection: $heroIndex) {
+                ForEach(Array(templates.enumerated()), id: \.element.id) { index, template in
+                    heroCard(template, isNext: template.id == nextTemplate?.id)
+                        .padding(.bottom, 26)   // room for the page dots
+                        .tag(index)
+                }
+            }
+            .tabViewStyle(.page(indexDisplayMode: .always))
+            .frame(height: heroHeight + 26)
+            .onAppear {
+                if let idx = templates.firstIndex(where: { $0.id == nextTemplate?.id }) {
+                    heroIndex = idx
+                }
+            }
+        }
+    }
+
+    private func heroCard(_ template: WorkoutTemplate, isNext: Bool) -> some View {
         VStack(alignment: .leading, spacing: TTSpace.md) {
             VStack(alignment: .leading, spacing: TTSpace.xs) {
-                Text("NEXT WORKOUT")
+                Text(isNext ? "NEXT WORKOUT" : "WORKOUT")
                     .font(TTFont.caption()).tracking(1.4)
                     .foregroundStyle(TTColor.brandRed)
                 Text(template.name.uppercased())
                     .font(TTFont.hero())
                     .foregroundStyle(TTColor.textPrimary)
-                    .lineLimit(2).minimumScaleFactor(0.7)
+                    .lineLimit(2).minimumScaleFactor(0.6)
                 HStack(spacing: TTSpace.xs) {
                     Label("\(template.exercises.count) exercises", systemImage: "list.bullet")
                     if let last = template.lastTrainedAt {
@@ -114,10 +137,15 @@ struct TodayView: View {
                 .foregroundStyle(TTColor.textSecondary)
             }
 
-            NavigationLink(value: template) {
-                Text("View plan")
-                    .font(TTFont.subheadline().weight(.semibold))
-                    .foregroundStyle(TTColor.textPrimary)
+            Spacer(minLength: TTSpace.xs)
+
+            HStack(spacing: TTSpace.md) {
+                NavigationLink(value: template) {
+                    Text("View plan")
+                        .font(TTFont.subheadline().weight(.semibold))
+                        .foregroundStyle(TTColor.textPrimary)
+                }
+                Spacer()
             }
 
             TTPrimaryButton(title: "Start Workout", systemImage: "play.fill") {
@@ -125,6 +153,7 @@ struct TodayView: View {
             }
         }
         .padding(TTSpace.lg)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .background(
             RoundedRectangle(cornerRadius: TTRadius.xl, style: .continuous)
                 .fill(TTColor.surface)
@@ -160,11 +189,38 @@ struct TodayView: View {
                 ForEach(templates) { template in
                     NavigationLink(value: template) {
                         WorkoutSummaryRow(template: template)
+                            .opacity(draggingID == template.id ? 0.35 : 1)
                     }
                     .buttonStyle(TTCardPressStyle())
+                    .draggable(template.id.uuidString) {
+                        // Long-press lifts the card to reorder.
+                        WorkoutSummaryRow(template: template)
+                            .frame(width: 320)
+                            .opacity(0.9)
+                            .onAppear { draggingID = template.id }
+                    }
+                    .dropDestination(for: String.self) { items, _ in
+                        draggingID = nil
+                        guard let raw = items.first, let dragged = UUID(uuidString: raw) else { return false }
+                        return moveWorkout(dragged, onto: template.id)
+                    }
                 }
             }
         }
+    }
+
+    /// Reorder templates by rewriting their `ordering`, then persist.
+    private func moveWorkout(_ draggedID: UUID, onto targetID: UUID) -> Bool {
+        guard draggedID != targetID,
+              let from = templates.firstIndex(where: { $0.id == draggedID }),
+              let to = templates.firstIndex(where: { $0.id == targetID }) else { return false }
+        var ordered = templates
+        let moved = ordered.remove(at: from)
+        ordered.insert(moved, at: to)
+        for (i, template) in ordered.enumerated() { template.ordering = i }
+        try? context.save()
+        TTHaptics.reorderSnap()
+        return true
     }
 
     // MARK: Recent coaching

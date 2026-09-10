@@ -28,6 +28,7 @@ struct BackupFile: Codable, Identifiable {
         var equipment: String
         var aliases: [String]
         var isCustom: Bool
+        var isFavorite: Bool?
         var notes: String
         var defaultRestSeconds: Int
         var restOverrideSeconds: Int?
@@ -217,7 +218,8 @@ enum BackupService {
                 let new = Exercise(id: dto.id, name: dto.name,
                                    category: MuscleCategory(rawValue: dto.category) ?? .fullBody,
                                    equipment: Equipment(rawValue: dto.equipment) ?? .other,
-                                   aliases: dto.aliases, isCustom: dto.isCustom, notes: dto.notes,
+                                   aliases: dto.aliases, isCustom: dto.isCustom,
+                                   isFavorite: dto.isFavorite ?? false, notes: dto.notes,
                                    defaultRestSeconds: dto.defaultRestSeconds,
                                    restOverrideSeconds: dto.restOverrideSeconds, createdAt: dto.createdAt)
                 context.insert(new)
@@ -230,6 +232,7 @@ enum BackupService {
             ex.equipmentRaw = dto.equipment
             ex.aliases = dto.aliases
             ex.isCustom = dto.isCustom
+            ex.isFavorite = dto.isFavorite ?? false
             ex.notes = dto.notes
             ex.defaultRestSeconds = dto.defaultRestSeconds
             ex.restOverrideSeconds = dto.restOverrideSeconds
@@ -324,7 +327,7 @@ enum BackupService {
 
     private static func dto(for e: Exercise) -> BackupFile.ExerciseDTO {
         .init(id: e.id, name: e.name, category: e.categoryRaw, equipment: e.equipmentRaw,
-              aliases: e.aliases, isCustom: e.isCustom, notes: e.notes,
+              aliases: e.aliases, isCustom: e.isCustom, isFavorite: e.isFavorite, notes: e.notes,
               defaultRestSeconds: e.defaultRestSeconds, restOverrideSeconds: e.restOverrideSeconds,
               createdAt: e.createdAt,
               coaching: e.coachingSources.map { c in

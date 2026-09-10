@@ -31,10 +31,18 @@ struct TTExerciseRow: View {
             .frame(width: 46, height: 46)
 
             VStack(alignment: .leading, spacing: 4) {
-                Text(exercise.name)
-                    .font(TTFont.headline())
-                    .foregroundStyle(TTColor.textPrimary)
-                    .lineLimit(1)
+                HStack(spacing: 5) {
+                    if exercise.isFavorite {
+                        Image(systemName: "star.fill")
+                            .font(.system(size: 11))
+                            .foregroundStyle(TTColor.brandRed)
+                            .accessibilityLabel("Favourite")
+                    }
+                    Text(exercise.name)
+                        .font(TTFont.headline())
+                        .foregroundStyle(TTColor.textPrimary)
+                        .lineLimit(1)
+                }
                 HStack(spacing: TTSpace.xs) {
                     Text(exercise.category.shortName)
                         .font(TTFont.caption())

@@ -13,6 +13,7 @@ final class Exercise {
     /// Extra search terms / aliases (e.g. "RDL" for Romanian Deadlift).
     var aliases: [String]
     var isCustom: Bool
+    var isFavorite: Bool = false
     var notes: String
     var defaultRestSeconds: Int
     /// nil = use global default rest.
@@ -30,6 +31,7 @@ final class Exercise {
         equipment: Equipment,
         aliases: [String] = [],
         isCustom: Bool = false,
+        isFavorite: Bool = false,
         notes: String = "",
         defaultRestSeconds: Int = 90,
         restOverrideSeconds: Int? = nil,
@@ -42,6 +44,7 @@ final class Exercise {
         self.equipmentRaw = equipment.rawValue
         self.aliases = aliases
         self.isCustom = isCustom
+        self.isFavorite = isFavorite
         self.notes = notes
         self.defaultRestSeconds = defaultRestSeconds
         self.restOverrideSeconds = restOverrideSeconds

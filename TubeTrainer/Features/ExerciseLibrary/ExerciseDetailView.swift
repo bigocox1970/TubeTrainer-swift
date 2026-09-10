@@ -31,6 +31,17 @@ struct ExerciseDetailView: View {
         .navigationBarTitleDisplayMode(.large)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    exercise.isFavorite.toggle()
+                    try? context.save()
+                    TTHaptics.lightTick()
+                } label: {
+                    Image(systemName: exercise.isFavorite ? "star.fill" : "star")
+                        .foregroundStyle(exercise.isFavorite ? TTColor.brandRed : TTColor.textSecondary)
+                }
+                .accessibilityLabel(exercise.isFavorite ? "Remove from favourites" : "Add to favourites")
+            }
+            ToolbarItem(placement: .topBarTrailing) {
                 Menu {
                     // Coach controls live on the video (or the Find-a-coach panel).
                     // This menu holds exercise-level settings only.

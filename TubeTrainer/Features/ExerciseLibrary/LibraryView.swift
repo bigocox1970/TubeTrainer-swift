@@ -11,6 +11,7 @@ struct LibraryView: View {
 
     enum LibraryFilter: String, CaseIterable, Identifiable {
         case all = "All"
+        case favorites = "Favourites"
         case needsCoach = "Needs Coach"
         case hasCoach = "Has Coach"
         var id: String { rawValue }
@@ -22,6 +23,7 @@ struct LibraryView: View {
             .filter { ex in
                 switch filter {
                 case .all: return true
+                case .favorites: return ex.isFavorite
                 case .needsCoach: return !ex.hasCoach
                 case .hasCoach: return ex.hasCoach
                 }
@@ -54,6 +56,7 @@ struct LibraryView: View {
                                     TTExerciseRow(exercise: exercise, lastPerformance: lastPerf(exercise))
                                 }
                                 .buttonStyle(TTCardPressStyle())
+                                .contextMenu { favoriteButton(exercise) }
                             }
                             if filtered.isEmpty {
                                 emptyState
@@ -116,12 +119,29 @@ struct LibraryView: View {
         exercises.isEmpty ? 0 : CGFloat(coachedCount) / CGFloat(exercises.count)
     }
 
-    private var emptyState: some View {
-        TTEmptyState(
-            symbol: filter == .needsCoach ? "checkmark.circle" : "magnifyingglass",
-            title: filter == .needsCoach ? "Every exercise has a coach" : "Nothing matches",
-            message: filter == .needsCoach ? "Your whole library is coached. Nice work." : "Try different words, or create a custom exercise."
-        )
+    @ViewBuilder private var emptyState: some View {
+        switch filter {
+        case .needsCoach:
+            TTEmptyState(symbol: "checkmark.circle", title: "Every exercise has a coach",
+                         message: "Your whole library is coached. Nice work.")
+        case .favorites where query.isEmpty:
+            TTEmptyState(symbol: "star", title: "No favourites yet",
+                         message: "Press and hold any exercise to add it here — handy for movements outside your usual split.")
+        default:
+            TTEmptyState(symbol: "magnifyingglass", title: "Nothing matches",
+                         message: "Try different words, or create a custom exercise.")
+        }
+    }
+
+    private func favoriteButton(_ exercise: Exercise) -> some View {
+        Button {
+            exercise.isFavorite.toggle()
+            try? context.save()
+            TTHaptics.lightTick()
+        } label: {
+            Label(exercise.isFavorite ? "Remove from Favourites" : "Add to Favourites",
+                  systemImage: exercise.isFavorite ? "star.slash" : "star")
+        }
     }
 
     private func lastPerf(_ exercise: Exercise) -> String? {
