@@ -12,6 +12,11 @@ struct TodayView: View {
     @State private var path = NavigationPath()
     @State private var heroIndex = 0
     @State private var draggingID: UUID?
+    @State private var editingWorkouts = false
+    @State private var namingWorkout = false
+    @State private var newWorkoutName = ""
+    @State private var pendingDelete: WorkoutTemplate?
+    @State private var pendingReset: TrainingStructure?
 
     private let heroHeight: CGFloat = 262
 
@@ -46,6 +51,34 @@ struct TodayView: View {
             .navigationDestination(for: WorkoutTemplate.self) { WorkoutPlanView(template: $0) }
             .navigationDestination(for: Exercise.self) { ExerciseDetailView(exercise: $0) }
             .toolbar(.hidden, for: .navigationBar)
+            .onAppear {
+                #if DEBUG
+                if ProcessInfo.processInfo.arguments.contains("-editWorkouts") { editingWorkouts = true }
+                #endif
+            }
+            .alert("New workout", isPresented: $namingWorkout) {
+                TextField("Name (e.g. Monday)", text: $newWorkoutName)
+                Button("Cancel", role: .cancel) {}
+                Button("Create") { createWorkout() }
+            } message: {
+                Text("Give it a name — you'll add exercises next.")
+            }
+            .confirmationDialog("Delete workout?",
+                isPresented: Binding(get: { pendingDelete != nil }, set: { if !$0 { pendingDelete = nil } }),
+                presenting: pendingDelete) { template in
+                Button("Delete \(template.name)", role: .destructive) { deleteWorkout(template) }
+                Button("Cancel", role: .cancel) { pendingDelete = nil }
+            } message: { _ in
+                Text("This removes the workout. Your logged history is kept.")
+            }
+            .confirmationDialog("Reset your split?",
+                isPresented: Binding(get: { pendingReset != nil }, set: { if !$0 { pendingReset = nil } }),
+                presenting: pendingReset) { structure in
+                Button("Replace with \(structure.title)", role: .destructive) { resetSplit(structure) }
+                Button("Cancel", role: .cancel) { pendingReset = nil }
+            } message: { structure in
+                Text("Removes your current workouts and creates \(structure.title). Your logged history is kept.")
+            }
         }
     }
 
@@ -187,9 +220,24 @@ struct TodayView: View {
         VStack(spacing: TTSpace.md) {
             TTEmptyState(symbol: "plus.rectangle.on.folder",
                          title: "Your first session starts here",
-                         message: "Create a workout and start training. No account, no setup.")
-            TTPrimaryButton(title: "Build a workout", systemImage: "plus") {
-                appState.selectedTab = .library
+                         message: "Create a workout, or start from a ready-made split.")
+            VStack(spacing: TTSpace.xs) {
+                TTPrimaryButton(title: "New workout", systemImage: "plus") {
+                    newWorkoutName = ""; namingWorkout = true
+                }
+                Menu {
+                    Section("Start from a split") {
+                        ForEach(TrainingStructure.allCases.filter { $0 != .custom }) { structure in
+                            Button(structure.title) { resetSplit(structure) }
+                        }
+                    }
+                } label: {
+                    Text("Choose a split")
+                        .font(TTFont.headline())
+                        .foregroundStyle(TTColor.textPrimary)
+                        .frame(maxWidth: .infinity).frame(height: 54)
+                        .background(TTColor.controlFill, in: RoundedRectangle(cornerRadius: TTRadius.md, style: .continuous))
+                }
             }
         }
         .ttCard(padding: TTSpace.lg)
@@ -198,27 +246,17 @@ struct TodayView: View {
     // MARK: All workouts
 
     @ViewBuilder private var allWorkoutsSection: some View {
-        if templates.count > 1 {
+        if !templates.isEmpty {
             VStack(alignment: .leading, spacing: TTSpace.sm) {
-                TTSectionHeader(title: "Your workouts")
+                TTSectionHeader(title: "Your workouts",
+                                actionTitle: editingWorkouts ? "Done" : "Edit") {
+                    withAnimation(TTAnim.quick) { editingWorkouts.toggle() }
+                }
                 ForEach(templates) { template in
-                    NavigationLink(value: template) {
-                        WorkoutSummaryRow(template: template, showDragHandle: true)
-                            .opacity(draggingID == template.id ? 0.35 : 1)
-                    }
-                    .buttonStyle(TTCardPressStyle())
-                    .draggable(template.id.uuidString) {
-                        // Long-press lifts the card to reorder.
-                        WorkoutSummaryRow(template: template, showDragHandle: true)
-                            .frame(width: 320)
-                            .opacity(0.9)
-                            .onAppear { draggingID = template.id }
-                    }
-                    .dropDestination(for: String.self) { items, _ in
-                        draggingID = nil
-                        guard let raw = items.first, let dragged = UUID(uuidString: raw) else { return false }
-                        return moveWorkout(dragged, onto: template.id)
-                    }
+                    workoutRow(template)
+                }
+                if editingWorkouts {
+                    workoutEditActions
                 }
             }
         }
@@ -236,6 +274,101 @@ struct TodayView: View {
         try? context.save()
         TTHaptics.reorderSnap()
         return true
+    }
+
+    @ViewBuilder private func workoutRow(_ template: WorkoutTemplate) -> some View {
+        if editingWorkouts {
+            HStack(spacing: TTSpace.xs) {
+                Button { pendingDelete = template } label: {
+                    Image(systemName: "minus.circle.fill")
+                        .font(.title3)
+                        .foregroundStyle(TTColor.brandRed)
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Delete \(template.name)")
+
+                WorkoutSummaryRow(template: template, showDragHandle: true)
+                    .opacity(draggingID == template.id ? 0.35 : 1)
+            }
+            .draggable(template.id.uuidString) {
+                WorkoutSummaryRow(template: template, showDragHandle: true)
+                    .frame(width: 300).opacity(0.9)
+                    .onAppear { draggingID = template.id }
+            }
+            .dropDestination(for: String.self) { items, _ in
+                draggingID = nil
+                guard let raw = items.first, let dragged = UUID(uuidString: raw) else { return false }
+                return moveWorkout(dragged, onto: template.id)
+            }
+        } else {
+            NavigationLink(value: template) {
+                WorkoutSummaryRow(template: template)
+            }
+            .buttonStyle(TTCardPressStyle())
+        }
+    }
+
+    private var workoutEditActions: some View {
+        VStack(spacing: TTSpace.xs) {
+            Button { newWorkoutName = ""; namingWorkout = true } label: {
+                editActionLabel("Add a workout day", systemImage: "plus")
+            }
+            Menu {
+                Section("Replace your workouts with a split") {
+                    ForEach(TrainingStructure.allCases.filter { $0 != .custom }) { structure in
+                        Button(structure.title) { pendingReset = structure }
+                    }
+                }
+            } label: {
+                editActionLabel("Reset to a split…", systemImage: "arrow.triangle.2.circlepath")
+            }
+        }
+        .padding(.top, 2)
+    }
+
+    private func editActionLabel(_ title: String, systemImage: String) -> some View {
+        HStack(spacing: TTSpace.xs) {
+            Image(systemName: systemImage)
+            Text(title).font(TTFont.subheadline().weight(.semibold))
+            Spacer()
+        }
+        .foregroundStyle(TTColor.brandRed)
+        .padding(TTSpace.sm)
+        .frame(maxWidth: .infinity)
+        .background(TTColor.brandRedSoft, in: RoundedRectangle(cornerRadius: TTRadius.md, style: .continuous))
+    }
+
+    // MARK: Workout create / delete / reset
+
+    private func createWorkout() {
+        let name = newWorkoutName.trimmingCharacters(in: .whitespaces)
+        let order = (templates.map(\.ordering).max() ?? -1) + 1
+        let template = WorkoutTemplate(name: name.isEmpty ? "New Workout" : name, ordering: order)
+        context.insert(template)
+        try? context.save()
+        TTHaptics.lightTick()
+        editingWorkouts = false
+        path.append(template)   // open the plan to add exercises
+    }
+
+    private func deleteWorkout(_ template: WorkoutTemplate) {
+        withAnimation(TTAnim.quick) {
+            context.delete(template)
+            try? context.save()
+        }
+        pendingDelete = nil
+        heroIndex = 0
+        TTHaptics.lightTick()
+    }
+
+    private func resetSplit(_ structure: TrainingStructure) {
+        for template in templates { context.delete(template) }
+        CatalogSeeder.buildTemplates(for: structure, in: context)
+        try? context.save()
+        pendingReset = nil
+        editingWorkouts = false
+        heroIndex = 0
+        TTHaptics.lightTick()
     }
 
     // MARK: Recent coaching

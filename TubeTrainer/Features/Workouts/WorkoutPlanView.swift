@@ -35,6 +35,10 @@ struct WorkoutPlanView: View {
         }
         .navigationTitle(template.name)
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            // A brand-new (empty) workout opens ready to name + add exercises.
+            if template.orderedExercises.isEmpty { isEditing = true }
+        }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(isEditing ? "Done" : "Edit") {
