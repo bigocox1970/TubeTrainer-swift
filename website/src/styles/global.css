@@ -229,6 +229,56 @@ img { display: block; max-width: 100%; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
 
+/* Legal / prose pages ----------------------------------------------------- */
+
+.prose-page { padding-block: clamp(48px, 7vw, 96px); }
+.prose {
+  max-width: 760px;
+  margin-inline: auto;
+}
+.prose h1 {
+  font-size: clamp(30px, 5vw, 46px);
+  margin-bottom: 10px;
+}
+.prose .updated {
+  color: var(--text-3);
+  font-size: 15px;
+  margin-bottom: 36px;
+}
+.prose h2 {
+  font-size: clamp(20px, 2.6vw, 26px);
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+.prose h3 {
+  font-size: 18px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+.prose p,
+.prose li {
+  color: var(--text-2);
+  font-size: 17px;
+  line-height: 1.7;
+}
+.prose p { margin-bottom: 16px; }
+.prose ul { margin: 0 0 16px 1.1em; }
+.prose li { margin-bottom: 8px; }
+.prose a { color: var(--red); text-decoration: underline; text-underline-offset: 2px; }
+.prose strong { color: var(--text); }
+.prose .lead {
+  font-size: 19px;
+  color: var(--text);
+}
+.prose .callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 24px 0;
+}
+.prose .callout p:last-child { margin-bottom: 0; }
+
 /* Utility ----------------------------------------------------------------- */
 
 .text-2 { color: var(--text-2); }

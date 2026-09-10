@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+const title = 'Support — TubeTrainer';
+const description = 'Get help with TubeTrainer: FAQs and a contact form.';
+
+const faqs = [
+  { q: 'How do I attach a coaching video to an exercise?', a: 'Open an exercise (or start a workout), tap “Find a coach”, then Recommended, My Coaches or Search. You can also share any YouTube link straight to TubeTrainer, or paste it in.' },
+  { q: 'Do I need a YouTube account or API key?', a: 'No. You can paste any YouTube link or search on YouTube with zero setup. In-app search is optional and uses your own free YouTube Data API key if you choose to add one in Settings.' },
+  { q: 'Does it work offline?', a: 'Yes — the whole tracker works without a connection. Only playing an online video needs the internet, and if a video can’t load, logging keeps working.' },
+  { q: 'Where is my data stored?', a: 'Entirely on your device. There’s no account and no server. You can export a backup any time from You → Data, and restore it later.' },
+  { q: 'How do I change or reset my split?', a: 'On the Today tab, tap “Edit” on Your Workouts to add or delete days, reorder them, or reset to a different split (Push/Pull/Legs, Upper/Lower, Body Part, Full Body).' },
+];
+---
+<Base title={title} description={description} path="/support">
+  <section class="section prose-page">
+    <div class="container prose">
+      <h1>Support</h1>
+      <p class="updated">We’re happy to help.</p>
+
+      <p class="lead">Most questions are answered below. If you’re on the TestFlight beta, the quickest way to
+      report a bug is the built-in <strong>Send Feedback</strong> option in the TestFlight app — it includes a
+      screenshot and device details automatically.</p>
+
+      <h2>Frequently asked</h2>
+      {faqs.map((f) => (
+        <>
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </>
+      ))}
+
+      <h2>Contact us</h2>
+      <p>Send a message and we’ll get back to you. We only use what you enter here to reply — nothing else.</p>
+
+      <form name="support" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="support-form">
+        <input type="hidden" name="form-name" value="support" />
+        <p class="hidden-field"><label>Leave this empty: <input name="bot-field" /></label></p>
+        <label class="field">
+          <span>Your name</span>
+          <input type="text" name="name" required autocomplete="name" />
+        </label>
+        <label class="field">
+          <span>Your email (so we can reply)</span>
+          <input type="email" name="email" required autocomplete="email" />
+        </label>
+        <label class="field">
+          <span>How can we help?</span>
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary">Send message</button>
+      </form>
+    </div>
+  </section>
+
+  <style>
+    .support-form { display: grid; gap: 16px; margin-top: 8px; }
+    .field { display: grid; gap: 6px; }
+    .field span { font-size: 14px; font-weight: 600; color: var(--text-2); }
+    .field input,
+    .field textarea {
+      width: 100%; padding: 13px 15px; border-radius: 12px;
+      background: var(--bg-2); border: 1px solid var(--border-strong);
+      color: var(--text); font-size: 16px; font-family: inherit; resize: vertical;
+    }
+    .field input:focus,
+    .field textarea:focus { outline: 2px solid var(--red); outline-offset: 1px; }
+    .support-form .btn { justify-self: start; }
+    .hidden-field { display: none; }
+  </style>
+</Base>

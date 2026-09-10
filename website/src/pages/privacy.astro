@@ -1,0 +1,113 @@
+---
+import Base from '../layouts/Base.astro';
+const title = 'Privacy Policy — TubeTrainer';
+const description = 'How TubeTrainer handles your data: local-first, no account, no analytics, no tracking.';
+---
+<Base title={title} description={description} path="/privacy">
+  <section class="section prose-page">
+    <div class="container prose">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: September 2026</p>
+
+      <p class="lead">
+        TubeTrainer is built to need as little of your data as possible. There is no account, no server,
+        and no analytics. Your workouts live on your device. This policy explains exactly what that means.
+      </p>
+
+      <div class="callout">
+        <p><strong>The short version:</strong> We don’t collect, store, or sell your personal data.
+        TubeTrainer has no backend and no tracking. The only time the app goes online is to find, preview,
+        or play the YouTube coaching videos you choose.</p>
+      </div>
+
+      <h2>Who we are</h2>
+      <p>
+        “TubeTrainer”, “we”, “us” refers to the developer of the TubeTrainer iOS app. This policy covers the
+        TubeTrainer app and the tubetrainer.app website.
+      </p>
+
+      <h2>Data we collect</h2>
+      <p>
+        <strong>None.</strong> TubeTrainer has no user accounts and no servers of our own. We do not collect,
+        receive, or store your name, email, contacts, location, device identifiers, or your workout data.
+      </p>
+
+      <h2>Data the app stores on your device</h2>
+      <p>
+        Everything you create in TubeTrainer — your exercises, workouts, logged sets, history, notes,
+        favourites, and the references to coaching videos you save — is stored <strong>locally on your
+        device</strong> using Apple’s on-device database. It never leaves your device unless you choose to
+        export a backup file yourself.
+      </p>
+      <ul>
+        <li><strong>Backups</strong> you create are ordinary files saved wherever you send them (e.g. Files or
+        AirDrop). You control them entirely; we never receive them.</li>
+        <li><strong>Deleting the app</strong> removes this data from your device.</li>
+      </ul>
+
+      <h2>YouTube &amp; Google</h2>
+      <p>
+        TubeTrainer helps you attach coaching videos from YouTube to your exercises. To do that, the app
+        connects to YouTube/Google services to search for, preview, and play videos you select, and to fetch
+        basic details like a title, channel name, and thumbnail. TubeTrainer stores only a <strong>reference</strong>
+        to a video (such as its link and title) — never the video itself.
+      </p>
+      <p>
+        When you view or play a YouTube video, or open one in YouTube, Google may receive information in
+        accordance with its own privacy policy — the same as visiting YouTube in a browser. That processing is
+        governed by <a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google’s Privacy Policy</a>
+        and the <a href="https://www.youtube.com/t/terms" rel="noopener" target="_blank">YouTube Terms of Service</a>.
+        We do not download, host, or redistribute any YouTube content.
+      </p>
+      <p>
+        In-app video search is optional and only works if you add your own YouTube Data API key in Settings.
+        If you do, that key is stored <strong>only on your device</strong> and is used solely to talk to
+        Google’s YouTube service. We never see it.
+      </p>
+
+      <h2>Notifications</h2>
+      <p>
+        If you enable the rest-timer notification, TubeTrainer schedules a local notification on your device so
+        it can alert you when a rest period ends. These are handled by iOS on your device; no notification data
+        is sent to us.
+      </p>
+
+      <h2>Analytics, advertising &amp; tracking</h2>
+      <p>
+        There are none. TubeTrainer contains no third-party analytics, advertising, or tracking SDKs, and does
+        not use the Advertising Identifier (IDFA). We do not track you across apps or websites.
+      </p>
+
+      <h2>Children</h2>
+      <p>
+        TubeTrainer is a general-audience fitness app and is not directed at children under 13. Because we do
+        not collect personal data, we do not knowingly collect data from anyone.
+      </p>
+
+      <h2>Your rights</h2>
+      <p>
+        Because your data stays on your device and we hold nothing about you, there is nothing for us to access,
+        correct, or delete on our side. You are always in control: export your data at any time, and remove it
+        by deleting the app.
+      </p>
+
+      <h2>The website</h2>
+      <p>
+        The tubetrainer.app website is a static marketing site hosted on Netlify. It sets no advertising or
+        tracking cookies. Your colour-theme preference is stored in your browser’s local storage on your device
+        and is never sent anywhere. Netlify may process standard, aggregated server logs (such as IP address and
+        browser type) to deliver and secure the site, per <a href="https://www.netlify.com/privacy/" rel="noopener" target="_blank">Netlify’s privacy policy</a>.
+      </p>
+
+      <h2>Changes to this policy</h2>
+      <p>
+        If this policy changes, we’ll update this page and the “last updated” date above.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions about privacy? See our <a href="/support">Support</a> page for ways to get in touch.
+      </p>
+    </div>
+  </section>
+</Base>

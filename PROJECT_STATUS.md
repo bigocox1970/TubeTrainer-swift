@@ -1,6 +1,19 @@
 # TubeTrainer — Project Status
 
-_Last updated: 2026-09-10_
+_Last updated: 2026-09-10 (heading to TestFlight)_
+
+## Current milestone: TestFlight
+
+The app is feature-complete for V1 and is being archived + uploaded to **TestFlight**.
+Before external testing works, in App Store Connect / developer.apple.com:
+1. Create the app record for bundle id **`app.tubetrainer.ios`** (My Apps → New App).
+2. Accept the latest **Apple Developer Program License Agreement** (Agreements, Tax & Banking)
+   — an outstanding agreement causes the Xcode upload error
+   `IDEDistribution.DistributionAppRecordProviderError error 0`.
+3. Ensure the **App Group `group.app.tubetrainer.ios`** is registered and enabled on both
+   `app.tubetrainer.ios` and `app.tubetrainer.ios.share` App IDs.
+4. Privacy Policy URL for TestFlight/App Store → **https://tubetrainer.app/privacy** (live on the site).
+
 
 A living handoff document. Read this first when picking the project back up.
 
@@ -117,8 +130,13 @@ sitemap, robots). Logo/favicons/OG derive from `TubeTrainer-Icon.png`.
 - Deploys to **Netlify** from the repo — root `netlify.toml` sets base `website/`,
   `NODE_VERSION=22`. Connect the repo once; every push auto-deploys. Point
   `tubetrainer.app` at the Netlify site.
-- Verified in-browser: hero, coaching/logging split sections, screenshot gallery,
-  share-flow, privacy, FAQ, notify form — dark + light, desktop + mobile.
+- Hero CTA is the **App Store badge** → TestFlight now, App Store at launch
+  (set `APP_STORE_URL` in `website/src/pages/index.astro`). Still need the real
+  TestFlight public link in `TESTFLIGHT_URL`.
+- **Legal pages (for App Store / TestFlight):** `/privacy`, `/terms`, `/support`
+  (support has a Netlify contact form — no email address is exposed anywhere on the site).
+  Footer links to all three; anchors are absolute (`/#…`) so they work from any page.
+- Verified in-browser across dark + light, desktop + mobile.
 - See `website/README.md` for details and how to refresh screenshots/OG.
 
 Not yet a git repo — when ready: `git init`, add `.gitignore` (already present),
