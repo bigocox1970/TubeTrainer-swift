@@ -22,9 +22,6 @@ struct ExerciseDetailView: View {
                     recordsSection
                     trainSection
                     historySection
-                    if exercise.isCustom {
-                        TTSecondaryButton(title: "Edit exercise", systemImage: "pencil") { editing = true }
-                    }
                 }
                 .padding(TTSpace.md)
                 .padding(.bottom, TTSpace.xxl)
@@ -35,10 +32,9 @@ struct ExerciseDetailView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Menu {
-                    Button { discovering = true } label: {
-                        Label(exercise.hasCoach ? "Change coach" : "Find a coach", systemImage: "play.rectangle")
-                    }
-                    Button { editing = true } label: { Label("Edit", systemImage: "pencil") }
+                    // Coach controls live on the video (or the Find-a-coach panel).
+                    // This menu holds exercise-level settings only.
+                    Button { editing = true } label: { Label("Edit exercise", systemImage: "pencil") }
                     restMenu
                 } label: { Image(systemName: "ellipsis.circle") }
             }
