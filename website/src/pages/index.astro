@@ -328,7 +328,11 @@ function icon(name) {
     .hero-inner { grid-template-columns: 1fr; gap: 20px; text-align: center; }
     .hero-copy .badge, .hero-title, .hero-lead { margin-inline: auto; }
     .hero-cta { justify-content: center; }
-    .hero-phones { height: 520px; margin-top: 10px; }
+    /* Keep both phones overlapping, sized so nothing clips or covers the copy. */
+    .hero-phones { height: 480px; margin-top: 20px; }
+    .hero-phone .phone { max-width: 208px; }
+    .hero-phone-front { transform: translateX(26%) rotate(3deg); }
+    .hero-phone-back { transform: translateX(-40%) rotate(-6deg) scale(0.9); }
     .split-inner, .split-inner.reverse { grid-template-columns: 1fr; gap: 32px; }
     .split-inner.reverse .split-copy { order: 2; }
     .split-inner.reverse .split-phone { order: 1; }
@@ -338,7 +342,13 @@ function icon(name) {
     .privacy { grid-template-columns: 1fr; text-align: center; justify-items: center; }
   }
   @media (max-width: 480px) {
-    .hero-phone-back { display: none; }
-    .hero-phone-front { transform: none; }
+    .hero-phones { height: 430px; margin-top: 16px; }
+    .hero-phone .phone { max-width: 186px; }
+    .hero-phone-front { transform: translateX(24%) rotate(3deg); }
+    .hero-phone-back { transform: translateX(-40%) rotate(-6deg) scale(0.88); }
+  }
+  @media (max-width: 360px) {
+    .hero-phones { height: 400px; }
+    .hero-phone .phone { max-width: 168px; }
   }
 </style>
