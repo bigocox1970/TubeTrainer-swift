@@ -180,6 +180,12 @@ const jsonLd = {
       .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 20px; }
       .brand { display: inline-flex; align-items: center; gap: 10px; }
       .brand-icon { border-radius: 8px; display: block; }
+      /* On the dark header the icon's black background blends in — a soft glow +
+         hairline reveals its square edge. Not needed in light mode. */
+      html[data-theme='dark'] .brand-icon {
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.09),
+                    0 0 16px rgba(245, 50, 46, 0.45);
+      }
       .brand-name { font-family: ui-rounded, 'SF Pro Rounded', -apple-system, sans-serif; font-weight: 800; font-size: 19px; letter-spacing: -0.02em; }
       .brand-accent { color: var(--red); }
       .nav-links { display: flex; gap: 28px; font-weight: 600; font-size: 15px; color: var(--text-2); }
