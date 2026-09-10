@@ -100,21 +100,35 @@ struct TodayView: View {
         } else if templates.count == 1 {
             heroCard(templates[0], isNext: true).frame(height: heroHeight)
         } else {
-            TabView(selection: $heroIndex) {
-                ForEach(Array(templates.enumerated()), id: \.element.id) { index, template in
-                    heroCard(template, isNext: template.id == nextTemplate?.id)
-                        .padding(.bottom, 26)   // room for the page dots
-                        .tag(index)
+            VStack(spacing: TTSpace.sm) {
+                TabView(selection: $heroIndex) {
+                    ForEach(Array(templates.enumerated()), id: \.element.id) { index, template in
+                        heroCard(template, isNext: template.id == nextTemplate?.id)
+                            .tag(index)
+                    }
                 }
-            }
-            .tabViewStyle(.page(indexDisplayMode: .always))
-            .frame(height: heroHeight + 26)
-            .onAppear {
-                if let idx = templates.firstIndex(where: { $0.id == nextTemplate?.id }) {
-                    heroIndex = idx
+                .tabViewStyle(.page(indexDisplayMode: .never))
+                .frame(height: heroHeight)
+                .onAppear {
+                    if let idx = templates.firstIndex(where: { $0.id == nextTemplate?.id }) {
+                        heroIndex = idx
+                    }
                 }
+                heroDots
             }
         }
+    }
+
+    /// Custom page indicator, sitting just under the card.
+    private var heroDots: some View {
+        HStack(spacing: 6) {
+            ForEach(templates.indices, id: \.self) { i in
+                Capsule()
+                    .fill(i == heroIndex ? TTColor.brandRed : TTColor.textTertiary.opacity(0.5))
+                    .frame(width: i == heroIndex ? 18 : 6, height: 6)
+            }
+        }
+        .animation(TTAnim.quick, value: heroIndex)
     }
 
     private func heroCard(_ template: WorkoutTemplate, isNext: Bool) -> some View {
@@ -189,13 +203,13 @@ struct TodayView: View {
                 TTSectionHeader(title: "Your workouts")
                 ForEach(templates) { template in
                     NavigationLink(value: template) {
-                        WorkoutSummaryRow(template: template)
+                        WorkoutSummaryRow(template: template, showDragHandle: true)
                             .opacity(draggingID == template.id ? 0.35 : 1)
                     }
                     .buttonStyle(TTCardPressStyle())
                     .draggable(template.id.uuidString) {
                         // Long-press lifts the card to reorder.
-                        WorkoutSummaryRow(template: template)
+                        WorkoutSummaryRow(template: template, showDragHandle: true)
                             .frame(width: 320)
                             .opacity(0.9)
                             .onAppear { draggingID = template.id }
@@ -264,8 +278,15 @@ struct TodayView: View {
 
 struct WorkoutSummaryRow: View {
     let template: WorkoutTemplate
+    var showDragHandle: Bool = false
     var body: some View {
         HStack(spacing: TTSpace.sm) {
+            if showDragHandle {
+                Image(systemName: "line.3.horizontal")
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundStyle(TTColor.textTertiary)
+                    .accessibilityLabel("Drag to reorder")
+            }
             ZStack {
                 RoundedRectangle(cornerRadius: TTRadius.sm, style: .continuous).fill(TTColor.controlFill)
                 Image(systemName: template.symbolGuess)
