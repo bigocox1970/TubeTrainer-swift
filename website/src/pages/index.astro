@@ -340,11 +340,23 @@ function icon(name) {
     .hero-inner { grid-template-columns: 1fr; gap: 20px; text-align: center; }
     .hero-copy .badge, .hero-title, .hero-lead { margin-inline: auto; }
     .hero-cta { justify-content: center; }
-    /* Keep both phones overlapping, sized so nothing clips or covers the copy. */
-    .hero-phones { height: 480px; margin-top: 20px; }
-    .hero-phone .phone { max-width: 208px; }
-    .hero-phone-front { transform: translateX(26%) rotate(3deg); }
-    .hero-phone-back { transform: translateX(-40%) rotate(-6deg) scale(0.9); }
+    /* Phones move into normal flow: container grows to fit them (never clips)
+       and sits below the copy (never overlaps the buttons). They overlap each
+       other with a negative margin instead of absolute positioning. */
+    .hero-phones {
+      position: static;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 34px;
+      padding: 20px 0 4px;
+      overflow: visible;
+    }
+    .hero-phone { position: static; }
+    .hero-phone .phone { max-width: 185px; }
+    .hero-phone-back { transform: rotate(-6deg) scale(0.9); z-index: 1; }
+    .hero-phone-front { transform: rotate(3deg); margin-left: -50px; z-index: 2; }
     .split-inner, .split-inner.reverse { grid-template-columns: 1fr; gap: 32px; }
     .split-inner.reverse .split-copy { order: 2; }
     .split-inner.reverse .split-phone { order: 1; }
@@ -353,14 +365,8 @@ function icon(name) {
     .feature-grid, .steps { grid-template-columns: 1fr; }
     .privacy { grid-template-columns: 1fr; text-align: center; justify-items: center; }
   }
-  @media (max-width: 480px) {
-    .hero-phones { height: 430px; margin-top: 16px; }
-    .hero-phone .phone { max-width: 186px; }
-    .hero-phone-front { transform: translateX(24%) rotate(3deg); }
-    .hero-phone-back { transform: translateX(-40%) rotate(-6deg) scale(0.88); }
-  }
-  @media (max-width: 360px) {
-    .hero-phones { height: 400px; }
-    .hero-phone .phone { max-width: 168px; }
+  @media (max-width: 400px) {
+    .hero-phone .phone { max-width: 164px; }
+    .hero-phone-front { margin-left: -44px; }
   }
 </style>
