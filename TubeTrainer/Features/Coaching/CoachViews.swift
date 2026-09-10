@@ -10,6 +10,7 @@ struct TTVideoHero: View {
     let source: CoachingSource
     var compact: Bool = false
     var onChangeCoach: (() -> Void)?
+    var onRemoveCoach: (() -> Void)?
 
     @State private var isPlaying = false
     @State private var playbackFailed = false
@@ -101,6 +102,11 @@ struct TTVideoHero: View {
                 } label: { Label("Open in YouTube", systemImage: "arrow.up.forward.app") }
                 if let onChangeCoach {
                     Button { onChangeCoach() } label: { Label("Change coach", systemImage: "arrow.triangle.2.circlepath") }
+                }
+                if let onRemoveCoach {
+                    Button(role: .destructive) { onRemoveCoach() } label: {
+                        Label("Remove coach", systemImage: "trash")
+                    }
                 }
             } label: {
                 Image(systemName: "ellipsis")

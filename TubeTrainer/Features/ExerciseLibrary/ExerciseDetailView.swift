@@ -8,6 +8,7 @@ struct ExerciseDetailView: View {
     @Environment(AppSettings.self) private var settings
 
     @State private var discovering = false
+    @State private var discoveryMode: CoachingDiscoveryModel.Mode = .recommended
     @State private var editing = false
     @State private var records = PerformanceStore.Records()
     @State private var history: [ExerciseSession] = []
@@ -43,7 +44,7 @@ struct ExerciseDetailView: View {
             }
         }
         .sheet(isPresented: $discovering) {
-            CoachingDiscoveryView(exercise: exercise) { attachCoach($0) }
+            CoachingDiscoveryView(exercise: exercise, startMode: discoveryMode) { attachCoach($0) }
         }
         .sheet(isPresented: $editing) {
             CustomExerciseEditor(existing: exercise)
@@ -62,7 +63,9 @@ struct ExerciseDetailView: View {
         VStack(alignment: .leading, spacing: TTSpace.sm) {
             TTSectionHeader(title: "Coach")
             if let source = exercise.primaryCoach {
-                TTVideoHero(source: source, onChangeCoach: { discovering = true })
+                TTVideoHero(source: source,
+                            onChangeCoach: { discovering = true },
+                            onRemoveCoach: { removeCoach() })
                 if exercise.coachingSources.count > 1 {
                     Text("\(exercise.coachingSources.count) saved videos")
                         .font(TTFont.caption()).foregroundStyle(TTColor.textTertiary)
@@ -70,9 +73,9 @@ struct ExerciseDetailView: View {
             } else {
                 TTEmptyCoachView(
                     exerciseName: exercise.name,
-                    onRecommended: { discovering = true },
-                    onMyCoaches: { discovering = true },
-                    onSearch: { discovering = true }
+                    onRecommended: { discoveryMode = .recommended; discovering = true },
+                    onMyCoaches: { discoveryMode = .myCoaches; discovering = true },
+                    onSearch: { discoveryMode = .search; discovering = true }
                 )
             }
         }
@@ -186,6 +189,14 @@ struct ExerciseDetailView: View {
     private func attachCoach(_ result: VideoResult) {
         CoachingLibrary.attach(result, to: exercise, context: context)
         TTHaptics.coachSelected()
+        reload()
+    }
+
+    private func removeCoach() {
+        withAnimation(TTAnim.standard) {
+            CoachingLibrary.removePrimaryCoach(from: exercise, context: context)
+        }
+        TTHaptics.lightTick()
         reload()
     }
 }

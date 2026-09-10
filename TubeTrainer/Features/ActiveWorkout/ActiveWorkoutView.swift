@@ -16,6 +16,7 @@ struct ActiveWorkoutView: View {
     @State private var showFinishConfirm = false
     @State private var showDiscardConfirm = false
     @State private var discovering: ExerciseSession?
+    @State private var discoveryMode: CoachingDiscoveryModel.Mode = .recommended
 
     private let clock = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -59,7 +60,7 @@ struct ActiveWorkoutView: View {
         .onChange(of: scenePhase) { _, phase in if phase == .active { restTimer.refresh() } }
         .sheet(item: $discovering) { exSession in
             if let exercise = exSession.exercise {
-                CoachingDiscoveryView(exercise: exercise) { result in
+                CoachingDiscoveryView(exercise: exercise, startMode: discoveryMode) { result in
                     attachCoach(result, to: exercise)
                 }
             }
@@ -192,13 +193,15 @@ struct ActiveWorkoutView: View {
     @ViewBuilder
     private func coachingArea(_ exSession: ExerciseSession) -> some View {
         if let exercise = exSession.exercise, let source = exercise.primaryCoach {
-            TTVideoHero(source: source, onChangeCoach: { discovering = exSession })
+            TTVideoHero(source: source,
+                        onChangeCoach: { discovering = exSession },
+                        onRemoveCoach: { removeCoach(from: exercise) })
         } else {
             TTEmptyCoachView(
                 exerciseName: exSession.displayName,
-                onRecommended: { discovering = exSession },
-                onMyCoaches: { discovering = exSession },
-                onSearch: { discovering = exSession }
+                onRecommended: { discoveryMode = .recommended; discovering = exSession },
+                onMyCoaches: { discoveryMode = .myCoaches; discovering = exSession },
+                onSearch: { discoveryMode = .search; discovering = exSession }
             )
         }
     }
@@ -264,5 +267,12 @@ struct ActiveWorkoutView: View {
     private func attachCoach(_ result: VideoResult, to exercise: Exercise) {
         CoachingLibrary.attach(result, to: exercise, context: context)
         TTHaptics.coachSelected()
+    }
+
+    private func removeCoach(from exercise: Exercise) {
+        withAnimation(TTAnim.standard) {
+            CoachingLibrary.removePrimaryCoach(from: exercise, context: context)
+        }
+        TTHaptics.lightTick()
     }
 }

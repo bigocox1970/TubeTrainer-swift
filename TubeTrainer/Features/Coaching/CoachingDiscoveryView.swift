@@ -5,6 +5,7 @@ import SwiftData
 /// plus a keyless paste-a-link flow. Selecting a video confirms before saving.
 struct CoachingDiscoveryView: View {
     let exercise: Exercise
+    var startMode: CoachingDiscoveryModel.Mode = .recommended
     var onSelect: (VideoResult) -> Void
 
     @Environment(\.dismiss) private var dismiss
@@ -34,7 +35,7 @@ struct CoachingDiscoveryView: View {
         .presentationDragIndicator(.visible)
         .onAppear {
             if model == nil {
-                model = CoachingDiscoveryModel(exerciseName: exercise.name, discovery: appEnv.discovery)
+                model = CoachingDiscoveryModel(exerciseName: exercise.name, discovery: appEnv.discovery, startMode: startMode)
             }
         }
         .sheet(item: $confirming) { result in
@@ -194,18 +195,25 @@ struct CoachingDiscoveryView: View {
     }
 
     private func searchUnavailableCard(_ model: CoachingDiscoveryModel) -> some View {
-        VStack(spacing: TTSpace.sm) {
-            Image(systemName: "magnifyingglass.circle.fill")
+        let query = model.mode == .recommended
+            ? model.recommendedQuery
+            : (model.query.isEmpty ? exercise.name : model.query)
+        return VStack(spacing: TTSpace.sm) {
+            Image(systemName: "sparkle.magnifyingglass")
                 .font(.system(size: 36)).foregroundStyle(TTColor.brandRed)
-            Text("Search on YouTube")
+            Text(model.mode == .recommended ? "Find a \(exercise.name) coach" : "Search YouTube")
                 .font(TTFont.title3()).foregroundStyle(TTColor.textPrimary)
-            Text("In-app search needs a free YouTube API key (add one in Settings). Meanwhile, search on YouTube and paste the link back here — that always works.")
+                .multilineTextAlignment(.center)
+            Text("Opens YouTube for “\(query)”. Pick a video you like, tap Share → TubeTrainer (or copy the link and paste it above) to set it as your coach.")
                 .font(TTFont.subheadline())
                 .foregroundStyle(TTColor.textSecondary)
                 .multilineTextAlignment(.center)
             TTPrimaryButton(title: "Search on YouTube", systemImage: "arrow.up.forward.app") {
                 model.webSearchFallback()
             }
+            Text("Prefer results right here? Add a free key in Settings → YouTube search key.")
+                .font(TTFont.caption()).foregroundStyle(TTColor.textTertiary)
+                .multilineTextAlignment(.center)
         }
         .ttCard(padding: TTSpace.lg)
     }
