@@ -50,16 +50,17 @@ struct TodayView: View {
     }
 
     private var greeting: String {
-        let hour = Calendar.current.component(.hour, from: .now)
-        let base: String
-        switch hour {
-        case 5..<12: base = "Good morning"
-        case 12..<17: base = "Good afternoon"
-        case 17..<22: base = "Good evening"
-        default: base = "Evening"
-        }
         let name = settings.nickname.trimmingCharacters(in: .whitespaces)
-        return name.isEmpty ? base : "\(base), \(name)"
+        // With a name: keep the prefix tiny so long names still fit.
+        if !name.isEmpty { return "Hey \(name)" }
+        // No name: room for the full time-of-day greeting.
+        let hour = Calendar.current.component(.hour, from: .now)
+        switch hour {
+        case 5..<12: return "Good morning"
+        case 12..<17: return "Good afternoon"
+        case 17..<22: return "Good evening"
+        default: return "Good evening"
+        }
     }
 
     // MARK: Continue in-progress
