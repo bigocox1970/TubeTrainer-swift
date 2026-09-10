@@ -22,7 +22,7 @@ final class RestTimerEngine {
         return 1 - (Double(remaining) / Double(totalSeconds))
     }
 
-    func start(seconds: Int, playSound: Bool) {
+    func start(seconds: Int, playSound: Bool, requestNotifications: Bool = true) {
         guard seconds > 0 else { return }
         totalSeconds = seconds
         endDate = Date().addingTimeInterval(TimeInterval(seconds))
@@ -30,6 +30,7 @@ final class RestTimerEngine {
         isRunning = true
         scheduleTicker()
 
+        guard requestNotifications else { return }
         Task {
             let granted = await RestTimerNotifications.shared.requestAuthorizationIfNeeded()
             if granted, isRunning {
@@ -37,6 +38,17 @@ final class RestTimerEngine {
             }
         }
     }
+
+    #if DEBUG
+    /// Screenshot helper: put the timer into a specific mid-recovery state.
+    func debugStart(total: Int, remaining rem: Int) {
+        totalSeconds = total
+        endDate = Date().addingTimeInterval(TimeInterval(rem))
+        remaining = rem
+        isRunning = true
+        scheduleTicker()
+    }
+    #endif
 
     func add(seconds: Int) {
         guard isRunning, let end = endDate else { return }

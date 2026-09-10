@@ -17,6 +17,7 @@ struct ActiveWorkoutView: View {
     @State private var showDiscardConfirm = false
     @State private var discovering: ExerciseSession?
     @State private var discoveryMode: CoachingDiscoveryModel.Mode = .recommended
+    @State private var restExpanded = false
 
     private let clock = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -39,20 +40,36 @@ struct ActiveWorkoutView: View {
             if restTimer.isRunning {
                 VStack {
                     Spacer()
-                    RestTimerBar(engine: restTimer)
+                    RestTimerBar(engine: restTimer, onExpand: { withAnimation(TTAnim.standard) { restExpanded = true } })
                         .padding(.horizontal, TTSpace.md)
                         .padding(.bottom, 96)
                         .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
             }
+            if restExpanded {
+                RestTimerRechargeView(engine: restTimer) {
+                    withAnimation(TTAnim.standard) { restExpanded = false }
+                }
+                .zIndex(2)
+            }
         }
         .animation(TTAnim.standard, value: restTimer.isRunning)
+        .onChange(of: restTimer.isRunning) { _, running in
+            if !running { withAnimation(TTAnim.standard) { restExpanded = false } }
+        }
         .onAppear {
             #if DEBUG
             let args = ProcessInfo.processInfo.arguments
             if let i = args.firstIndex(of: "-activeIndex"), i + 1 < args.count,
                let idx = Int(args[i + 1]), exercises.indices.contains(idx) {
                 currentIndex = idx
+            }
+            // Demo/screenshots: show the expanded recharge rest timer, mid-recovery.
+            if args.contains("-restTimer") {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                    restTimer.debugStart(total: 90, remaining: 34)
+                    restExpanded = true
+                }
             }
             // Demo/screenshots: mark this exercise's prefilled sets as completed.
             if args.contains("-logSets") {
