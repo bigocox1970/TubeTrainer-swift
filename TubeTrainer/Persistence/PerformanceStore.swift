@@ -9,30 +9,36 @@ enum PerformanceStore {
     /// Most recent *completed* exercise session for an exercise, excluding an optional session.
     static func lastSession(for exercise: Exercise, excluding sessionID: UUID? = nil, context: ModelContext) -> ExerciseSession? {
         let exID = exercise.id
-        var descriptor = FetchDescriptor<ExerciseSession>(
+        // NB: don't sort in the FetchDescriptor by \.workoutSession?.startedAt —
+        // SwiftData can't resolve a sort keypath through an optional relationship
+        // and traps under Release/whole-module optimisation. Sort in memory instead.
+        let descriptor = FetchDescriptor<ExerciseSession>(
             predicate: #Predicate { es in
                 es.exercise?.id == exID &&
                 es.workoutSession?.completedAt != nil
-            },
-            sortBy: [SortDescriptor(\.workoutSession?.startedAt, order: .reverse)]
+            }
         )
-        descriptor.fetchLimit = 8
-        let results = (try? context.fetch(descriptor)) ?? []
+        let results = ((try? context.fetch(descriptor)) ?? [])
+            .sorted { ($0.workoutSession?.startedAt ?? .distantPast) > ($1.workoutSession?.startedAt ?? .distantPast) }
         return results.first { $0.workoutSession?.id != sessionID && !$0.orderedSets.isEmpty }
     }
 
     /// Completed exercise sessions for an exercise, newest first.
     static func history(for exercise: Exercise, limit: Int = 50, context: ModelContext) -> [ExerciseSession] {
         let exID = exercise.id
-        var descriptor = FetchDescriptor<ExerciseSession>(
+        // Sort/limit in memory — a FetchDescriptor sort through the optional
+        // \.workoutSession?.startedAt keypath traps in Release (see lastSession).
+        let descriptor = FetchDescriptor<ExerciseSession>(
             predicate: #Predicate { es in
                 es.exercise?.id == exID &&
                 es.workoutSession?.completedAt != nil
-            },
-            sortBy: [SortDescriptor(\.workoutSession?.startedAt, order: .reverse)]
+            }
         )
-        descriptor.fetchLimit = limit
-        return ((try? context.fetch(descriptor)) ?? []).filter { !$0.orderedSets.isEmpty }
+        return ((try? context.fetch(descriptor)) ?? [])
+            .filter { !$0.orderedSets.isEmpty }
+            .sorted { ($0.workoutSession?.startedAt ?? .distantPast) > ($1.workoutSession?.startedAt ?? .distantPast) }
+            .prefix(limit)
+            .map { $0 }
     }
 
     // MARK: Personal records
