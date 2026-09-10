@@ -53,7 +53,20 @@ struct TodayView: View {
             .toolbar(.hidden, for: .navigationBar)
             .onAppear {
                 #if DEBUG
-                if ProcessInfo.processInfo.arguments.contains("-editWorkouts") { editingWorkouts = true }
+                let args = ProcessInfo.processInfo.arguments
+                if args.contains("-editWorkouts") { editingWorkouts = true }
+                if let i = args.firstIndex(of: "-exerciseDetail"), i + 1 < args.count {
+                    let target = args[i + 1]
+                    func tryPush(_ attempt: Int) {
+                        if let ex = (try? context.fetch(FetchDescriptor<Exercise>()))?
+                            .first(where: { $0.name.localizedCaseInsensitiveContains(target) }) {
+                            path.append(ex)
+                        } else if attempt < 12 {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { tryPush(attempt + 1) }
+                        }
+                    }
+                    tryPush(0)
+                }
                 #endif
             }
             .alert("New workout", isPresented: $namingWorkout) {

@@ -54,6 +54,17 @@ struct ActiveWorkoutView: View {
                let idx = Int(args[i + 1]), exercises.indices.contains(idx) {
                 currentIndex = idx
             }
+            // Demo/screenshots: mark this exercise's prefilled sets as completed.
+            if args.contains("-logSets") {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                    if let ex = exercises[safe: currentIndex] {
+                        for set in ex.orderedSets where set.weight > 0 && set.reps > 0 {
+                            set.completedAt = .now
+                        }
+                        try? context.save()
+                    }
+                }
+            }
             #endif
         }
         .onReceive(clock) { _ in elapsed = session.durationSeconds }
