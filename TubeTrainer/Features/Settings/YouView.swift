@@ -17,19 +17,24 @@ struct YouView: View {
         NavigationStack {
             ZStack {
                 TTBackground()
-                ScrollView {
-                    VStack(spacing: TTSpace.lg) {
-                        trainingSection(settings)
-                        coachingSection
-                        dataSection
-                        appearanceSection(settings)
-                        aboutSection
+                VStack(spacing: 0) {
+                    TTMainHeader(title: "You")
+                    ScrollView {
+                        VStack(spacing: TTSpace.lg) {
+                            profileSection(settings)
+                            trainingSection(settings)
+                            coachingSection
+                            dataSection
+                            appearanceSection(settings)
+                            aboutSection
+                        }
+                        .padding(.horizontal, TTSpace.md)
+                        .padding(.top, TTSpace.xs)
+                        .padding(.bottom, TTSpace.xxl)
                     }
-                    .padding(TTSpace.md)
-                    .padding(.bottom, TTSpace.xxl)
                 }
             }
-            .navigationTitle("You")
+            .toolbar(.hidden, for: .navigationBar)
         }
         .sheet(item: $exportURL) { url in
             ShareSheet(items: [url])
@@ -44,6 +49,25 @@ struct YouView: View {
         }
         .alert(item: $alert) { a in
             Alert(title: Text(a.title), message: Text(a.message), dismissButton: .default(Text("OK")))
+        }
+    }
+
+    // MARK: Profile
+
+    private func profileSection(_ settings: AppSettings) -> some View {
+        SettingsCard(title: "Profile") {
+            SettingsRow(icon: "person.fill", title: "Name") {
+                TextField("Your name", text: Binding(
+                    get: { settings.nickname },
+                    set: { settings.nickname = $0 }
+                ))
+                .multilineTextAlignment(.trailing)
+                .textInputAutocapitalization(.words)
+                .autocorrectionDisabled()
+                .submitLabel(.done)
+                .foregroundStyle(TTColor.textPrimary)
+                .frame(maxWidth: 180)
+            }
         }
     }
 

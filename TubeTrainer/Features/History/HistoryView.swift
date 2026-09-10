@@ -11,11 +11,15 @@ struct HistoryView: View {
         NavigationStack {
             ZStack {
                 TTBackground()
-                if sessions.isEmpty {
-                    TTEmptyState(symbol: "clock.arrow.circlepath",
-                                 title: "Your first session starts here",
-                                 message: "Finished workouts show up here with volume, sets and records.")
-                } else {
+                VStack(spacing: 0) {
+                    TTMainHeader(title: "History")
+                    if sessions.isEmpty {
+                        Spacer()
+                        TTEmptyState(symbol: "clock.arrow.circlepath",
+                                     title: "Your first session starts here",
+                                     message: "Finished workouts show up here with volume, sets and records.")
+                        Spacer()
+                    } else {
                     ScrollView {
                         LazyVStack(spacing: TTSpace.sm) {
                             summaryHeader
@@ -36,9 +40,10 @@ struct HistoryView: View {
                         .padding(TTSpace.md)
                         .padding(.bottom, TTSpace.xxl)
                     }
+                    }
                 }
             }
-            .navigationTitle("History")
+            .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: WorkoutSession.self) { SessionDetailView(session: $0) }
         }
     }

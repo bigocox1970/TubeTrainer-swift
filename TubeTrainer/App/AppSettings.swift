@@ -18,6 +18,12 @@ final class AppSettings {
         static let onboarded = "tt.onboardingComplete"
         static let youtubeAPIKey = "tt.youtubeAPIKey"
         static let restAlertSound = "tt.restAlertSound"
+        static let nickname = "tt.nickname"
+    }
+
+    /// Optional first name used in the Today greeting. Empty => greeting only.
+    var nickname: String {
+        didSet { defaults.set(nickname, forKey: Key.nickname) }
     }
 
     var weightUnit: WeightUnit {
@@ -82,6 +88,7 @@ final class AppSettings {
 
         onboardingComplete = defaults.bool(forKey: Key.onboarded)
         youtubeAPIKey = defaults.string(forKey: Key.youtubeAPIKey) ?? ""
+        nickname = defaults.string(forKey: Key.nickname) ?? ""
     }
 
     /// Common rest presets in seconds.

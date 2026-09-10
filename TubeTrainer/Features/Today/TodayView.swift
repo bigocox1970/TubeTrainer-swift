@@ -3,6 +3,7 @@ import SwiftData
 
 struct TodayView: View {
     @Environment(AppState.self) private var appState
+    @Environment(AppSettings.self) private var settings
     @Environment(\.modelContext) private var context
     @Query(sort: \WorkoutTemplate.ordering) private var templates: [WorkoutTemplate]
     @Query(filter: #Predicate<WorkoutSession> { $0.completedAt == nil },
@@ -21,22 +22,25 @@ struct TodayView: View {
         NavigationStack(path: $path) {
             ZStack {
                 TTBackground()
-                ScrollView {
-                    VStack(alignment: .leading, spacing: TTSpace.lg) {
-                        header
-                        if let session = inProgress.first {
-                            continueCard(session)
+                VStack(spacing: 0) {
+                    TTMainHeader(title: greeting)
+                    ScrollView {
+                        VStack(alignment: .leading, spacing: TTSpace.lg) {
+                            if let session = inProgress.first {
+                                continueCard(session)
+                            }
+                            if let template = nextTemplate {
+                                heroCard(template)
+                            } else {
+                                noPlansCard
+                            }
+                            allWorkoutsSection
+                            recentCoachingSection
                         }
-                        if let template = nextTemplate {
-                            heroCard(template)
-                        } else {
-                            noPlansCard
-                        }
-                        allWorkoutsSection
-                        recentCoachingSection
+                        .padding(.horizontal, TTSpace.md)
+                        .padding(.top, TTSpace.xs)
+                        .padding(.bottom, TTSpace.xxl)
                     }
-                    .padding(TTSpace.md)
-                    .padding(.bottom, TTSpace.xxl)
                 }
             }
             .navigationDestination(for: WorkoutTemplate.self) { WorkoutPlanView(template: $0) }
@@ -45,29 +49,17 @@ struct TodayView: View {
         }
     }
 
-    private var header: some View {
-        HStack(alignment: .center) {
-            VStack(alignment: .leading, spacing: 2) {
-                Text(greeting)
-                    .font(TTFont.footnote())
-                    .foregroundStyle(TTColor.textSecondary)
-                Text("Ready to train")
-                    .font(TTFont.title().weight(.heavy))
-                    .foregroundStyle(TTColor.textPrimary)
-            }
-            Spacer()
-        }
-        .padding(.top, TTSpace.sm)
-    }
-
     private var greeting: String {
         let hour = Calendar.current.component(.hour, from: .now)
+        let base: String
         switch hour {
-        case 5..<12: return "Good morning"
-        case 12..<17: return "Good afternoon"
-        case 17..<22: return "Good evening"
-        default: return "Late one"
+        case 5..<12: base = "Good morning"
+        case 12..<17: base = "Good afternoon"
+        case 17..<22: base = "Good evening"
+        default: base = "Evening"
         }
+        let name = settings.nickname.trimmingCharacters(in: .whitespaces)
+        return name.isEmpty ? base : "\(base), \(name)"
     }
 
     // MARK: Continue in-progress

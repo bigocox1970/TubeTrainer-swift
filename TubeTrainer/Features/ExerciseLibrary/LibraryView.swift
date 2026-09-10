@@ -35,6 +35,10 @@ struct LibraryView: View {
             ZStack {
                 TTBackground()
                 VStack(spacing: TTSpace.sm) {
+                    TTMainHeader(title: "Library") {
+                        TTHeaderAddButton(accessibilityLabel: "Create exercise") { creatingCustom = true }
+                    }
+
                     TTSearchField(text: $query, placeholder: "Search your exercises")
                         .padding(.horizontal, TTSpace.md)
 
@@ -60,16 +64,7 @@ struct LibraryView: View {
                     }
                 }
             }
-            .navigationTitle("Library")
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button { creatingCustom = true } label: {
-                        Image(systemName: "plus")
-                    }
-                    .foregroundStyle(TTColor.brandRed)
-                    .accessibilityLabel("Create exercise")
-                }
-            }
+            .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: Exercise.self) { ExerciseDetailView(exercise: $0) }
             .sheet(isPresented: $creatingCustom) {
                 CustomExerciseEditor()
