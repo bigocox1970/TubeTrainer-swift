@@ -2,7 +2,15 @@
 
 _Last updated: 2026-09-10 (heading to TestFlight)_
 
-## Current milestone: TestFlight
+## Current milestone: App Store submission (v1.0)
+
+App is on TestFlight (public link `GTdSCsAh`). App Store Connect is mostly filled;
+**build 1 is now attached** to the 1.0 version. What still blocks **Add for Review**:
+Contact Information (App Review), Age Rating (expect 17+ for the web view), Content
+Rights (accesses YouTube), Pricing = Free, and the EU Trader Status banner.
+App Privacy is correctly **Data Not Collected** — do not change it. Full detail in
+the `tubetrainer-appstore-submission` memory. Screenshots (7) live in
+`AppStore-Screenshots/`.
 
 The app is feature-complete for V1 and is being archived + uploaded to **TestFlight**.
 Before external testing works, in App Store Connect / developer.apple.com:
