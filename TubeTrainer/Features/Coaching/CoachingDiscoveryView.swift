@@ -14,6 +14,13 @@ struct CoachingDiscoveryView: View {
 
     @State private var model: CoachingDiscoveryModel?
     @State private var confirming: VideoResult?
+    @State private var safariURL: URL?
+
+    /// Open a YouTube search inside the app (compliant in-app Safari). From there
+    /// the user can Share → TubeTrainer to save a video without leaving the app.
+    private func browseYouTube(_ query: String) {
+        safariURL = YouTubeURL.searchURL(query: query)
+    }
 
     var body: some View {
         NavigationStack {
@@ -44,6 +51,10 @@ struct CoachingDiscoveryView: View {
                 dismiss()
             }
             .presentationDetents([.medium, .large])
+        }
+        .fullScreenCover(item: $safariURL) { url in
+            SafariView(url: url) { safariURL = nil }
+                .ignoresSafeArea()
         }
     }
 
@@ -188,7 +199,7 @@ struct CoachingDiscoveryView: View {
                 .foregroundStyle(TTColor.textSecondary).multilineTextAlignment(.center)
             HStack {
                 TTSecondaryButton(title: "Retry", systemImage: "arrow.clockwise", fullWidth: false, action: retry)
-                TTSecondaryButton(title: "Search on YouTube", fullWidth: false) { OpenYouTube.search(exercise.name) }
+                TTSecondaryButton(title: "Search on YouTube", fullWidth: false) { browseYouTube(exercise.name) }
             }
         }
         .ttCard(padding: TTSpace.lg)
@@ -208,8 +219,8 @@ struct CoachingDiscoveryView: View {
                 .font(TTFont.subheadline())
                 .foregroundStyle(TTColor.textSecondary)
                 .multilineTextAlignment(.center)
-            TTPrimaryButton(title: "Search on YouTube", systemImage: "arrow.up.forward.app") {
-                model.webSearchFallback()
+            TTPrimaryButton(title: "Search on YouTube", systemImage: "magnifyingglass") {
+                browseYouTube(query)
             }
             Text("Prefer results right here? Add a free key in Settings → YouTube search key.")
                 .font(TTFont.caption()).foregroundStyle(TTColor.textTertiary)
