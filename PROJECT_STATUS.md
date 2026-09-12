@@ -1,16 +1,23 @@
 # TubeTrainer — Project Status
 
-_Last updated: 2026-09-10 (heading to TestFlight)_
+_Last updated: 2026-09-12 (submission-ready; awaiting Apple EU-trader verification)_
 
 ## Current milestone: App Store submission (v1.0)
 
-App is on TestFlight (public link `GTdSCsAh`). App Store Connect is mostly filled;
-**build 1 is now attached** to the 1.0 version. What still blocks **Add for Review**:
-Contact Information (App Review), Age Rating (expect 17+ for the web view), Content
-Rights (accesses YouTube), Pricing = Free, and the EU Trader Status banner.
-App Privacy is correctly **Data Not Collected** — do not change it. Full detail in
-the `tubetrainer-appstore-submission` memory. Screenshots (7) live in
-`AppStore-Screenshots/`.
+**App Store Connect is fully filled in and "Add for Review" is enabled.** Done on
+2026-09-12: **build 3** attached (fixes a Release-only crash on opening any
+exercise — a SwiftData sort through an optional relationship); a fresh **9-shot,
+Jeff-Nippard-free** screenshot set (AI gym images + made-up coach "Form First");
+Contact Info; **Age Rating 16+**; Content Rights (accesses YouTube); Pricing =
+Free + Availability (175 regions); full **App Review Notes** (with YouTube
+compliance); **Regulated Medical Device = No**; and an **H.264 demo video**
+attached (iPhone HEVC recordings are rejected — re-encode with ffmpeg).
+Only remaining: **EU Trader Status verification** (submitted as Chris Cox /
+account entity, home address 78 Pinnocks Way; Apple verifying an uploaded doc) —
+then hit **Add for Review**. App Privacy stays **Data Not Collected** — do not
+change it. Full detail in the `tubetrainer-appstore-submission` memory.
+Screenshots live in `AppStore-Screenshots/` (uploaded set + `for-upload/`);
+website also de-Jeff'd and redesigned (carousel, tilt/hover) and pushed.
 
 The app is feature-complete for V1 and is being archived + uploaded to **TestFlight**.
 Before external testing works, in App Store Connect / developer.apple.com:
@@ -44,14 +51,17 @@ A living handoff document. Read this first when picking the project back up.
 
 - **Design system** — semantic light/dark color tokens, type/space/radius/anim
   scales, haptics, reusable `TT*` components.
-- **Onboarding** — 6 steps (brand → experience → structure → customize → coaches →
-  coaching explainer); builds a populated workout structure; skippable.
+- **Onboarding** — 7 steps (brand → **name** → experience → structure → customize →
+  coaches → coaching explainer); asks the user's name (feeds the Today greeting);
+  builds a populated workout structure; skippable.
 - **Workout engine** — templates, active session, fast set logger (steppers +
   keypad + prev-fill), previous-performance display, auto rest timer (background
   via local notifications), completion summary with PR detection.
 - **Coaching** — the differentiator. Video hero with inline compliant player,
-  clip start-times, empty "Find your X coach" discovery panel. Discovery routes:
-  Recommended / My Coaches / Search + paste-a-link. "Use this for X?" confirm.
+  clip start-times, empty "Find your X coach" discovery panel. Discovery is now
+  one search with an optional coach filter (no coach = all of YouTube, coach
+  selected = that channel; empty query = recommended) + paste-a-link. In-app
+  Safari opens via UIKit so "Done" returns to the paste field. "Use this for X?" confirm.
 - **Library** — search + Needs/Has Coach filters + coaching-progress bar;
   exercise detail (Coach / Train / History + PRs); custom exercises.
 - **History** — sessions grouped by month, session detail, exercise progression,
