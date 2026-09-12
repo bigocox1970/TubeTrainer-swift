@@ -126,12 +126,20 @@ function icon(name) {
       <h2 class="section-title center-title">Deliberately designed, top to bottom.</h2>
       <p class="section-lead center-lead">Dark-first, with a proper light mode. Every screen earns its place.</p>
     </div>
-    <div class="gallery reveal">
-      {screens.map((s, i) => (
-        <div class="gallery-item"><PhoneFrame src={s.src} alt={s.alt} loading={i < 2 ? 'eager' : 'lazy'} /></div>
-      ))}
+    <div class="gallery-wrap reveal">
+      <button class="gallery-arrow prev" type="button" aria-label="Previous screenshots">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="gallery">
+        {screens.map((s, i) => (
+          <div class="gallery-item"><PhoneFrame src={s.src} alt={s.alt} loading={i < 2 ? 'eager' : 'lazy'} /></div>
+        ))}
+      </div>
+      <button class="gallery-arrow next" type="button" aria-label="Next screenshots">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
     </div>
-    <p class="gallery-hint text-2 center">Scroll sideways →</p>
+    <p class="gallery-hint text-2 center">Swipe, scroll, or use the arrows →</p>
   </section>
 
   <!-- Feature grid -------------------------------------------------------- -->
@@ -270,6 +278,20 @@ function icon(name) {
   .split-inner.reverse { grid-template-columns: 1.1fr 0.9fr; }
   .split-phone { display: flex; justify-content: center; }
   .split-phone .phone { max-width: 280px; }
+  /* .phone is rendered by PhoneFrame, so it needs :global to escape index.astro's
+     scoping. Slight resting tilt (leaning away from the copy); straighten + lift on hover. */
+  .split-phone :global(.phone) {
+    transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+    will-change: transform;
+  }
+  .split-inner:not(.reverse) .split-phone :global(.phone) { transform: rotate(-3deg); }
+  .split-inner.reverse .split-phone :global(.phone) { transform: rotate(3deg); }
+  .split-phone :global(.phone):hover { transform: rotate(0deg) translateY(-12px) scale(1.03); }
+  @media (prefers-reduced-motion: reduce) {
+    .split-inner:not(.reverse) .split-phone :global(.phone),
+    .split-inner.reverse .split-phone :global(.phone) { transform: none; }
+    .split-phone :global(.phone):hover { transform: translateY(-6px); }
+  }
   .ticks { list-style: none; margin-top: 28px; display: grid; gap: 14px; }
   .ticks li { position: relative; padding-left: 34px; color: var(--text-2); font-size: 17px; }
   .ticks li strong { color: var(--text); }
@@ -281,12 +303,49 @@ function icon(name) {
   .center-lead { margin-inline: auto; }
 
   /* Gallery */
+  .gallery-wrap { position: relative; }
   .gallery {
     display: flex; gap: 26px; overflow-x: auto; scroll-snap-type: x mandatory;
-    padding: 40px max(24px, calc((100vw - 1120px) / 2)); scrollbar-width: none;
+    padding: 56px max(24px, calc((100vw - 1120px) / 2)); scrollbar-width: none;
   }
   .gallery::-webkit-scrollbar { display: none; }
-  .gallery-item { flex: 0 0 auto; scroll-snap-align: center; width: 264px; }
+  .gallery-item {
+    flex: 0 0 auto; scroll-snap-align: center; width: 264px;
+    transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+    will-change: transform;
+  }
+  /* Slight resting tilt, alternating for a dynamic layered look */
+  .gallery-item:nth-child(odd)  { transform: rotate(-2.5deg); }
+  .gallery-item:nth-child(even) { transform: rotate(2.5deg); }
+  /* Rollover: straighten, lift and grow */
+  .gallery-item:hover {
+    transform: rotate(0deg) translateY(-14px) scale(1.045);
+    z-index: 3; position: relative;
+  }
+
+  .gallery-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%); z-index: 5;
+    width: 52px; height: 52px; border-radius: 999px; cursor: pointer;
+    display: grid; place-items: center;
+    background: var(--surface); color: var(--text); border: 1px solid var(--border-strong);
+    box-shadow: 0 10px 28px -10px rgba(0,0,0,0.55);
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  }
+  .gallery-arrow:hover { background: var(--red); color: #fff; border-color: var(--red); }
+  .gallery-arrow:active { transform: translateY(-50%) scale(0.92); }
+  .gallery-arrow svg { width: 24px; height: 24px; }
+  .gallery-arrow.prev { left: clamp(8px, 2.5vw, 32px); }
+  .gallery-arrow.next { right: clamp(8px, 2.5vw, 32px); }
+  /* Touch/small screens swipe naturally — hide arrows */
+  @media (hover: none), (max-width: 900px) {
+    .gallery-arrow { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .gallery-item,
+    .gallery-item:nth-child(odd),
+    .gallery-item:nth-child(even) { transform: none; }
+    .gallery-item:hover { transform: translateY(-8px); }
+  }
   .gallery-hint { margin-top: 6px; font-size: 14px; }
 
   /* Feature grid */
@@ -381,3 +440,25 @@ function icon(name) {
     .hero-phone-front { margin-left: -44px; }
   }
 </style>
+
+<script>
+  // Desktop arrow controls for the horizontal screenshot gallery.
+  const gallery = document.querySelector('.gallery');
+  if (gallery) {
+    const step = () => Math.min(gallery.clientWidth * 0.75, 320);
+    const prev = document.querySelector('.gallery-arrow.prev');
+    const next = document.querySelector('.gallery-arrow.next');
+    prev?.addEventListener('click', () => gallery.scrollBy({ left: -step(), behavior: 'smooth' }));
+    next?.addEventListener('click', () => gallery.scrollBy({ left: step(), behavior: 'smooth' }));
+
+    // Dim an arrow when there's nothing more to scroll that way.
+    const sync = () => {
+      const max = gallery.scrollWidth - gallery.clientWidth - 2;
+      if (prev) prev.style.opacity = gallery.scrollLeft <= 2 ? '0.35' : '1';
+      if (next) next.style.opacity = gallery.scrollLeft >= max ? '0.35' : '1';
+    };
+    gallery.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
+    sync();
+  }
+</script>
