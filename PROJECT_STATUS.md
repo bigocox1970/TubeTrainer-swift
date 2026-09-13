@@ -1,23 +1,36 @@
 # TubeTrainer — Project Status
 
-_Last updated: 2026-09-12 (submission-ready; awaiting Apple EU-trader verification)_
+_Last updated: 2026-09-13 (submitted → 2.1 info-needed → responded + resubmitted; now "Waiting for Review")_
 
 ## Current milestone: App Store submission (v1.0)
 
-**App Store Connect is fully filled in and "Add for Review" is enabled.** Done on
-2026-09-12: **build 3** attached (fixes a Release-only crash on opening any
-exercise — a SwiftData sort through an optional relationship); a fresh **9-shot,
-Jeff-Nippard-free** screenshot set (AI gym images + made-up coach "Form First");
-Contact Info; **Age Rating 16+**; Content Rights (accesses YouTube); Pricing =
-Free + Availability (175 regions); full **App Review Notes** (with YouTube
-compliance); **Regulated Medical Device = No**; and an **H.264 demo video**
-attached (iPhone HEVC recordings are rejected — re-encode with ffmpeg).
-Only remaining: **EU Trader Status verification** (submitted as Chris Cox /
-account entity, home address 78 Pinnocks Way; Apple verifying an uploaded doc) —
-then hit **Add for Review**. App Privacy stays **Data Not Collected** — do not
-change it. Full detail in the `tubetrainer-appstore-submission` memory.
-Screenshots live in `AppStore-Screenshots/` (uploaded set + `for-upload/`);
-website also de-Jeff'd and redesigned (carousel, tilt/hover) and pushed.
+**Submitted, rejected as Guideline 2.1 "Information Needed", responded, and
+resubmitted — now "Waiting for Review".** The 2.1 was the standard new-account
+info request (NOT a crash — the "Bugs and crashes" wording is boilerplate);
+replied in the Resolution Center with the 6 points (recording / purpose /
+no-login setup / external services = YouTube + optional Data API / no regional
+diffs / third-party = official IFrame player) and clicked **Resubmit to App
+Review** (replying alone does not re-queue). XRP Maxi (separate app) got the same
+template and is also back in the queue — its demo video had been the raw iPhone
+**HEVC** recording silently stuck on "Waiting for…"; re-encoded to H.264 and
+resubmitted.
+
+Submission was fully filled in on 2026-09-12: **build 3** attached (fixes a
+Release-only crash on opening any exercise — a SwiftData sort through an optional
+relationship); a fresh **9-shot, Jeff-Nippard-free** screenshot set (AI gym
+images + made-up coach "Form First"); Contact Info; **Age Rating 16+**; Content
+Rights (accesses YouTube); Pricing = Free + Availability (175 regions); full
+**App Review Notes** (with YouTube compliance); **Regulated Medical Device = No**;
+and an **H.264 demo video** attached (iPhone HEVC recordings are rejected —
+re-encode with ffmpeg).
+
+Remaining: **wait for the re-review**, and **EU Trader Status verification**
+(separate track — submitted as Chris Cox / account entity, home address 78
+Pinnocks Way; Apple verifying an uploaded doc; account-level, covers all apps).
+App Privacy stays **Data Not Collected** — do not change it. Full detail in the
+`tubetrainer-appstore-submission` memory. Screenshots live in
+`AppStore-Screenshots/` (uploaded set + `for-upload/`); website also de-Jeff'd
+and redesigned (carousel, tilt/hover) and pushed.
 
 The app is feature-complete for V1 and is being archived + uploaded to **TestFlight**.
 Before external testing works, in App Store Connect / developer.apple.com:
