@@ -95,8 +95,20 @@ const jsonLd = {
             <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
           </button>
           <a href="#download" class="btn btn-primary nav-cta">Download</a>
+          <button id="nav-toggle" class="icon-btn nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+            <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </button>
         </div>
       </div>
+      <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+        <a href="/#coaching">Coaching</a>
+        <a href="/#logging">Training</a>
+        <a href="/#screens">Screens</a>
+        <a href="/#privacy">Privacy</a>
+        <a href="/#faq">FAQ</a>
+        <a href="#download" class="btn btn-primary mobile-cta">Download</a>
+      </nav>
     </header>
 
     <main id="main">
@@ -152,6 +164,28 @@ const jsonLd = {
         };
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll();
+        // Mobile hamburger menu
+        var navToggle = document.getElementById('nav-toggle');
+        var mobileMenu = document.getElementById('mobile-menu');
+        if (navToggle && mobileMenu) {
+          var setMenu = function (open) {
+            nav.classList.toggle('nav-open', open);
+            navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+          };
+          navToggle.addEventListener('click', function () {
+            setMenu(!nav.classList.contains('nav-open'));
+          });
+          mobileMenu.querySelectorAll('a').forEach(function (a) {
+            a.addEventListener('click', function () { setMenu(false); });
+          });
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') setMenu(false);
+          });
+          window.addEventListener('resize', function () {
+            if (window.innerWidth > 720) setMenu(false);
+          });
+        }
         // Reveal on scroll
         var els = document.querySelectorAll('.reveal');
         if ('IntersectionObserver' in window) {
@@ -213,6 +247,47 @@ const jsonLd = {
       html[data-theme='light'] .icon-sun { display: none; }
       html[data-theme='light'] .icon-moon { display: block; }
 
+      /* Hamburger — desktop hidden, mobile shown. Close icon swaps in when open. */
+      .nav-toggle { display: none; }
+      .nav-toggle .icon-close { display: none; }
+      .nav.nav-open .nav-toggle .icon-menu { display: none; }
+      .nav.nav-open .nav-toggle .icon-close { display: block; }
+
+      .mobile-menu {
+        position: absolute; top: 100%; left: 0; right: 0;
+        display: flex; flex-direction: column; gap: 4px;
+        padding: 12px 24px 20px;
+        background: color-mix(in srgb, var(--bg) 93%, transparent);
+        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 24px 40px -24px var(--shadow);
+        transform: translateY(-10px);
+        opacity: 0; visibility: hidden; pointer-events: none;
+        transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+      }
+      .nav.nav-open .mobile-menu {
+        transform: none; opacity: 1; visibility: visible; pointer-events: auto;
+      }
+      .mobile-menu a {
+        font-weight: 600; font-size: 17px; color: var(--text-2);
+        padding: 12px 4px; border-bottom: 1px solid var(--border);
+      }
+      .mobile-menu a:hover { color: var(--text); }
+      .mobile-menu .mobile-cta {
+        margin-top: 14px; border-bottom: none; color: #fff;
+        justify-content: center; font-size: 16px;
+      }
+      .mobile-menu .mobile-cta:hover { color: #fff; }
+
+      @media (max-width: 720px) {
+        .nav-toggle { display: inline-flex; }
+        .nav-cta { display: none; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .mobile-menu { transition: opacity 0.15s ease, visibility 0.15s; transform: none; }
+      }
+
       .footer { border-top: 1px solid var(--border); padding-block: 56px 34px; margin-top: 40px; }
       .footer-inner { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
       .footer-brand p { margin-top: 12px; font-size: 15px; }
@@ -220,7 +295,6 @@ const jsonLd = {
       .footer-links { display: flex; flex-direction: column; gap: 12px; font-weight: 600; color: var(--text-2); }
       .footer-links a:hover { color: var(--text); }
       .footer-legal { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 36px; font-size: 14px; }
-      @media (max-width: 560px) { .nav-cta { display: none; } }
     </style>
   </body>
 </html>
