@@ -174,7 +174,7 @@ struct ExerciseDetailView: View {
             }
         } else {
             TTEmptyState(symbol: "clock", title: "No history yet",
-                         message: "Your sets for \(exercise.name) will show up here.")
+                         message: String(localized: "Your sets for \(exercise.displayName) will show up here."))
         }
     }
 

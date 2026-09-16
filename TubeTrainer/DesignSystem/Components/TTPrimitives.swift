@@ -28,14 +28,14 @@ struct TTSectionHeader: View {
 
     var body: some View {
         HStack(alignment: .firstTextBaseline) {
-            Text(title.uppercased())
+            Text(TTLocalized(title).uppercased())
                 .font(TTFont.caption())
                 .tracking(1.2)
                 .foregroundStyle(TTColor.textSecondary)
             Spacer()
             if let actionTitle, let action {
                 Button(action: action) {
-                    Text(actionTitle)
+                    Text(TTLocalized(actionTitle))
                         .font(TTFont.footnote().weight(.semibold))
                         .foregroundStyle(TTColor.brandRed)
                 }
@@ -81,7 +81,7 @@ struct TTBadge: View {
             if let systemImage {
                 Image(systemName: systemImage).font(.system(size: 10, weight: .bold))
             }
-            Text(text)
+            Text(TTLocalized(text))
                 .font(TTFont.caption())
         }
         .foregroundStyle(style.fg)
@@ -104,7 +104,7 @@ struct TTSearchField: View {
         HStack(spacing: TTSpace.xs) {
             Image(systemName: "magnifyingglass")
                 .foregroundStyle(TTColor.textSecondary)
-            TextField(placeholder, text: $text)
+            TextField(TTLocalized(placeholder), text: $text)
                 .font(TTFont.body())
                 .foregroundStyle(TTColor.textPrimary)
                 .textInputAutocapitalization(.never)
@@ -142,7 +142,7 @@ struct TTFilterChip: View {
             TTHaptics.lightTick()
             action()
         } label: {
-            Text(title)
+            Text(TTLocalized(title))
                 .font(TTFont.subheadline().weight(.semibold))
                 .foregroundStyle(isSelected ? .white : TTColor.textSecondary)
                 .padding(.horizontal, TTSpace.sm)
@@ -167,11 +167,11 @@ struct TTEmptyState: View {
             Image(systemName: symbol)
                 .font(.system(size: 40, weight: .regular))
                 .foregroundStyle(TTColor.textTertiary)
-            Text(title)
+            Text(TTLocalized(title))
                 .font(TTFont.title3())
                 .foregroundStyle(TTColor.textPrimary)
                 .multilineTextAlignment(.center)
-            Text(message)
+            Text(TTLocalized(message))
                 .font(TTFont.subheadline())
                 .foregroundStyle(TTColor.textSecondary)
                 .multilineTextAlignment(.center)

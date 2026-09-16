@@ -48,7 +48,7 @@ struct YouView: View {
             }
         }
         .alert(item: $alert) { a in
-            Alert(title: Text(a.title), message: Text(a.message), dismissButton: .default(Text("OK")))
+            Alert(title: Text(TTLocalized(a.title)), message: Text(TTLocalized(a.message)), dismissButton: .default(Text("OK")))
         }
     }
 
@@ -232,7 +232,7 @@ struct YouView: View {
         do {
             let count = try BackupService.importBackup(file, mode: mode, context: context)
             TTHaptics.workoutCompleted()
-            alert = SettingsAlert(title: "Import complete", message: "Restored \(count) items.")
+            alert = SettingsAlert(title: "Import complete", message: String(localized: "Restored \(count) items."))
         } catch {
             alert = SettingsAlert(title: "Import failed", message: "Your existing data was not changed.")
         }
@@ -275,7 +275,7 @@ struct SettingsRow<Trailing: View>: View {
                 .font(.system(size: 15, weight: .semibold))
                 .foregroundStyle(TTColor.brandRed)
                 .frame(width: 28)
-            Text(title).font(TTFont.body()).foregroundStyle(TTColor.textPrimary)
+            Text(TTLocalized(title)).font(TTFont.body()).foregroundStyle(TTColor.textPrimary)
             Spacer()
             trailing
         }

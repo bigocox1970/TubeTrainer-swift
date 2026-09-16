@@ -265,7 +265,7 @@ struct ActiveWorkoutView: View {
         }) {
             HStack(spacing: TTSpace.xs) {
                 if system == "chevron.left" { Image(systemName: system) }
-                Text(label).font(TTFont.headline())
+                Text(TTLocalized(label)).font(TTFont.headline())
                 if system == "chevron.right" { Image(systemName: system) }
             }
             .frame(maxWidth: .infinity)

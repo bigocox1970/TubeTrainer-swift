@@ -94,7 +94,7 @@ struct WorkoutCompleteView: View {
                 .font(TTFont.numeric(20, weight: .bold))
                 .foregroundStyle(TTColor.textPrimary)
                 .minimumScaleFactor(0.6).lineLimit(1)
-            Text(label).font(TTFont.caption()).foregroundStyle(TTColor.textSecondary)
+            Text(TTLocalized(label)).font(TTFont.caption()).foregroundStyle(TTColor.textSecondary)
                 .multilineTextAlignment(.center)
         }
         .frame(maxWidth: .infinity)

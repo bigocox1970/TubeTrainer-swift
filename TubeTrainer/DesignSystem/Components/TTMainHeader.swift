@@ -9,7 +9,7 @@ struct TTMainHeader<Trailing: View>: View {
 
     var body: some View {
         HStack(alignment: .center, spacing: TTSpace.sm) {
-            Text(title)
+            Text(TTLocalized(title))
                 .font(TTFont.largeTitle())
                 .foregroundStyle(TTColor.textPrimary)
                 .lineLimit(1)
