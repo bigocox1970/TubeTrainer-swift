@@ -1,7 +1,2340 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-
+  "sourceLanguage": "en",
+  "strings": {
+    "": {},
+    "%@ Complete": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ completado"
+          }
+        }
+      }
+    },
+    "%@ · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@ · %2$@"
+          }
+        }
+      }
+    },
+    "%@ · %lld sets logged": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@ · %2$lld sets logged"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %lld series registradas"
+          }
+        }
+      }
+    },
+    "%lld": {},
+    "%lld / %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$lld / %2$lld"
+          }
+        }
+      }
+    },
+    "%lld Personal %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$lld Personal %2$@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld %@ personales"
+          }
+        }
+      }
+    },
+    "%lld exercise%@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$lld exercise%2$@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld ejercicio%@"
+          }
+        }
+      }
+    },
+    "%lld exercises": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld ejercicios"
+          }
+        }
+      }
+    },
+    "%lld exercises · %lld sets · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$lld exercises · %2$lld sets · %3$@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld ejercicios · %lld series · %@"
+          }
+        }
+      }
+    },
+    "%lld saved videos": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld vídeos guardados"
+          }
+        }
+      }
+    },
+    "%lld sets": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld series"
+          }
+        }
+      }
+    },
+    "%lld sets logged.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld series registradas."
+          }
+        }
+      }
+    },
+    "%lld sets · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$lld sets · %2$@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld series · %@"
+          }
+        }
+      }
+    },
+    "+15": {},
+    "0": {},
+    "1. Open Google Cloud Console and create a project.\n2. Enable “YouTube Data API v3”.\n3. Create an API key and (recommended) restrict it to the YouTube Data API and your iOS bundle id.\n\nThe free tier allows roughly 100 searches per day. The key is stored only on this device.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1. Abre Google Cloud Console y crea un proyecto.\n2. Activa «YouTube Data API v3».\n3. Crea una clave API y (recomendado) restríngela a la YouTube Data API y al bundle id de tu app iOS.\n\nEl plan gratuito permite unas 100 búsquedas al día. La clave se guarda solo en este dispositivo."
+          }
+        }
+      }
+    },
+    "15s": {},
+    "A balanced starting point.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un punto de partida equilibrado."
+          }
+        }
+      }
+    },
+    "A focused day per muscle group.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un día centrado en cada grupo muscular."
+          }
+        }
+      }
+    },
+    "A saved start point jumps you straight to the useful part.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un punto de inicio guardado te lleva directo a la parte útil."
+          }
+        }
+      }
+    },
+    "Add a coach": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir un entrenador"
+          }
+        }
+      }
+    },
+    "Add a note": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir una nota"
+          }
+        }
+      }
+    },
+    "Add coach": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir entrenador"
+          }
+        }
+      }
+    },
+    "Add exercise": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir ejercicio"
+          }
+        }
+      }
+    },
+    "Add set": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir serie"
+          }
+        }
+      }
+    },
+    "Add the name of a YouTube trainer you trust. When you find coaching, theirs gets prioritised.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añade el nombre de un entrenador de YouTube en el que confíes. Cuando encuentres vídeos, los suyos tendrán prioridad."
+          }
+        }
+      }
+    },
+    "Add to Favourites": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir a favoritos"
+          }
+        }
+      }
+    },
+    "Add to favourites": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir a favoritos"
+          }
+        }
+      }
+    },
+    "Aliases make search forgiving — type any of them to find this exercise.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los alias hacen la búsqueda más flexible: escribe cualquiera de ellos para encontrar este ejercicio."
+          }
+        }
+      }
+    },
+    "Alternate upper- and lower-body days.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alterna días de tren superior e inferior."
+          }
+        }
+      }
+    },
+    "Attach a coach whenever a video makes an exercise click.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adjunta un entrenador cuando un vídeo te haga entender un ejercicio."
+          }
+        }
+      }
+    },
+    "Backup from %@ · v%lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "Backup from %1$@ · v%2$lld"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copia de %@ · v%lld"
+          }
+        }
+      }
+    },
+    "Body Part Split": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rutina por grupo muscular"
+          }
+        }
+      }
+    },
+    "Build My Own": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crear la mía"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancelar"
+          }
+        }
+      }
+    },
+    "Change coach": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cambiar de entrenador"
+          }
+        }
+      }
+    },
+    "Choose a split": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige una rutina"
+          }
+        }
+      }
+    },
+    "Clear search": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Borrar búsqueda"
+          }
+        }
+      }
+    },
+    "Coaching options": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opciones de entrenador"
+          }
+        }
+      }
+    },
+    "Complete set %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completar serie %lld"
+          }
+        }
+      }
+    },
+    "Continue workout": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar entrenamiento"
+          }
+        }
+      }
+    },
+    "Create": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crear"
+          }
+        }
+      }
+    },
+    "Create \"%@\"": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crear «%@»"
+          }
+        }
+      }
+    },
+    "Dark": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oscuro"
+          }
+        }
+      }
+    },
+    "Delete %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar %@"
+          }
+        }
+      }
+    },
+    "Delete set": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar serie"
+          }
+        }
+      }
+    },
+    "Delete workout?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Eliminar entrenamiento?"
+          }
+        }
+      }
+    },
+    "Discard": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descartar"
+          }
+        }
+      }
+    },
+    "Discard this workout?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Descartar este entrenamiento?"
+          }
+        }
+      }
+    },
+    "Discard workout": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descartar entrenamiento"
+          }
+        }
+      }
+    },
+    "Done": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hecho"
+          }
+        }
+      }
+    },
+    "Drag to reorder": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arrastra para reordenar"
+          }
+        }
+      }
+    },
+    "Edit": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Editar"
+          }
+        }
+      }
+    },
+    "Edit exercise": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Editar ejercicio"
+          }
+        }
+      }
+    },
+    "Estimated 1RM uses the Epley formula — a guide, not a medical measure.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El 1RM estimado usa la fórmula de Epley: una guía, no una medida médica."
+          }
+        }
+      }
+    },
+    "Exercise name": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre del ejercicio"
+          }
+        }
+      }
+    },
+    "Experienced": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con experiencia"
+          }
+        }
+      }
+    },
+    "Favourite": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favorito"
+          }
+        }
+      }
+    },
+    "Find a %@ coach": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Busca un entrenador de %@"
+          }
+        }
+      }
+    },
+    "Find a coach": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar un entrenador"
+          }
+        }
+      }
+    },
+    "Find your %@ coach": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encuentra tu entrenador de %@"
+          }
+        }
+      }
+    },
+    "Finish": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminar"
+          }
+        }
+      }
+    },
+    "Finish & Save": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminar y guardar"
+          }
+        }
+      }
+    },
+    "Finish workout?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Terminar entrenamiento?"
+          }
+        }
+      }
+    },
+    "Full Body": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuerpo completo"
+          }
+        }
+      }
+    },
+    "Give it a name — you'll add exercises next.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ponle un nombre; después añadirás ejercicios."
+          }
+        }
+      }
+    },
+    "Have a link?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Tienes un enlace?"
+          }
+        }
+      }
+    },
+    "History": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Historial"
+          }
+        }
+      }
+    },
+    "How to get a key": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cómo conseguir una clave"
+          }
+        }
+      }
+    },
+    "In-app YouTube search is optional. Without a key, you can still paste any YouTube link and open Search on YouTube — that always works.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La búsqueda de YouTube en la app es opcional. Sin clave, puedes pegar cualquier enlace de YouTube y abrir «Buscar en YouTube»: eso siempre funciona."
+          }
+        }
+      }
+    },
+    "Keep training": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seguir entrenando"
+          }
+        }
+      }
+    },
+    "LAST TIME": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ÚLTIMA VEZ"
+          }
+        }
+      }
+    },
+    "Last %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Última %@"
+          }
+        }
+      }
+    },
+    "Last time · %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Última vez · %@"
+          }
+        }
+      }
+    },
+    "Library": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biblioteca"
+          }
+        }
+      }
+    },
+    "Light": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Claro"
+          }
+        }
+      }
+    },
+    "Mark set %lld incomplete": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcar serie %lld como incompleta"
+          }
+        }
+      }
+    },
+    "Merge keeps what you have and adds anything missing. Replace clears your current data first.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Combinar mantiene lo que tienes y añade lo que falte. Reemplazar borra primero tus datos actuales."
+          }
+        }
+      }
+    },
+    "My Coaches": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mis entrenadores"
+          }
+        }
+      }
+    },
+    "NEXT WORKOUT": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PRÓXIMO ENTRENAMIENTO"
+          }
+        }
+      }
+    },
+    "Name (e.g. Monday)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre (p. ej. Lunes)"
+          }
+        }
+      }
+    },
+    "New exercise": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nuevo ejercicio"
+          }
+        }
+      }
+    },
+    "New to training": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nuevo en el entrenamiento"
+          }
+        }
+      }
+    },
+    "New workout": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nuevo entrenamiento"
+          }
+        }
+      }
+    },
+    "No exercises yet": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay ejercicios"
+          }
+        }
+      }
+    },
+    "Note": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nota"
+          }
+        }
+      }
+    },
+    "Nothing from this session will be saved.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se guardará nada de esta sesión."
+          }
+        }
+      }
+    },
+    "OK": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "Off": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No"
+          }
+        }
+      }
+    },
+    "On": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sí"
+          }
+        }
+      }
+    },
+    "One session hits everything. Great 2–3× per week.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una sesión trabaja todo. Ideal 2–3× por semana."
+          }
+        }
+      }
+    },
+    "Open channel": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir canal"
+          }
+        }
+      }
+    },
+    "Open in YouTube": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir en YouTube"
+          }
+        }
+      }
+    },
+    "Opens YouTube for “%@”. Pick a video you like, tap Share → TubeTrainer (or copy the link and paste it above) to set it as your coach.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abre YouTube para «%@». Elige un vídeo que te guste, toca Compartir → TubeTrainer (o copia el enlace y pégalo arriba) para ponerlo como tu entrenador."
+          }
+        }
+      }
+    },
+    "PREV": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ANT"
+          }
+        }
+      }
+    },
+    "Paste YouTube link": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pega el enlace de YouTube"
+          }
+        }
+      }
+    },
+    "Paste key": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pegar clave"
+          }
+        }
+      }
+    },
+    "Play coaching video: %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reproducir vídeo de entrenamiento: %@"
+          }
+        }
+      }
+    },
+    "Prefer results right here? Add a free key in Settings → YouTube search key.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Prefieres los resultados aquí mismo? Añade una clave gratuita en Ajustes → Clave de búsqueda de YouTube."
+          }
+        }
+      }
+    },
+    "Privacy": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacidad"
+          }
+        }
+      }
+    },
+    "Push / Pull / Legs": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empuje / Tirón / Pierna"
+          }
+        }
+      }
+    },
+    "READY": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LISTO"
+          }
+        }
+      }
+    },
+    "RECHARGING": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RECARGANDO"
+          }
+        }
+      }
+    },
+    "REPS": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "REPS"
+          }
+        }
+      }
+    },
+    "Remove": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar"
+          }
+        }
+      }
+    },
+    "Remove coach": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar entrenador"
+          }
+        }
+      }
+    },
+    "Remove from Favourites": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar de favoritos"
+          }
+        }
+      }
+    },
+    "Remove from favourites": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar de favoritos"
+          }
+        }
+      }
+    },
+    "Removes your current workouts and creates %@. Your logged history is kept.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elimina tus entrenamientos actuales y crea %@. Tu historial registrado se conserva."
+          }
+        }
+      }
+    },
+    "Rename workout": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Renombrar entrenamiento"
+          }
+        }
+      }
+    },
+    "Replace with %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reemplazar por %@"
+          }
+        }
+      }
+    },
+    "Replace your workouts with a split": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reemplaza tus entrenamientos por una rutina"
+          }
+        }
+      }
+    },
+    "Reset your split?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Restablecer tu rutina?"
+          }
+        }
+      }
+    },
+    "Rest": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descanso"
+          }
+        }
+      }
+    },
+    "Rest timer": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temporizador de descanso"
+          }
+        }
+      }
+    },
+    "Restore backup": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurar copia"
+          }
+        }
+      }
+    },
+    "SET": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SERIE"
+          }
+        }
+      }
+    },
+    "Save": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar"
+          }
+        }
+      }
+    },
+    "Save the best exercise coaching you find on YouTube and keep it right beside your workout.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guarda los mejores vídeos de ejercicios que encuentres en YouTube y tenlos justo al lado de tu entrenamiento."
+          }
+        }
+      }
+    },
+    "Save the explanation that makes this exercise click for you.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guarda la explicación que te hace entender este ejercicio."
+          }
+        }
+      }
+    },
+    "Search YouTube": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar en YouTube"
+          }
+        }
+      }
+    },
+    "Seat 4. Keep elbows slightly forward.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Asiento 4. Mantén los codos ligeramente adelantados."
+          }
+        }
+      }
+    },
+    "Set %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serie %lld"
+          }
+        }
+      }
+    },
+    "Short": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Short"
+          }
+        }
+      }
+    },
+    "Skip": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omitir"
+          }
+        }
+      }
+    },
+    "Skip rest": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omitir descanso"
+          }
+        }
+      }
+    },
+    "Some experience": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo de experiencia"
+          }
+        }
+      }
+    },
+    "Start coaching at a specific time": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empezar el vídeo en un momento concreto"
+          }
+        }
+      }
+    },
+    "Start empty and build it your way.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empieza vacío y créalo a tu manera."
+          }
+        }
+      }
+    },
+    "Start from a split": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empezar desde una rutina"
+          }
+        }
+      }
+    },
+    "System": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sistema"
+          }
+        }
+      }
+    },
+    "The classic 3-day strength split.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La clásica rutina de fuerza de 3 días."
+          }
+        }
+      }
+    },
+    "This removes the workout. Your logged history is kept.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esto elimina el entrenamiento. Tu historial registrado se conserva."
+          }
+        }
+      }
+    },
+    "Today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoy"
+          }
+        }
+      }
+    },
+    "TubeTrainer has no account, no server and no analytics. Everything you log lives locally in the app and only leaves your device if you export a backup yourself.\n\nThe app talks to YouTube only to find, preview and open coaching videos you choose. We never download or store the videos themselves — only links and basic metadata like the title and thumbnail.\n\nIf you add your own YouTube API key for in-app search, it's stored locally on this device and used solely to talk to Google's YouTube service.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TubeTrainer no tiene cuenta, ni servidor, ni analíticas. Todo lo que registras vive localmente en la app y solo sale de tu dispositivo si exportas una copia de seguridad tú mismo.\n\nLa app se conecta a YouTube solo para encontrar, previsualizar y abrir los vídeos de entrenamiento que elijas. Nunca descargamos ni almacenamos los vídeos: solo enlaces y datos básicos como el título y la miniatura.\n\nSi añades tu propia clave API de YouTube para la búsqueda en la app, se guarda localmente en este dispositivo y se usa únicamente para comunicarse con el servicio YouTube de Google."
+          }
+        }
+      }
+    },
+    "Upper / Lower": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Superior / Inferior"
+          }
+        }
+      }
+    },
+    "Use default": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usar predeterminado"
+          }
+        }
+      }
+    },
+    "Use this for %@?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Usar esto para %@?"
+          }
+        }
+      }
+    },
+    "Video": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vídeo"
+          }
+        }
+      }
+    },
+    "Video unavailable right now": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vídeo no disponible ahora mismo"
+          }
+        }
+      }
+    },
+    "View plan": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ver plan"
+          }
+        }
+      }
+    },
+    "WORKOUT": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ENTRENAMIENTO"
+          }
+        }
+      }
+    },
+    "We'll keep set targets simple.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantendremos los objetivos de series sencillos."
+          }
+        }
+      }
+    },
+    "Workout name": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre del entrenamiento"
+          }
+        }
+      }
+    },
+    "YOUTUBE DATA API KEY": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CLAVE DE LA YOUTUBE DATA API"
+          }
+        }
+      }
+    },
+    "Yesterday": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayer"
+          }
+        }
+      }
+    },
+    "You": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tú"
+          }
+        }
+      }
+    },
+    "You can change your chosen video whenever you like.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puedes cambiar el vídeo elegido cuando quieras."
+          }
+        }
+      }
+    },
+    "You know your way around.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Te desenvuelves bien."
+          }
+        }
+      }
+    },
+    "YouTube search": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Búsqueda de YouTube"
+          }
+        }
+      }
+    },
+    "Your coaches.\nYour exercises.\nYour progress.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus entrenadores.\nTus ejercicios.\nTu progreso."
+          }
+        }
+      }
+    },
+    "Your coaching library": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu biblioteca de entrenadores"
+          }
+        }
+      }
+    },
+    "Your name": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu nombre"
+          }
+        }
+      }
+    },
+    "Your workouts stay on your device.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus entrenamientos se quedan en tu dispositivo."
+          }
+        }
+      }
+    },
+    "e.g. 2:14 or 134": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "p. ej. 2:14 o 134"
+          }
+        }
+      }
+    },
+    "e.g. Jeff Nippard": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "p. ej. Jeff Nippard"
+          }
+        }
+      }
+    },
+    "e.g. RDL, stiff-leg": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "p. ej. RDL, peso muerto rígido"
+          }
+        }
+      }
+    },
+    "https://youtube.com/@…": {},
+    "of %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "de %@"
+          }
+        }
+      }
+    },
+    "·": {},
+    "—": {},
+    "✓ Use default (%@)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ Usar predeterminado (%@)"
+          }
+        }
+      }
+    },
+    "Chest": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pecho"
+          }
+        }
+      }
+    },
+    "Back": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Espalda"
+          }
+        }
+      }
+    },
+    "Shoulders": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hombros"
+          }
+        }
+      }
+    },
+    "Biceps": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bíceps"
+          }
+        }
+      }
+    },
+    "Triceps": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tríceps"
+          }
+        }
+      }
+    },
+    "Quadriceps": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuádriceps"
+          }
+        }
+      }
+    },
+    "Hamstrings": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Isquiotibiales"
+          }
+        }
+      }
+    },
+    "Glutes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Glúteos"
+          }
+        }
+      }
+    },
+    "Calves": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gemelos"
+          }
+        }
+      }
+    },
+    "Core": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Core"
+          }
+        }
+      }
+    },
+    "Cardio": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cardio"
+          }
+        }
+      }
+    },
+    "Mobility / Warm-up": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Movilidad / Calentamiento"
+          }
+        }
+      }
+    },
+    "Mobility": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Movilidad"
+          }
+        }
+      }
+    },
+    "Barbell": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Barra"
+          }
+        }
+      }
+    },
+    "Dumbbell": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mancuernas"
+          }
+        }
+      }
+    },
+    "Machine": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Máquina"
+          }
+        }
+      }
+    },
+    "Cable": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Polea"
+          }
+        }
+      }
+    },
+    "Bodyweight": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Peso corporal"
+          }
+        }
+      }
+    },
+    "Kettlebell": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kettlebell"
+          }
+        }
+      }
+    },
+    "Band": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Banda"
+          }
+        }
+      }
+    },
+    "Other": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otro"
+          }
+        }
+      }
+    },
+    "Barbell Bench Press": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Press de banca con barra"
+          }
+        }
+      }
+    },
+    "Dumbbell Bench Press": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Press de banca con mancuernas"
+          }
+        }
+      }
+    },
+    "Incline Dumbbell Press": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Press inclinado con mancuernas"
+          }
+        }
+      }
+    },
+    "Incline Barbell Press": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Press inclinado con barra"
+          }
+        }
+      }
+    },
+    "Chest Press Machine": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Press de pecho en máquina"
+          }
+        }
+      }
+    },
+    "Cable Fly": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aperturas en polea"
+          }
+        }
+      }
+    },
+    "Pec Deck": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contractora de pecho"
+          }
+        }
+      }
+    },
+    "Push-Up": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flexiones"
+          }
+        }
+      }
+    },
+    "Pull-Up": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dominadas"
+          }
+        }
+      }
+    },
+    "Lat Pulldown": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jalón al pecho"
+          }
+        }
+      }
+    },
+    "Barbell Row": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remo con barra"
+          }
+        }
+      }
+    },
+    "Dumbbell Row": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remo con mancuerna"
+          }
+        }
+      }
+    },
+    "Seated Cable Row": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remo sentado en polea"
+          }
+        }
+      }
+    },
+    "Chest-Supported Row": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remo con apoyo en pecho"
+          }
+        }
+      }
+    },
+    "Face Pull": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Face pull"
+          }
+        }
+      }
+    },
+    "Barbell Overhead Press": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Press militar con barra"
+          }
+        }
+      }
+    },
+    "Dumbbell Shoulder Press": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Press de hombros con mancuernas"
+          }
+        }
+      }
+    },
+    "Machine Shoulder Press": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Press de hombros en máquina"
+          }
+        }
+      }
+    },
+    "Lateral Raise": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elevaciones laterales"
+          }
+        }
+      }
+    },
+    "Rear Delt Fly": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aperturas posteriores"
+          }
+        }
+      }
+    },
+    "Barbell Curl": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Curl con barra"
+          }
+        }
+      }
+    },
+    "Dumbbell Curl": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Curl con mancuernas"
+          }
+        }
+      }
+    },
+    "Hammer Curl": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Curl martillo"
+          }
+        }
+      }
+    },
+    "Cable Curl": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Curl en polea"
+          }
+        }
+      }
+    },
+    "Triceps Pushdown": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extensión de tríceps en polea"
+          }
+        }
+      }
+    },
+    "Overhead Triceps Extension": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extensión de tríceps sobre la cabeza"
+          }
+        }
+      }
+    },
+    "Skull Crusher": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Press francés"
+          }
+        }
+      }
+    },
+    "Dip": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fondos"
+          }
+        }
+      }
+    },
+    "Back Squat": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sentadilla trasera"
+          }
+        }
+      }
+    },
+    "Front Squat": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sentadilla frontal"
+          }
+        }
+      }
+    },
+    "Leg Press": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prensa de piernas"
+          }
+        }
+      }
+    },
+    "Hack Squat": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sentadilla hack"
+          }
+        }
+      }
+    },
+    "Leg Extension": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extensión de cuádriceps"
+          }
+        }
+      }
+    },
+    "Walking Lunge": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zancadas caminando"
+          }
+        }
+      }
+    },
+    "Bulgarian Split Squat": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sentadilla búlgara"
+          }
+        }
+      }
+    },
+    "Deadlift": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Peso muerto"
+          }
+        }
+      }
+    },
+    "Romanian Deadlift": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Peso muerto rumano"
+          }
+        }
+      }
+    },
+    "Leg Curl": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Curl femoral"
+          }
+        }
+      }
+    },
+    "Hip Thrust": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hip thrust"
+          }
+        }
+      }
+    },
+    "Standing Calf Raise": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elevación de gemelos de pie"
+          }
+        }
+      }
+    },
+    "Seated Calf Raise": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elevación de gemelos sentado"
+          }
+        }
+      }
+    },
+    "Plank": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plancha"
+          }
+        }
+      }
+    },
+    "Hanging Leg Raise": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elevación de piernas colgado"
+          }
+        }
+      }
+    },
+    "Cable Crunch": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crunch en polea"
+          }
+        }
+      }
+    },
+    "Ab Wheel": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rueda abdominal"
+          }
+        }
+      }
+    },
+    "Kettlebell Swing": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Swing con kettlebell"
+          }
+        }
+      }
+    },
+    "Clean and Press": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cargada y press"
+          }
+        }
+      }
+    },
+    "Treadmill": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cinta de correr"
+          }
+        }
+      }
+    },
+    "Rowing Machine": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Máquina de remo"
+          }
+        }
+      }
+    },
+    "Stationary Bike": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bicicleta estática"
+          }
+        }
+      }
+    },
+    "Cat-Cow": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gato-vaca"
+          }
+        }
+      }
+    },
+    "World's Greatest Stretch": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El mejor estiramiento del mundo"
+          }
+        }
+      }
+    },
+    "Band Pull-Apart": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aperturas con banda"
+          }
+        }
+      }
+    }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }

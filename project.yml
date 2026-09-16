@@ -14,6 +14,9 @@ settings:
     CURRENT_PROJECT_VERSION: "3"
     ENABLE_USER_SCRIPT_SANDBOXING: YES
     GENERATE_INFOPLIST_FILE: YES
+    # Compiler extracts Text()/String(localized:) literals into the String Catalog,
+    # so re-running a build refreshes Localizable.xcstrings when UI strings change.
+    SWIFT_EMIT_LOC_STRINGS: YES
 targets:
   TubeTrainer:
     type: application
