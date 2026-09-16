@@ -5,6 +5,8 @@
 export const locales = [
   { code: 'en', label: 'EN', name: 'English', home: '/' },
   { code: 'es', label: 'ES', name: 'Español', home: '/es/' },
+  { code: 'pt-br', label: 'PT', name: 'Português', home: '/pt-br/' },
+  { code: 'de', label: 'DE', name: 'Deutsch', home: '/de/' },
 ];
 
 export const strings = {
@@ -201,6 +203,202 @@ export const strings = {
       madeFor: '© 2026 TubeTrainer. Hecho para quienes entrenan en serio.',
       notAffiliated: 'Sin afiliación con YouTube ni Google.',
       privacy: 'Privacidad', terms: 'Términos de uso', support: 'Soporte',
+    },
+  },
+
+  'pt-br': {
+    meta: {
+      title: 'TubeTrainer — Seus treinadores. Seus exercícios. Seu progresso.',
+      description:
+        'Salve as melhores dicas de exercícios que você encontra no YouTube e mantenha-as ao lado do seu treino. Um tracker de academia premium e local para iPhone. Grátis.',
+    },
+    nav: {
+      coaching: 'Treinadores', training: 'Treino', screens: 'Telas',
+      privacy: 'Privacidade', faq: 'Perguntas frequentes', download: 'Baixar', skip: 'Pular para o conteúdo',
+    },
+    hero: {
+      badge: 'Grátis · iPhone · Sem conta',
+      title: 'Os melhores treinadores do YouTube, ao lado do seu treino.',
+      lead: 'Você já tem treinadores: eles estão no YouTube. O TubeTrainer reúne as melhores dicas deles no seu <strong>manual visual de exercícios</strong>, integrado a um tracker de treino muito rápido.',
+      seeHow: 'Veja como funciona',
+      note: 'Grátis · iPhone · iOS 18+',
+    },
+    coaching: {
+      eyebrow: 'A diferença',
+      title: 'Cada exercício ganha o treinador que faz tudo fazer sentido.',
+      lead: 'Um criador para o supino, outro para o agachamento, outro para a mobilidade. Anexe o vídeo exato — ou o momento exato — a qualquer exercício. Sem retângulos vazios: exercícios sem treinador mostram um painel de descoberta que faz montar sua biblioteca parecer colecionar, não configurar.',
+      ticks: [
+        'Busque no YouTube ou cole qualquer link, até um Short.',
+        'Salve o ponto de início para ir direto à parte útil.',
+        'Priorize os treinadores em que você já confia marcando-os como favoritos.',
+        'Reprodução incorporada e em conformidade, com um claro “Abrir no YouTube”.',
+      ],
+    },
+    logging: {
+      eyebrow: 'Sem atrito na academia',
+      title: 'Registre uma série em segundos. Com uma mão. Sempre.',
+      lead: 'Controles grandes pensados para o polegar, valores preenchidos da última vez e um timer de descanso que começa sozinho. Ver o treinador está sempre a um toque e nunca atrapalha o registro.',
+      ticks: [
+        'Seus <strong>dados da última sessão</strong> estão sempre à mão.',
+        'Toque para digitar ou ajuste com +/–. Sem seletores intermináveis de valores.',
+        'Complete uma série → vibração → descanso → próxima.',
+        'Termine com um resumo que celebra seus recordes de verdade (PR).',
+      ],
+    },
+    screens: {
+      eyebrow: 'Uma espiada por dentro',
+      title: 'Projetado com capricho, de cima a baixo.',
+      lead: 'Modo escuro por padrão, com um modo claro de verdade. Cada tela merece seu lugar.',
+      hint: 'Deslize, role ou use as setas →',
+    },
+    features: {
+      eyebrow: 'Tudo o que um registro sério precisa',
+      title: 'Um tracker de treino completo que, de quebra, é grátis.',
+      items: [
+        { icon: 'library', title: 'Um catálogo de exercícios de verdade', body: 'Mais de 50 movimentos integrados para cada grupo muscular, além de exercícios personalizados. Busca flexível: digite “RDL” e aparece o Levantamento Terra Romeno.' },
+        { icon: 'chart', title: 'Histórico e recordes pessoais', body: 'Cada sessão salva. Veja a última vez antes de cada série, acompanhe a progressão e tenha PRs honestos: série mais pesada, 1RM estimado, melhor volume.' },
+        { icon: 'timer', title: 'Um timer de descanso que funciona', body: 'Começa sozinho ao completar uma série, faz a contagem em segundo plano e avisa na hora certa — mesmo com o app fechado.' },
+        { icon: 'wifi', title: 'Funciona mesmo sem sinal', body: 'Sinal ruim? O registro nunca trava. Se um vídeo não carregar, você ainda vê a última vez, registra séries e termina — totalmente offline.' },
+        { icon: 'lock', title: 'Seu, no seu dispositivo', body: 'Sem conta, sem servidor, sem analytics. Tudo é local. Exporte um backup com versões quando quiser e restaure onde for.' },
+        { icon: 'bolt', title: 'Feito para parecer natural', body: 'Vibrações caprichadas, animação breve e natural, Dynamic Type e modos escuro e claro completos. Rápido onde importa.' },
+      ],
+    },
+    share: {
+      eyebrow: 'Compartilhar → TubeTrainer',
+      title: 'Achou um bom vídeo? Salve sem sair do YouTube.',
+      steps: [
+        { title: 'Toque em Compartilhar no YouTube', body: 'Em qualquer vídeo ou Short, o TubeTrainer aparece no menu de compartilhamento como qualquer outro app.' },
+        { title: 'Escolha o exercício', body: 'Busque na sua biblioteca ali mesmo e escolha onde ele vai.' },
+        { title: 'Já é seu treinador', body: 'O vídeo espera nesse exercício na próxima vez que você treinar. Pronto.' },
+      ],
+    },
+    privacy: {
+      eyebrow: 'Privacidade por padrão',
+      title: 'Seu treino fica no seu celular.',
+      lead: 'Sem conta. Sem servidor. Sem SDKs de analytics. O TubeTrainer se conecta ao YouTube apenas para encontrar e reproduzir os vídeos de treino que você escolher — e nunca baixa nem armazena o vídeo. Seu histórico de treino é seu, e você pode exportar um backup com versões quando quiser.',
+    },
+    faq: {
+      eyebrow: 'Perguntas',
+      title: 'Bom saber.',
+      items: [
+        { q: 'Custa alguma coisa?', a: 'A V1 é grátis. Sem assinatura, sem paywall, sem conta.' },
+        { q: 'Preciso de conta do YouTube ou chave de API?', a: 'Não. Você pode colar qualquer link do YouTube ou usar “Buscar no YouTube” sem configurar nada. A busca dentro do app é opcional e usa sua própria chave de API gratuita do YouTube, se você adicionar uma.' },
+        { q: 'Funciona offline?', a: 'Todo o tracker funciona sem sinal. Só reproduzir um vídeo online precisa de conexão — e se falhar, o registro continua funcionando.' },
+        { q: 'Os vídeos ficam salvos no meu celular?', a: 'Nunca. O TubeTrainer salva apenas uma referência (link, título, miniatura) e reproduz os vídeos pelo player oficial do YouTube. Não baixa nem re-hospeda nada.' },
+        { q: 'Posso mover meus dados?', a: 'Sim: exporte um backup JSON com versões e importe para restaurar ou trocar de dispositivo. Você leva sua biblioteca com você.' },
+        { q: 'Quais dispositivos?', a: 'iPhone, iOS 18 ou posterior. Com modos escuro e claro.' },
+      ],
+    },
+    download: {
+      eyebrow: 'Baixe o app',
+      title: 'Seja um dos primeiros a treinar com ele.',
+      lead: 'O TubeTrainer já está na App Store. Grátis, sem conta: baixe e comece a treinar.',
+      sub: 'Baixar na',
+      note: 'Grátis · iPhone · iOS 18+',
+    },
+    footer: {
+      tagline: 'Seus treinadores. Seus exercícios. Seu progresso.',
+      madeFor: '© 2026 TubeTrainer. Feito para quem treina de verdade.',
+      notAffiliated: 'Sem afiliação com o YouTube ou o Google.',
+      privacy: 'Privacidade', terms: 'Termos de uso', support: 'Suporte',
+    },
+  },
+
+  de: {
+    meta: {
+      title: 'TubeTrainer — Deine Trainer. Deine Übungen. Dein Fortschritt.',
+      description:
+        'Speichere die besten Übungs-Tipps, die du auf YouTube findest, und hab sie direkt neben deinem Workout. Ein hochwertiger, lokaler Gym-Tracker fürs iPhone. Kostenlos.',
+    },
+    nav: {
+      coaching: 'Trainer', training: 'Training', screens: 'Screens',
+      privacy: 'Datenschutz', faq: 'FAQ', download: 'Laden', skip: 'Zum Inhalt springen',
+    },
+    hero: {
+      badge: 'Kostenlos · iPhone · Kein Konto',
+      title: 'Die besten Trainer auf YouTube, direkt neben deinem Workout.',
+      lead: 'Du hast schon Trainer – sie sind auf YouTube. TubeTrainer bündelt ihre besten Tipps in deinem <strong>visuellen Übungshandbuch</strong>, eingebettet in einen richtig schnellen Gym-Tracker.',
+      seeHow: 'So funktioniert’s',
+      note: 'Kostenlos · iPhone · iOS 18+',
+    },
+    coaching: {
+      eyebrow: 'Der Unterschied',
+      title: 'Jede Übung bekommt den Trainer, der sie erklärt.',
+      lead: 'Ein Creator fürs Bankdrücken, einer für Kniebeugen, einer für Mobilität. Häng das genaue Video – oder den genauen Moment – an jede Übung. Keine leeren Kacheln: Übungen ohne Trainer zeigen ein Entdeckungs-Panel, das den Aufbau deiner Bibliothek wie Sammeln wirken lässt, nicht wie Konfigurieren.',
+      ticks: [
+        'Suche auf YouTube oder füge jeden Link ein – auch einen Short.',
+        'Speichere einen Startpunkt, um direkt zum nützlichen Teil zu springen.',
+        'Priorisiere die Trainer, denen du schon vertraust, als Favoriten.',
+        'Regelkonforme eingebettete Wiedergabe mit klarem „In YouTube öffnen“.',
+      ],
+    },
+    logging: {
+      eyebrow: 'Reibungslos im Gym',
+      title: 'Einen Satz in Sekunden loggen. Einhändig. Jedes Mal.',
+      lead: 'Große, daumenfreundliche Bedienelemente, Werte vom letzten Mal vorausgefüllt und ein Pausen-Timer, der von selbst startet. Den Trainer anzusehen ist immer nur einen Tipp entfernt und stört nie beim Loggen.',
+      ticks: [
+        'Deine <strong>Daten der letzten Einheit</strong> sind immer griffbereit.',
+        'Tippen zum Eingeben oder mit +/– anpassen. Keine endlosen Werteräder.',
+        'Satz abschließen → Haptik → Pause → weiter.',
+        'Zum Schluss eine Übersicht, die echte PRs feiert.',
+      ],
+    },
+    screens: {
+      eyebrow: 'Ein Blick nach innen',
+      title: 'Bewusst gestaltet, von oben bis unten.',
+      lead: 'Dark-Mode zuerst, mit einem echten Light-Mode. Jeder Screen verdient seinen Platz.',
+      hint: 'Wischen, scrollen oder die Pfeile nutzen →',
+    },
+    features: {
+      eyebrow: 'Alles, was ein ernsthaftes Log braucht',
+      title: 'Ein vollwertiger Tracker, der obendrein kostenlos ist.',
+      items: [
+        { icon: 'library', title: 'Ein echter Übungskatalog', body: 'Über 50 integrierte Übungen für jede Muskelgruppe, plus eigene Übungen. Tolerante Suche: Tippe „RDL“ und du bekommst Rumänisches Kreuzheben.' },
+        { icon: 'chart', title: 'Verlauf & persönliche Rekorde', body: 'Jede Einheit gespeichert. Sieh vor jedem Satz das letzte Mal, verfolge den Fortschritt und bekomme ehrliche PRs – schwerster Satz, geschätztes 1RM, bestes Volumen.' },
+        { icon: 'timer', title: 'Ein Pausen-Timer, der einfach funktioniert', body: 'Startet automatisch bei einem abgeschlossenen Satz, zählt im Hintergrund herunter und benachrichtigt dich rechtzeitig – auch bei geschlossener App.' },
+        { icon: 'wifi', title: 'Funktioniert, wenn das Gym es nicht tut', body: 'Schlechter Empfang? Das Loggen blockiert nie. Lädt ein Video nicht, siehst du trotzdem das letzte Mal, loggst Sätze und machst fertig – komplett offline.' },
+        { icon: 'lock', title: 'Deins, auf deinem Gerät', body: 'Kein Konto, kein Server, keine Analytics. Alles ist lokal. Exportiere jederzeit ein versioniertes Backup und stelle es überall wieder her.' },
+        { icon: 'bolt', title: 'Gebaut, um sich natürlich anzufühlen', body: 'Bewusste Haptik, kurze, natürliche Animationen, Dynamic Type und vollständige Dark- und Light-Themes. Schnell, wo es zählt.' },
+      ],
+    },
+    share: {
+      eyebrow: 'Teilen → TubeTrainer',
+      title: 'Ein tolles Video gefunden? Speichere es, ohne YouTube zu verlassen.',
+      steps: [
+        { title: 'In YouTube auf Teilen tippen', body: 'Bei jedem Video oder Short taucht TubeTrainer im Teilen-Menü auf wie jede andere App.' },
+        { title: 'Übung auswählen', body: 'Durchsuche deine Bibliothek direkt dort und wähle, wohin es gehört.' },
+        { title: 'Das ist dein Trainer', body: 'Das Video wartet bei dieser Übung beim nächsten Training. Fertig.' },
+      ],
+    },
+    privacy: {
+      eyebrow: 'Datenschutz von Haus aus',
+      title: 'Dein Training bleibt auf deinem Handy.',
+      lead: 'Kein Konto. Kein Server. Keine Analytics-SDKs. TubeTrainer spricht mit YouTube nur, um die von dir gewählten Trainings-Videos zu finden und abzuspielen – und lädt oder speichert das Video selbst nie. Dein Trainingsverlauf gehört dir, und du kannst jederzeit ein versioniertes Backup exportieren.',
+    },
+    faq: {
+      eyebrow: 'Fragen',
+      title: 'Gut zu wissen.',
+      items: [
+        { q: 'Kostet es etwas?', a: 'V1 ist kostenlos. Kein Abo, keine Paywall, kein Konto.' },
+        { q: 'Brauche ich ein YouTube-Konto oder einen API-Schlüssel?', a: 'Nein. Du kannst jeden YouTube-Link einfügen oder „Auf YouTube suchen“ ohne Einrichtung nutzen. Die In-App-Suche ist optional und nutzt deinen eigenen kostenlosen YouTube-API-Schlüssel, falls du einen hinzufügst.' },
+        { q: 'Funktioniert es offline?', a: 'Der ganze Tracker funktioniert ohne Empfang. Nur das Abspielen eines Online-Videos braucht eine Verbindung – und wenn eine fehlschlägt, läuft das Loggen weiter.' },
+        { q: 'Werden die Videos auf meinem Handy gespeichert?', a: 'Niemals. TubeTrainer speichert nur eine Referenz (Link, Titel, Vorschaubild) und spielt Videos über den regelkonformen YouTube-Player ab. Es lädt oder hostet nichts neu.' },
+        { q: 'Kann ich meine Daten mitnehmen?', a: 'Ja – exportiere ein versioniertes JSON-Backup und importiere es, um wiederherzustellen oder das Gerät zu wechseln. Deine Bibliothek kommt mit.' },
+        { q: 'Welche Geräte?', a: 'iPhone, iOS 18 und neuer. Dark- und Light-Theme inklusive.' },
+      ],
+    },
+    download: {
+      eyebrow: 'Hol dir die App',
+      title: 'Sei einer der Ersten, die damit trainieren.',
+      lead: 'TubeTrainer ist im App Store. Kostenlos, kein Konto – laden und loslegen.',
+      sub: 'Laden im',
+      note: 'Kostenlos · iPhone · iOS 18+',
+    },
+    footer: {
+      tagline: 'Deine Trainer. Deine Übungen. Dein Fortschritt.',
+      madeFor: '© 2026 TubeTrainer. Für alle, die es ernst meinen.',
+      notAffiliated: 'Nicht mit YouTube oder Google verbunden.',
+      privacy: 'Datenschutz', terms: 'Nutzungsbedingungen', support: 'Support',
     },
   },
 };

@@ -61,7 +61,7 @@ const jsonLd = {
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_GB'} />
+    <meta property="og:locale" content={({ es: 'es_ES', 'pt-br': 'pt_BR', de: 'de_DE' })[lang] || 'en_GB'} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
