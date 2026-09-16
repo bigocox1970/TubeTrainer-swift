@@ -110,16 +110,16 @@ export const strings = {
     meta: {
       title: 'TubeTrainer — Tus entrenadores. Tus ejercicios. Tu progreso.',
       description:
-        'Guarda la mejor enseñanza de ejercicios que encuentres en YouTube y tenla justo al lado de tu entrenamiento. Un tracker de gimnasio premium y local para iPhone. Gratis.',
+        'Guarda los mejores consejos de entrenadores de YouTube y tenlos junto a tus entrenamientos. Un tracker de gimnasio premium y local para iPhone. Gratis.',
     },
     nav: {
-      coaching: 'Enseñanza', training: 'Entrenamiento', screens: 'Pantallas',
+      coaching: 'Entrenadores', training: 'Entrenamiento', screens: 'Pantallas',
       privacy: 'Privacidad', faq: 'Preguntas frecuentes', download: 'Descargar', skip: 'Saltar al contenido',
     },
     hero: {
       badge: 'Gratis · iPhone · Sin cuenta',
-      title: 'La mejor enseñanza de YouTube, justo al lado de tu entrenamiento.',
-      lead: 'Ya tienes entrenadores: están en YouTube. TubeTrainer convierte esa enseñanza dispersa en tu <strong>manual visual de ejercicios</strong>, integrado en un tracker de entrenamiento muy rápido.',
+      title: 'Los mejores entrenadores de YouTube, junto a tu entrenamiento.',
+      lead: 'Ya tienes entrenadores: están en YouTube. TubeTrainer reúne sus mejores consejos en tu <strong>manual visual de ejercicios</strong>, integrado en un tracker de entrenamiento muy rápido.',
       seeHow: 'Mira cómo funciona',
       note: 'Gratis · iPhone · iOS 18+',
     },
@@ -135,7 +135,7 @@ export const strings = {
       ],
     },
     logging: {
-      eyebrow: 'Sin fricción en el gimnasio',
+      eyebrow: 'Entrena sin complicaciones',
       title: 'Registra una serie en segundos. Con una mano. Siempre.',
       lead: 'Controles grandes pensados para el pulgar, valores rellenados desde la última vez y un temporizador de descanso que se inicia solo. Ver al entrenador está siempre a un toque y nunca estorba al registrar.',
       ticks: [
@@ -158,9 +158,9 @@ export const strings = {
         { icon: 'library', title: 'Un catálogo de ejercicios de verdad', body: 'Más de 50 movimientos integrados para cada grupo muscular, y ejercicios personalizados. Búsqueda flexible: escribe “RDL” y aparece el Peso Muerto Rumano.' },
         { icon: 'chart', title: 'Historial y récords personales', body: 'Cada sesión guardada. Consulta la última vez antes de cada serie, sigue tu progresión y obtén PR honestos: serie más pesada, 1RM estimado, mejor volumen.' },
         { icon: 'timer', title: 'Un temporizador de descanso que funciona', body: 'Se inicia solo al completar una serie, cuenta atrás en segundo plano y te avisa cuando toca, incluso con la app cerrada.' },
-        { icon: 'wifi', title: 'Funciona aunque el gimnasio no', body: '¿Mala cobertura? Registrar nunca se bloquea. Si un vídeo no carga, sigues viendo la última vez, registras series y terminas, totalmente sin conexión.' },
+        { icon: 'wifi', title: 'Funciona incluso sin cobertura', body: '¿Mala cobertura? Registrar nunca se bloquea. Si un vídeo no carga, sigues viendo la última vez, registras series y terminas, totalmente sin conexión.' },
         { icon: 'lock', title: 'Tuyo, en tu dispositivo', body: 'Sin cuenta, sin servidor, sin analíticas. Todo es local. Exporta una copia de seguridad con versiones cuando quieras y restáurala donde sea.' },
-        { icon: 'bolt', title: 'Diseñado para sentirse físico', body: 'Vibraciones cuidadas, animación breve y natural, Dynamic Type y modos oscuro y claro completos. Rápido donde importa.' },
+        { icon: 'bolt', title: 'Diseñado para sentirse natural', body: 'Vibraciones cuidadas, animación breve y natural, Dynamic Type y modos oscuro y claro completos. Rápido donde importa.' },
       ],
     },
     share: {
@@ -175,7 +175,7 @@ export const strings = {
     privacy: {
       eyebrow: 'Privacidad por defecto',
       title: 'Tu entrenamiento se queda en tu teléfono.',
-      lead: 'Sin cuenta. Sin servidor. Sin SDK de analíticas. TubeTrainer se conecta a YouTube solo para encontrar y reproducir la enseñanza que elijas, y nunca descarga ni almacena el vídeo. Tu historial de entrenamiento es tuyo, y puedes exportar una copia de seguridad con versiones cuando quieras.',
+      lead: 'Sin cuenta. Sin servidor. Sin SDK de analíticas. TubeTrainer se conecta a YouTube solo para encontrar y reproducir los vídeos de entrenamiento que elijas, y nunca descarga ni almacena el vídeo. Tu historial de entrenamiento es tuyo, y puedes exportar una copia de seguridad con versiones cuando quieras.',
     },
     faq: {
       eyebrow: 'Preguntas',
@@ -198,7 +198,7 @@ export const strings = {
     },
     footer: {
       tagline: 'Tus entrenadores. Tus ejercicios. Tu progreso.',
-      madeFor: '© 2026 TubeTrainer. Hecho para quienes levantan.',
+      madeFor: '© 2026 TubeTrainer. Hecho para quienes entrenan en serio.',
       notAffiliated: 'Sin afiliación con YouTube ni Google.',
       privacy: 'Privacidad', terms: 'Términos de uso', support: 'Soporte',
     },
