@@ -1,11 +1,17 @@
 # Website Spanish translation — for review
 
-_First-pass Spanish (es) of the tubetrainer.app homepage. Reviewer: please check tone and gym
-terminology. Neutral Spanish aimed to read well in both Spain and Latin America. Tricky/loanword
-choices are flagged with a **← note**. Nothing is live yet — this is the pre-read._
+**STATUS: LIVE at https://tubetrainer.app/es/ since 2026-09-16.** ChatGPT's native review has been
+applied and deployed. The **authoritative source is now `website/src/i18n/strings.js`** — this doc is
+a historical review record, so the first-pass wording in the tables below may differ from what's live.
 
-How to read: **EN** original, then **ES** proposed, then a back-translation only where a term is
-debatable so a non-Spanish speaker can sanity-check the meaning.
+Corrections applied since first pass: Screens → **Pantallas**; FAQ → **Preguntas frecuentes**;
+"tracker" kept as a loanword (hero + features); "un minuto de inicio" → **el punto de inicio**;
+"ruedas de cien valores" → **interminables selectores de valores**; "La última vez está ahí mismo" →
+**Tus datos de la última sesión están siempre a mano**; "biblioteca es portable" → **Puedes llevarte
+tu biblioteca contigo**.
+
+How to read: **EN** original, then **ES** first-pass, then a back-translation where a term was
+debatable. Neutral Spanish aimed to read well in both Spain and Latin America.
 
 ---
 
