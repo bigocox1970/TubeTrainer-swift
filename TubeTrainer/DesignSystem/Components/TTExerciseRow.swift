@@ -38,7 +38,7 @@ struct TTExerciseRow: View {
                             .foregroundStyle(TTColor.brandRed)
                             .accessibilityLabel("Favourite")
                     }
-                    Text(exercise.name)
+                    Text(exercise.displayName)
                         .font(TTFont.headline())
                         .foregroundStyle(TTColor.textPrimary)
                         .lineLimit(1)

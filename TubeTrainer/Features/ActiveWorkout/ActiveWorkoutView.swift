@@ -192,7 +192,7 @@ struct ActiveWorkoutView: View {
                         .font(TTFont.largeTitle())
                         .foregroundStyle(TTColor.textPrimary)
                     if let exercise = exSession.exercise {
-                        Text("\(exercise.category.shortName) · \(exercise.equipment.rawValue)")
+                        Text("\(exercise.category.shortName) · \(exercise.equipment.displayName)")
                             .font(TTFont.subheadline())
                             .foregroundStyle(TTColor.textSecondary)
                     }

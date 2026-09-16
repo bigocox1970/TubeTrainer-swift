@@ -197,7 +197,7 @@ struct CoachingDiscoveryView: View {
         return VStack(spacing: TTSpace.sm) {
             Image(systemName: "sparkle.magnifyingglass")
                 .font(.system(size: 36)).foregroundStyle(TTColor.brandRed)
-            Text(isDefault ? "Find a \(exercise.name) coach" : "Search YouTube")
+            Text(isDefault ? "Find a \(exercise.displayName) coach" : "Search YouTube")
                 .font(TTFont.title3()).foregroundStyle(TTColor.textPrimary)
                 .multilineTextAlignment(.center)
             Text("Opens YouTube for “\(query)”. Pick a video you like, tap Share → TubeTrainer (or copy the link and paste it above) to set it as your coach.")

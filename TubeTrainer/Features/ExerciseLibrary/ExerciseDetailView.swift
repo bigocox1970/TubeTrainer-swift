@@ -26,7 +26,7 @@ struct ExerciseDetailView: View {
                 .padding(.bottom, TTSpace.xxl)
             }
         }
-        .navigationTitle(exercise.name)
+        .navigationTitle(exercise.displayName)
         .navigationBarTitleDisplayMode(.large)
         .toolbar(.hidden, for: .tabBar)
         .toolbar {

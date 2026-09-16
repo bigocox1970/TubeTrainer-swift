@@ -182,7 +182,7 @@ struct PlanExerciseRow: View {
                         .foregroundStyle(TTColor.textTertiary)
                         .frame(width: 24)
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(exercise.name).font(TTFont.headline()).foregroundStyle(TTColor.textPrimary)
+                        Text(exercise.displayName).font(TTFont.headline()).foregroundStyle(TTColor.textPrimary)
                         HStack(spacing: TTSpace.xs) {
                             if let target = tie.targetSummary {
                                 Text(target).font(TTFont.caption()).foregroundStyle(TTColor.textSecondary)

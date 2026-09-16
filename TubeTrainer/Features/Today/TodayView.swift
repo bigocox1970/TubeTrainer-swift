@@ -461,7 +461,7 @@ struct RecentCoachingCard: View {
                         contentType: exercise.primaryCoach?.contentType ?? .video)
                 .frame(width: 200, height: 112)
                 .clipShape(RoundedRectangle(cornerRadius: TTRadius.md, style: .continuous))
-            Text(exercise.name).font(TTFont.subheadline().weight(.semibold))
+            Text(exercise.displayName).font(TTFont.subheadline().weight(.semibold))
                 .foregroundStyle(TTColor.textPrimary).lineLimit(1)
             Text(exercise.primaryCoach?.channelName ?? "")
                 .font(TTFont.caption()).foregroundStyle(TTColor.textSecondary).lineLimit(1)
