@@ -101,7 +101,11 @@ final class AppSettings {
         appLanguage = defaults.string(forKey: Key.appLanguage) ?? ""
 
         // Apply the stored language override at launch (before the UI renders).
-        AppLanguage.apply(appLanguage.isEmpty ? nil : appLanguage)
+        // Under UI-test seeding, honour the launch -AppleLanguages instead so the
+        // screenshot harness can drive language independently of any saved override.
+        if !SampleData.isRequested {
+            AppLanguage.apply(appLanguage.isEmpty ? nil : appLanguage)
+        }
     }
 
     /// Common rest presets in seconds.
