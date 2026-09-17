@@ -72,7 +72,7 @@ struct HistoryView: View {
     private func statTile(_ value: String, _ label: String) -> some View {
         VStack(spacing: 4) {
             Text(value).font(TTFont.numeric(22, weight: .bold)).foregroundStyle(TTColor.textPrimary)
-            Text(label).font(TTFont.caption()).foregroundStyle(TTColor.textSecondary)
+            Text(TTLocalized(label)).font(TTFont.caption()).foregroundStyle(TTColor.textSecondary)
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, TTSpace.md)

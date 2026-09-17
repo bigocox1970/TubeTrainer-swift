@@ -23,3 +23,4 @@ website-shots/
 *.log
 .env
 .env.*
+screenshots-loc/

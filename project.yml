@@ -83,15 +83,28 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: app.tubetrainer.ios.tests
         GENERATE_INFOPLIST_FILE: YES
+  TubeTrainerUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: TubeTrainerUITests
+    dependencies:
+      - target: TubeTrainer
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.tubetrainer.ios.uitests
+        GENERATE_INFOPLIST_FILE: YES
 schemes:
   TubeTrainer:
     build:
       targets:
         TubeTrainer: all
         TubeTrainerTests: [test]
+        TubeTrainerUITests: [test]
     test:
       targets:
         - TubeTrainerTests
+        - TubeTrainerUITests
       gatherCoverageData: false
       disableMainThreadChecker: true
       environmentVariables:
