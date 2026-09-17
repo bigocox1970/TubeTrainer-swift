@@ -17,16 +17,18 @@ const alternates = [
   { code: 'de', url: '/de/' },
 ];
 
-// Screenshot alt text stays descriptive in English (same images across locales).
+// Per-locale screenshots: English at /screenshots, other languages at
+// /screenshots/<lang>/ (localized captures live there). Alt text stays English.
+const shots = lang === 'en' ? '/screenshots' : `/screenshots/${lang}`;
 const screens = [
-  { src: '/screenshots/today.png', alt: 'TubeTrainer Today screen with the next workout and Start Workout button' },
-  { src: '/screenshots/active-coach.png', alt: 'Active workout showing a coaching video attached to Barbell Bench Press' },
-  { src: '/screenshots/logged-sets.png', alt: 'Fast set logger with completed sets and last-time values' },
-  { src: '/screenshots/rest-timer.png', alt: 'Recharge rest timer counting down with a red-to-green progress ring' },
-  { src: '/screenshots/records.png', alt: 'Exercise detail with personal records and estimated 1RM' },
-  { src: '/screenshots/active-empty.png', alt: 'Find your coach discovery panel for an exercise with no video yet' },
-  { src: '/screenshots/history.png', alt: 'Workout history grouped by month' },
-  { src: '/screenshots/you.png', alt: 'Settings with units, rest timer and appearance' },
+  { src: `${shots}/today.png`, alt: 'TubeTrainer Today screen with the next workout and Start Workout button' },
+  { src: `${shots}/active-coach.png`, alt: 'Active workout showing a coaching video attached to Barbell Bench Press' },
+  { src: `${shots}/logged-sets.png`, alt: 'Fast set logger with completed sets and last-time values' },
+  { src: `${shots}/rest-timer.png`, alt: 'Recharge rest timer counting down with a red-to-green progress ring' },
+  { src: `${shots}/records.png`, alt: 'Exercise detail with personal records and estimated 1RM' },
+  { src: `${shots}/active-empty.png`, alt: 'Find your coach discovery panel for an exercise with no video yet' },
+  { src: `${shots}/history.png`, alt: 'Workout history grouped by month' },
+  { src: `${shots}/you.png`, alt: 'Settings with units, rest timer and appearance' },
 ];
 
 function icon(name) {
@@ -59,10 +61,10 @@ function icon(name) {
       </div>
       <div class="hero-phones">
         <div class="hero-phone hero-phone-back" aria-hidden="true">
-          <PhoneFrame src="/screenshots/active-empty.png" alt="" loading="eager" />
+          <PhoneFrame src={`${shots}/active-empty.png`} alt="" loading="eager" />
         </div>
         <div class="hero-phone hero-phone-front">
-          <PhoneFrame src="/screenshots/active-coach.png" alt="Active workout with a coaching video attached to an exercise" loading="eager" />
+          <PhoneFrame src={`${shots}/active-coach.png`} alt="Active workout with a coaching video attached to an exercise" loading="eager" />
         </div>
       </div>
     </div>
@@ -72,7 +74,7 @@ function icon(name) {
   <section id="coaching" class="section split">
     <div class="container split-inner">
       <div class="split-phone reveal">
-        <PhoneFrame src="/screenshots/active-empty.png" alt="Find your coach panel with Recommended, My Coaches and Search" />
+        <PhoneFrame src={`${shots}/active-empty.png`} alt="Find your coach panel with Recommended, My Coaches and Search" />
       </div>
       <div class="split-copy reveal">
         <span class="eyebrow">{t.coaching.eyebrow}</span>
@@ -97,7 +99,7 @@ function icon(name) {
         </ul>
       </div>
       <div class="split-phone reveal">
-        <PhoneFrame src="/screenshots/logged-sets.png" alt="Fast set logger with completed sets and last-time values" />
+        <PhoneFrame src={`${shots}/logged-sets.png`} alt="Fast set logger with completed sets and last-time values" />
       </div>
     </div>
   </section>
