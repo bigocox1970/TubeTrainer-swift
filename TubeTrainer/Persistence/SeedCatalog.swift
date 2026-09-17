@@ -80,7 +80,7 @@ enum SeedCatalog {
 
         // Full body / conditioning
         Seed(name: "Kettlebell Swing", category: .fullBody, equipment: .kettlebell, aliases: ["kb swing", "swing"], rest: 60),
-        Seed(name: "Clean and Press", category: .fullBody, equipment: .barbell, aliases: ["clean press"], rest: 150),
+        Seed(name: "Clean and Press", category: .fullBody, equipment: .barbell, aliases: ["clean press", "arranco", "desenvolvimento"], rest: 150),
 
         // Cardio
         Seed(name: "Treadmill", category: .cardio, equipment: .machine, aliases: ["run", "running", "jog"], rest: 0),
@@ -89,7 +89,7 @@ enum SeedCatalog {
 
         // Mobility / warm-up
         Seed(name: "Cat-Cow", category: .mobility, equipment: .bodyweight, aliases: ["cat cow", "spinal mobility"], rest: 0),
-        Seed(name: "World's Greatest Stretch", category: .mobility, equipment: .bodyweight, aliases: ["wgs", "greatest stretch"], rest: 0),
+        Seed(name: "World's Greatest Stretch", category: .mobility, equipment: .bodyweight, aliases: ["wgs", "greatest stretch", "maior alongamento", "alongamento"], rest: 0),
         Seed(name: "Band Pull-Apart", category: .mobility, equipment: .band, aliases: ["pull apart", "band pullapart"], rest: 0),
     ]
 

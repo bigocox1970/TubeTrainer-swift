@@ -679,7 +679,7 @@
         "pt-br": {
           "stringUnit": {
             "state": "translated",
-            "value": "Anexe um treinador sempre que um vídeo fizer um exercício fazer sentido."
+            "value": "Encontrou um vídeo que explica bem o exercício? Salve-o como seu treinador."
           }
         }
       }
@@ -1238,7 +1238,7 @@
         "pt-br": {
           "stringUnit": {
             "state": "translated",
-            "value": "Arranco e desenvolvimento"
+            "value": "Clean and Press"
           }
         }
       }
@@ -1697,7 +1697,7 @@
         "pt-br": {
           "stringUnit": {
             "state": "translated",
-            "value": "Concluído"
+            "value": "Pronto"
           }
         }
       }
@@ -3199,7 +3199,7 @@
         "pt-br": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nada corresponde"
+            "value": "Nenhum resultado"
           }
         }
       }
@@ -3280,7 +3280,7 @@
         "pt-br": {
           "stringUnit": {
             "state": "translated",
-            "value": "Uma sessão trabalha tudo. Ótimo 2–3× por semana."
+            "value": "Uma sessão trabalha o corpo todo. Ideal para treinar 2–3× por semana."
           }
         }
       }
@@ -3443,7 +3443,7 @@
         "pt-br": {
           "stringUnit": {
             "state": "translated",
-            "value": "Voador (peck deck)"
+            "value": "Voador (pec deck)"
           }
         }
       }
@@ -3625,7 +3625,7 @@
         "pt-br": {
           "stringUnit": {
             "state": "translated",
-            "value": "Empurrar / Puxar / Pernas"
+            "value": "Push / Pull / Legs"
           }
         }
       }
@@ -4112,7 +4112,7 @@
         "pt-br": {
           "stringUnit": {
             "state": "translated",
-            "value": "Salve as melhores dicas de exercícios que você encontra no YouTube e tenha-as ao lado do seu treino."
+            "value": "Salve os melhores vídeos de exercícios que encontrar no YouTube e deixe-os sempre à mão durante o treino."
           }
         }
       }
@@ -4489,7 +4489,7 @@
         "pt-br": {
           "stringUnit": {
             "state": "translated",
-            "value": "Comece vazio e monte do seu jeito."
+            "value": "Comece do zero e monte do seu jeito."
           }
         }
       }
@@ -5049,7 +5049,7 @@
         "pt-br": {
           "stringUnit": {
             "state": "translated",
-            "value": "Vamos usá-lo para te cumprimentar. Opcional — você pode adicionar ou mudar quando quiser em Você."
+            "value": "Vamos usá-lo para te cumprimentar. Opcional — você pode adicionar ou mudar quando quiser na seção Você."
           }
         }
       }
@@ -5132,7 +5132,7 @@
         "pt-br": {
           "stringUnit": {
             "state": "translated",
-            "value": "O maior alongamento do mundo"
+            "value": "World's Greatest Stretch"
           }
         }
       }
@@ -5377,7 +5377,7 @@
         "pt-br": {
           "stringUnit": {
             "state": "translated",
-            "value": "Toda a sua biblioteca tem treinador. Belo trabalho!"
+            "value": "Toda a sua biblioteca tem treinador. Boa!"
           }
         }
       }
