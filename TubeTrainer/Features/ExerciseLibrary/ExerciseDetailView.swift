@@ -17,6 +17,11 @@ struct ExerciseDetailView: View {
             TTBackground()
             ScrollView {
                 VStack(alignment: .leading, spacing: TTSpace.lg) {
+                    Text(exercise.displayName)
+                        .font(TTFont.largeTitle().weight(.bold))
+                        .foregroundStyle(TTColor.textPrimary)
+                        .lineLimit(3)
+                        .fixedSize(horizontal: false, vertical: true)
                     coachSection
                     recordsSection
                     trainSection
@@ -27,7 +32,7 @@ struct ExerciseDetailView: View {
             }
         }
         .navigationTitle(exercise.displayName)
-        .navigationBarTitleDisplayMode(.large)
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .tabBar)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {

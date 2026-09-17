@@ -71,13 +71,14 @@ final class LocalizationScreenshots: XCTestCase {
 
         // Library
         tabs.element(boundBy: 1).tap(); sleep(1); shot("02-library")
-        // First exercise → detail (best-effort, language-independent).
-        let firstCell = app.cells.firstMatch
-        if firstCell.waitForExistence(timeout: 3), firstCell.isHittable {
-            firstCell.tap(); sleep(1); shot("03-exercise-detail")
-            if app.navigationBars.buttons.firstMatch.exists {
-                app.navigationBars.buttons.firstMatch.tap(); sleep(1)
-            }
+        // Open a lower exercise row (≈4th = a long-named one) via a coordinate tap on
+        // the left/name side, to show the detail-page title wrapping. SwiftUI rows
+        // aren't exposed as tappable cells, so a coordinate tap is the reliable route.
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.28, dy: 0.70)).tap()
+        sleep(1)
+        if app.navigationBars.buttons.firstMatch.exists {   // navigated into a detail
+            shot("03-exercise-detail")
+            app.navigationBars.buttons.firstMatch.tap(); sleep(1)
         }
 
         // History

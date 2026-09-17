@@ -103,7 +103,7 @@ final class AppSettings {
         // Apply the stored language override at launch (before the UI renders).
         // Under UI-test seeding, honour the launch -AppleLanguages instead so the
         // screenshot harness can drive language independently of any saved override.
-        if !SampleData.isRequested {
+        if !ProcessInfo.processInfo.arguments.contains("-seedSample") {
             AppLanguage.apply(appLanguage.isEmpty ? nil : appLanguage)
         }
     }
