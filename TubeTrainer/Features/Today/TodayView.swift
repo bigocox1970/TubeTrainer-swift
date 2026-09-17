@@ -122,7 +122,7 @@ struct TodayView: View {
                     .background(TTColor.brandRed.opacity(0.35), in: Circle())
                 VStack(alignment: .leading, spacing: 2) {
                     Text("Continue workout").font(TTFont.headline()).foregroundStyle(.white)
-                    Text("\(session.nameSnapshot) · \(session.completedSetCount) sets logged")
+                    Text("\(TTLocalized(session.nameSnapshot)) · \(session.completedSetCount) sets logged")
                         .font(TTFont.caption()).foregroundStyle(.white.opacity(0.8))
                 }
                 Spacer()
@@ -183,7 +183,7 @@ struct TodayView: View {
                 Text(isNext ? "NEXT WORKOUT" : "WORKOUT")
                     .font(TTFont.caption()).tracking(1.4)
                     .foregroundStyle(TTColor.brandRed)
-                Text(template.name.uppercased())
+                Text(TTLocalized(template.name).uppercased())
                     .font(TTFont.hero())
                     .foregroundStyle(TTColor.textPrimary)
                     .lineLimit(2).minimumScaleFactor(0.6)
@@ -440,7 +440,7 @@ struct WorkoutSummaryRow: View {
             }
             .frame(width: 46, height: 46)
             VStack(alignment: .leading, spacing: 2) {
-                Text(template.name).font(TTFont.headline()).foregroundStyle(TTColor.textPrimary)
+                Text(TTLocalized(template.name)).font(TTFont.headline()).foregroundStyle(TTColor.textPrimary)
                 Text("\(template.exercises.count) exercises")
                     .font(TTFont.caption()).foregroundStyle(TTColor.textSecondary)
             }

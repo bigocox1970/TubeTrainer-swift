@@ -98,12 +98,13 @@ final class AppSettings {
         onboardingComplete = defaults.bool(forKey: Key.onboarded)
         youtubeAPIKey = defaults.string(forKey: Key.youtubeAPIKey) ?? ""
         nickname = defaults.string(forKey: Key.nickname) ?? ""
-        appLanguage = defaults.string(forKey: Key.appLanguage) ?? ""
-
-        // Apply the stored language override at launch (before the UI renders).
-        // Under UI-test seeding, honour the launch -AppleLanguages instead so the
-        // screenshot harness can drive language independently of any saved override.
-        if !ProcessInfo.processInfo.arguments.contains("-seedSample") {
+        // Under UI-test seeding, ignore any saved override entirely (both the bundle
+        // redirect and the environment locale) so the harness drives language purely
+        // via -AppleLanguages. Otherwise load + apply the user's stored choice.
+        if ProcessInfo.processInfo.arguments.contains("-seedSample") {
+            appLanguage = ""
+        } else {
+            appLanguage = defaults.string(forKey: Key.appLanguage) ?? ""
             AppLanguage.apply(appLanguage.isEmpty ? nil : appLanguage)
         }
     }

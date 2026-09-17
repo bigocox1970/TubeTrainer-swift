@@ -119,7 +119,7 @@ struct ActiveWorkoutView: View {
 
             Spacer()
             VStack(spacing: 0) {
-                Text(session.nameSnapshot.uppercased())
+                Text(TTLocalized(session.nameSnapshot).uppercased())
                     .font(TTFont.caption()).tracking(1.2)
                     .foregroundStyle(TTColor.textSecondary)
                 Text(TTFormat.clock(elapsed))

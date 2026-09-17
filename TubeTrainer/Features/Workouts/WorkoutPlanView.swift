@@ -33,7 +33,7 @@ struct WorkoutPlanView: View {
                 startBar
             }
         }
-        .navigationTitle(template.name)
+        .navigationTitle(TTLocalized(template.name))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .tabBar)
         .onAppear {
@@ -66,7 +66,7 @@ struct WorkoutPlanView: View {
     private var headerCard: some View {
         VStack(alignment: .leading, spacing: TTSpace.xs) {
             HStack {
-                Text(template.name)
+                Text(TTLocalized(template.name))
                     .font(TTFont.largeTitle())
                     .foregroundStyle(TTColor.textPrimary)
                 if isEditing {

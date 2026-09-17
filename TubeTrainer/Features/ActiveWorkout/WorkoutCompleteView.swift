@@ -35,7 +35,7 @@ struct WorkoutCompleteView: View {
                         .opacity(appear ? 1 : 0)
 
                     VStack(spacing: TTSpace.xs) {
-                        Text("\(session.nameSnapshot) Complete")
+                        Text("\(TTLocalized(session.nameSnapshot)) Complete")
                             .font(TTFont.title().weight(.heavy))
                             .foregroundStyle(TTColor.textPrimary)
                             .multilineTextAlignment(.center)
