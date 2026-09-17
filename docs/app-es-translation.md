@@ -1,6 +1,6 @@
 # TubeTrainer app — Spanish (es) translation, for review
 
-_All translated strings in the app, incl. built-in workout/day names (Push Day → …).
+_All translated strings, incl. built-in workout/day names (Push Day → …).
 %@ = word/name, %lld = number — keep them. Newlines = ⏎. Plurals (1)=singular/(n)=plural._
 
 ## 1. Exercise names & gym terms (75)

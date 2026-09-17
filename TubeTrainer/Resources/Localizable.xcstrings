@@ -7578,16 +7578,16 @@
             "value": "Día de empuje"
           }
         },
-        "pt-br": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dia de empurrar"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Push-Tag"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dia de empurrar"
           }
         }
       }
@@ -7600,16 +7600,16 @@
             "value": "Día de tirón"
           }
         },
-        "pt-br": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dia de puxar"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Pull-Tag"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dia de puxar"
           }
         }
       }
@@ -7622,16 +7622,16 @@
             "value": "Día de piernas"
           }
         },
-        "pt-br": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dia de pernas"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Bein-Tag"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dia de pernas"
           }
         }
       }
@@ -7644,16 +7644,16 @@
             "value": "Superior"
           }
         },
-        "pt-br": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Superior"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Oberkörper"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Superior"
           }
         }
       }
@@ -7666,16 +7666,16 @@
             "value": "Inferior"
           }
         },
-        "pt-br": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Inferior"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Unterkörper"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inferior"
           }
         }
       }
@@ -7688,16 +7688,16 @@
             "value": "Cuerpo completo A"
           }
         },
-        "pt-br": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Corpo inteiro A"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Ganzkörper A"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Corpo inteiro A"
           }
         }
       }
@@ -7710,16 +7710,16 @@
             "value": "Cuerpo completo B"
           }
         },
-        "pt-br": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Corpo inteiro B"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Ganzkörper B"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Corpo inteiro B"
           }
         }
       }
@@ -7732,16 +7732,16 @@
             "value": "Brazos"
           }
         },
-        "pt-br": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Braços"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Arme"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Braços"
           }
         }
       }
@@ -7754,16 +7754,16 @@
             "value": "Piernas"
           }
         },
-        "pt-br": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pernas"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Beine"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pernas"
           }
         }
       }
@@ -7776,16 +7776,16 @@
             "value": "Mi entrenamiento"
           }
         },
-        "pt-br": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Meu treino"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Mein Training"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meu treino"
           }
         }
       }
@@ -7798,16 +7798,16 @@
             "value": "Nuevo entrenamiento"
           }
         },
-        "pt-br": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Novo treino"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Neues Training"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Novo treino"
           }
         }
       }
