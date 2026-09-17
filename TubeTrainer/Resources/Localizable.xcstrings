@@ -617,7 +617,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Füge YouTube-Lieblingstrainer hinzu, damit ihre Videos Vorrang bekommen — oder überspringe und entdecke unterwegs."
+            "value": "Füge deine Lieblings-Trainer auf YouTube hinzu, damit ihre Videos bevorzugt angezeigt werden — oder überspringe und entdecke unterwegs."
           }
         }
       }
@@ -707,7 +707,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Füge den Namen eines YouTube-Trainers hinzu, dem du vertraust. Wenn du Videos findest, bekommen seine Vorrang."
+            "value": "Füge einen YouTube-Trainer hinzu, dem du vertraust. Seine Videos werden bei der Suche bevorzugt."
           }
         }
       }
@@ -1300,7 +1300,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Bulgarische Kniebeuge"
+            "value": "Bulgarian Split Squat"
           }
         }
       }
@@ -1392,7 +1392,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Kabelzug-Fliegende"
+            "value": "Fliegende am Kabelzug"
           }
         }
       }
@@ -1799,7 +1799,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Trainer, integriert"
+            "value": "Trainer direkt integriert"
           }
         }
       }
@@ -2606,7 +2606,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Erfahren"
+            "value": "Ich habe Erfahrung"
           }
         }
       }
@@ -2988,7 +2988,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gesäß"
+            "value": "Gluteus"
           }
         }
       }
@@ -4090,7 +4090,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Neu im Training"
+            "value": "Ich fange gerade an"
           }
         }
       }
@@ -4316,7 +4316,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Von dieser Sitzung wird nichts gespeichert."
+            "value": "Von diesem Training wird nichts gespeichert."
           }
         }
       }
@@ -5033,7 +5033,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "WDH"
+            "value": "WDH."
           }
         }
       }
@@ -5588,7 +5588,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Speichere die besten Übungsvideos, die du auf YouTube findest, und hab sie direkt neben deinem Training."
+            "value": "Speichere die besten Übungsvideos, die du auf YouTube findest, und hab sie beim Training immer griffbereit."
           }
         }
       }
@@ -6014,7 +6014,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Etwas Erfahrung"
+            "value": "Ich habe etwas Erfahrung"
           }
         }
       }
@@ -6103,7 +6103,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Leer starten und nach deinen Vorstellungen aufbauen."
+            "value": "Starte bei null und stell dir dein Training selbst zusammen."
           }
         }
       }
@@ -6845,7 +6845,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wir halten die Satz-Ziele einfach."
+            "value": "Wir halten die Satzziele einfach."
           }
         }
       }
@@ -7002,7 +7002,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "YOUTUBE-DATA-API-SCHLÜSSEL"
+            "value": "YOUTUBE-API-SCHLÜSSEL"
           }
         }
       }
@@ -7248,7 +7248,7 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Deine erste Sitzung beginnt hier"
+            "value": "Dein erstes Training beginnt hier"
           }
         }
       }

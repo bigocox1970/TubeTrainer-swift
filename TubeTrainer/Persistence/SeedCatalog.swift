@@ -58,7 +58,7 @@ enum SeedCatalog {
         Seed(name: "Hack Squat", category: .quadriceps, equipment: .machine, aliases: ["machine hack squat"], rest: 150),
         Seed(name: "Leg Extension", category: .quadriceps, equipment: .machine, aliases: ["leg extensions", "quad extension"], rest: 75),
         Seed(name: "Walking Lunge", category: .quadriceps, equipment: .dumbbell, aliases: ["lunges", "lunge", "walking lunges"]),
-        Seed(name: "Bulgarian Split Squat", category: .quadriceps, equipment: .dumbbell, aliases: ["bss", "split squat", "rear foot elevated split squat"], rest: 120),
+        Seed(name: "Bulgarian Split Squat", category: .quadriceps, equipment: .dumbbell, aliases: ["bss", "split squat", "rear foot elevated split squat", "bulgarische kniebeuge"], rest: 120),
 
         // Hamstrings
         Seed(name: "Deadlift", category: .hamstrings, equipment: .barbell, aliases: ["conventional deadlift", "dl"], rest: 210),
