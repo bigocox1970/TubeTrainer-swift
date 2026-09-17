@@ -98,14 +98,14 @@ struct TodayView: View {
     private var greeting: String {
         let name = settings.nickname.trimmingCharacters(in: .whitespaces)
         // With a name: keep the prefix tiny so long names still fit.
-        if !name.isEmpty { return String(localized: "Hey \(name)") }
+        if !name.isEmpty { return String(format: TTLocalized("Hey %@"), name) }
         // No name: room for the full time-of-day greeting.
         let hour = Calendar.current.component(.hour, from: .now)
         switch hour {
-        case 5..<12: return String(localized: "Good morning")
-        case 12..<17: return String(localized: "Good afternoon")
-        case 17..<22: return String(localized: "Good evening")
-        default: return String(localized: "Good evening")
+        case 5..<12: return TTLocalized("Good morning")
+        case 12..<17: return TTLocalized("Good afternoon")
+        case 17..<22: return TTLocalized("Good evening")
+        default: return TTLocalized("Good evening")
         }
     }
 

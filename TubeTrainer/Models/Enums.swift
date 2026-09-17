@@ -86,8 +86,8 @@ enum VideoContentType: String, Codable {
 
     var label: String {
         switch self {
-        case .video: return String(localized: "Video")
-        case .short: return String(localized: "Short")
+        case .video: return TTLocalized("Video")
+        case .short: return TTLocalized("Short")
         }
     }
 }
@@ -131,9 +131,9 @@ enum AppearancePreference: String, Codable, CaseIterable, Identifiable {
 
     var label: String {
         switch self {
-        case .system: return String(localized: "System")
-        case .dark: return String(localized: "Dark")
-        case .light: return String(localized: "Light")
+        case .system: return TTLocalized("System")
+        case .dark: return TTLocalized("Dark")
+        case .light: return TTLocalized("Light")
         }
     }
 
@@ -157,17 +157,17 @@ enum ExperienceLevel: String, Codable, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .new: return String(localized: "New to training")
-        case .some: return String(localized: "Some experience")
-        case .experienced: return String(localized: "Experienced")
+        case .new: return TTLocalized("New to training")
+        case .some: return TTLocalized("Some experience")
+        case .experienced: return TTLocalized("Experienced")
         }
     }
 
     var blurb: String {
         switch self {
-        case .new: return String(localized: "We'll keep set targets simple.")
-        case .some: return String(localized: "A balanced starting point.")
-        case .experienced: return String(localized: "You know your way around.")
+        case .new: return TTLocalized("We'll keep set targets simple.")
+        case .some: return TTLocalized("A balanced starting point.")
+        case .experienced: return TTLocalized("You know your way around.")
         }
     }
 }
@@ -185,21 +185,21 @@ enum TrainingStructure: String, Codable, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .fullBody: return String(localized: "Full Body")
-        case .upperLower: return String(localized: "Upper / Lower")
-        case .pushPullLegs: return String(localized: "Push / Pull / Legs")
-        case .bodyPart: return String(localized: "Body Part Split")
-        case .custom: return String(localized: "Build My Own")
+        case .fullBody: return TTLocalized("Full Body")
+        case .upperLower: return TTLocalized("Upper / Lower")
+        case .pushPullLegs: return TTLocalized("Push / Pull / Legs")
+        case .bodyPart: return TTLocalized("Body Part Split")
+        case .custom: return TTLocalized("Build My Own")
         }
     }
 
     var blurb: String {
         switch self {
-        case .fullBody: return String(localized: "One session hits everything. Great 2–3× per week.")
-        case .upperLower: return String(localized: "Alternate upper- and lower-body days.")
-        case .pushPullLegs: return String(localized: "The classic 3-day strength split.")
-        case .bodyPart: return String(localized: "A focused day per muscle group.")
-        case .custom: return String(localized: "Start empty and build it your way.")
+        case .fullBody: return TTLocalized("One session hits everything. Great 2–3× per week.")
+        case .upperLower: return TTLocalized("Alternate upper- and lower-body days.")
+        case .pushPullLegs: return TTLocalized("The classic 3-day strength split.")
+        case .bodyPart: return TTLocalized("A focused day per muscle group.")
+        case .custom: return TTLocalized("Start empty and build it your way.")
         }
     }
 

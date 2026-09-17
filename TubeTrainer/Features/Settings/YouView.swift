@@ -246,7 +246,7 @@ struct YouView: View {
         do {
             let count = try BackupService.importBackup(file, mode: mode, context: context)
             TTHaptics.workoutCompleted()
-            alert = SettingsAlert(title: "Import complete", message: String(localized: "Restored \(count) items."))
+            alert = SettingsAlert(title: "Import complete", message: String(format: TTLocalized("Restored %lld items."), count))
         } catch {
             alert = SettingsAlert(title: "Import failed", message: "Your existing data was not changed.")
         }

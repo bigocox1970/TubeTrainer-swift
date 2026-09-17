@@ -72,8 +72,8 @@ enum TTFormat {
     /// "Last trained Monday" style — weekday within a week, else relative. All locale-aware.
     static func lastTrained(_ date: Date, now: Date = .now) -> String {
         let cal = Calendar.current
-        if cal.isDateInToday(date) { return String(localized: "Today") }
-        if cal.isDateInYesterday(date) { return String(localized: "Yesterday") }
+        if cal.isDateInToday(date) { return TTLocalized("Today") }
+        if cal.isDateInYesterday(date) { return TTLocalized("Yesterday") }
         let days = cal.dateComponents([.day], from: cal.startOfDay(for: date), to: cal.startOfDay(for: now)).day ?? 0
         if days < 7 {
             return date.formatted(.dateTime.weekday(.wide))   // localized weekday name
