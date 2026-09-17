@@ -63,7 +63,7 @@ enum SampleData {
                 canonicalURL: c.short ? YouTubeURL.shortURL(c.videoID) : YouTubeURL.watchURL(c.videoID, start: c.start),
                 videoID: c.videoID,
                 contentType: c.short ? .short : .video,
-                title: c.title, channelName: c.channel,
+                title: TTLocalized(c.title), channelName: c.channel,
                 thumbnailURL: c.thumb,
                 startSeconds: c.start, isPrimary: true
             )

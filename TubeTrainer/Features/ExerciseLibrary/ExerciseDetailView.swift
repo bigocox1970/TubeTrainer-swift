@@ -116,7 +116,7 @@ struct ExerciseDetailView: View {
             Image(systemName: symbol).foregroundStyle(TTColor.brandRed)
             Text(value).font(TTFont.numeric(19, weight: .bold)).foregroundStyle(TTColor.textPrimary)
                 .minimumScaleFactor(0.7).lineLimit(1)
-            Text(label).font(TTFont.caption()).foregroundStyle(TTColor.textSecondary)
+            Text(TTLocalized(label)).font(TTFont.caption()).foregroundStyle(TTColor.textSecondary)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(TTSpace.md)
