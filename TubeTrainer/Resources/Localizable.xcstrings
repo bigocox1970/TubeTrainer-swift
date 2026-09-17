@@ -15,6 +15,12 @@
             "state": "translated",
             "value": "%@ concluído"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ abgeschlossen"
+          }
         }
       }
     },
@@ -46,6 +52,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ · %lld séries registradas"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %lld Sätze protokolliert"
           }
         }
       }
@@ -79,6 +91,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld %@ pessoais"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld persönliche %@"
           }
         }
       }
@@ -138,6 +156,24 @@
               }
             }
           }
+        },
+        "de": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Übung"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Übungen"
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -160,6 +196,12 @@
             "state": "translated",
             "value": "%lld exercícios · %lld séries · %@"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Übungen · %lld Sätze · %@"
+          }
         }
       }
     },
@@ -175,6 +217,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld vídeos salvos"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld gespeicherte Videos"
           }
         }
       }
@@ -234,6 +282,24 @@
               }
             }
           }
+        },
+        "de": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Satz"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld Sätze"
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -249,6 +315,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld séries registradas."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Sätze protokolliert."
           }
         }
       }
@@ -272,6 +344,12 @@
             "state": "translated",
             "value": "%lld séries · %@"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Sätze · %@"
+          }
         }
       }
     },
@@ -290,6 +368,12 @@
             "state": "translated",
             "value": "1. Abra o Google Cloud Console e crie um projeto.\n2. Ative a «YouTube Data API v3».\n3. Crie uma chave de API e (recomendado) restrinja-a à YouTube Data API e ao bundle id do seu app iOS.\n\nO plano gratuito permite cerca de 100 buscas por dia. A chave é salva apenas neste dispositivo."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1. Öffne die Google Cloud Console und erstelle ein Projekt.\n2. Aktiviere die „YouTube Data API v3“.\n3. Erstelle einen API-Schlüssel und beschränke ihn (empfohlen) auf die YouTube Data API und deine iOS-Bundle-ID.\n\nDas kostenlose Kontingent erlaubt etwa 100 Suchen pro Tag. Der Schlüssel wird nur auf diesem Gerät gespeichert."
+          }
         }
       }
     },
@@ -307,6 +391,12 @@
             "state": "translated",
             "value": "Um ponto de partida equilibrado."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein ausgewogener Startpunkt."
+          }
         }
       }
     },
@@ -322,6 +412,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Um dia focado em cada grupo muscular."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein fokussierter Tag pro Muskelgruppe."
           }
         }
       }
@@ -339,6 +435,12 @@
             "state": "translated",
             "value": "Um ponto de início salvo te leva direto à parte útil."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein gespeicherter Startpunkt bringt dich direkt zum nützlichen Teil."
+          }
         }
       }
     },
@@ -354,6 +456,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Um ponto de partida, não uma prescrição. Não é orientação médica."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein Ausgangspunkt, keine Vorgabe. Keine medizinische Beratung."
           }
         }
       }
@@ -372,6 +480,12 @@
             "state": "translated",
             "value": "Roda abdominal"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bauchroller"
+          }
         }
       }
     },
@@ -389,6 +503,12 @@
             "state": "translated",
             "value": "Sobre"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Über"
+          }
         }
       }
     },
@@ -404,6 +524,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Adicionar um treinador"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trainer hinzufügen"
           }
         }
       }
@@ -421,6 +547,12 @@
             "state": "translated",
             "value": "Adicionar uma nota"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notiz hinzufügen"
+          }
         }
       }
     },
@@ -436,6 +568,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Adicionar treinador"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trainer hinzufügen"
           }
         }
       }
@@ -453,6 +591,12 @@
             "state": "translated",
             "value": "Adicionar exercício"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Übung hinzufügen"
+          }
         }
       }
     },
@@ -469,6 +613,12 @@
             "state": "translated",
             "value": "Adicione treinadores favoritos do YouTube para que os vídeos deles tenham prioridade — ou pule e descubra ao longo do caminho."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Füge YouTube-Lieblingstrainer hinzu, damit ihre Videos Vorrang bekommen — oder überspringe und entdecke unterwegs."
+          }
         }
       }
     },
@@ -484,6 +634,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Adicionar série"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satz hinzufügen"
           }
         }
       }
@@ -502,6 +658,12 @@
             "state": "translated",
             "value": "Adicione os treinadores do YouTube em quem você já confia — ou pule e descubra vídeos exercício por exercício."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Füge die YouTube-Trainer hinzu, denen du schon vertraust — oder überspringe das und entdecke Videos Übung für Übung."
+          }
         }
       }
     },
@@ -519,6 +681,12 @@
             "state": "translated",
             "value": "Adicione os movimentos que você quer neste treino."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Füge die Übungen hinzu, die du in diesem Training haben möchtest."
+          }
         }
       }
     },
@@ -534,6 +702,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Adicione o nome de um treinador do YouTube em quem você confia. Quando você encontrar vídeos, os dele terão prioridade."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Füge den Namen eines YouTube-Trainers hinzu, dem du vertraust. Wenn du Videos findest, bekommen seine Vorrang."
           }
         }
       }
@@ -551,6 +725,12 @@
             "state": "translated",
             "value": "Adicionar aos favoritos"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zu Favoriten hinzufügen"
+          }
         }
       }
     },
@@ -566,6 +746,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Adicionar aos favoritos"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zu Favoriten hinzufügen"
           }
         }
       }
@@ -583,6 +769,12 @@
             "state": "translated",
             "value": "Adicione, remova ou reordene. Já vem com o básico."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hinzufügen, entfernen oder umsortieren. Mit sinnvollen Basics vorbelegt."
+          }
         }
       }
     },
@@ -598,6 +790,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Os apelidos deixam a busca flexível — digite qualquer um deles para encontrar este exercício."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aliasse machen die Suche flexibel — tippe einen davon ein, um diese Übung zu finden."
           }
         }
       }
@@ -616,6 +814,12 @@
             "state": "translated",
             "value": "Todos"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle"
+          }
         }
       }
     },
@@ -632,6 +836,12 @@
             "state": "translated",
             "value": "Já tem treinadores em quem confia?"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hast du schon Trainer, denen du vertraust?"
+          }
         }
       }
     },
@@ -647,6 +857,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Alterne dias de membros superiores e inferiores."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wechsle zwischen Oberkörper- und Unterkörper-Tagen."
           }
         }
       }
@@ -665,6 +881,12 @@
             "state": "translated",
             "value": "Aparência"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Darstellung"
+          }
         }
       }
     },
@@ -680,6 +902,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Encontrou um vídeo que explica bem o exercício? Salve-o como seu treinador."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein Video gefunden, das die Übung gut erklärt? Speichere es als deinen Trainer."
           }
         }
       }
@@ -698,6 +926,12 @@
             "state": "translated",
             "value": "Iniciar descanso automaticamente"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausen-Timer automatisch starten"
+          }
         }
       }
     },
@@ -715,6 +949,12 @@
             "state": "translated",
             "value": "Costas"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rücken"
+          }
         }
       }
     },
@@ -731,6 +971,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Agachamento livre"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kniebeuge"
           }
         }
       }
@@ -754,6 +1000,12 @@
             "state": "translated",
             "value": "Backup de %@ · v%lld"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Backup von %@ · v%lld"
+          }
         }
       }
     },
@@ -770,6 +1022,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Elástico"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Band"
           }
         }
       }
@@ -788,6 +1046,12 @@
             "state": "translated",
             "value": "Abertura com elástico"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Band Pull-Apart"
+          }
         }
       }
     },
@@ -804,6 +1068,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Barra"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langhantel"
           }
         }
       }
@@ -822,6 +1092,12 @@
             "state": "translated",
             "value": "Supino reto com barra"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langhantel-Bankdrücken"
+          }
         }
       }
     },
@@ -838,6 +1114,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Rosca direta com barra"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langhantel-Curls"
           }
         }
       }
@@ -856,6 +1138,12 @@
             "state": "translated",
             "value": "Desenvolvimento militar com barra"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langhantel-Schulterdrücken"
+          }
         }
       }
     },
@@ -872,6 +1160,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Remada curvada com barra"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Langhantelrudern"
           }
         }
       }
@@ -890,6 +1184,12 @@
             "state": "translated",
             "value": "Bíceps"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bizeps"
+          }
         }
       }
     },
@@ -905,6 +1205,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Divisão por grupo muscular"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Split nach Muskelgruppen"
           }
         }
       }
@@ -923,6 +1229,12 @@
             "state": "translated",
             "value": "Peso corporal"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Körpergewicht"
+          }
         }
       }
     },
@@ -939,6 +1251,12 @@
             "state": "translated",
             "value": "Montar do zero"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selbst erstellen"
+          }
         }
       }
     },
@@ -954,6 +1272,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Criar meu plano"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meinen Plan erstellen"
           }
         }
       }
@@ -972,6 +1296,12 @@
             "state": "translated",
             "value": "Agachamento búlgaro"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bulgarische Kniebeuge"
+          }
         }
       }
     },
@@ -988,6 +1318,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Polia"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kabelzug"
           }
         }
       }
@@ -1006,6 +1342,12 @@
             "state": "translated",
             "value": "Abdominal na polia"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kabel-Crunch"
+          }
         }
       }
     },
@@ -1022,6 +1364,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Rosca na polia"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kabel-Curls"
           }
         }
       }
@@ -1040,6 +1388,12 @@
             "state": "translated",
             "value": "Crucifixo na polia"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kabelzug-Fliegende"
+          }
         }
       }
     },
@@ -1056,6 +1410,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Panturrilhas"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waden"
           }
         }
       }
@@ -1074,6 +1434,12 @@
             "state": "translated",
             "value": "Não é possível importar"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import nicht möglich"
+          }
         }
       }
     },
@@ -1090,6 +1456,12 @@
             "state": "translated",
             "value": "Cancelar"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abbrechen"
+          }
         }
       }
     },
@@ -1103,6 +1475,12 @@
           }
         },
         "pt-br": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cardio"
+          }
+        },
+        "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Cardio"
@@ -1124,6 +1502,12 @@
             "state": "translated",
             "value": "Gato-vaca"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Katze-Kuh"
+          }
         }
       }
     },
@@ -1139,6 +1523,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Trocar de treinador"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trainer wechseln"
           }
         }
       }
@@ -1157,6 +1547,12 @@
             "state": "translated",
             "value": "Peito"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brust"
+          }
         }
       }
     },
@@ -1173,6 +1569,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Supino na máquina"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brustpresse (Maschine)"
           }
         }
       }
@@ -1191,6 +1593,12 @@
             "state": "translated",
             "value": "Remada com apoio no peito"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rudern mit Brustauflage"
+          }
         }
       }
     },
@@ -1206,6 +1614,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Escolha uma divisão"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wähle einen Split"
           }
         }
       }
@@ -1223,6 +1637,12 @@
             "state": "translated",
             "value": "Escolher outro"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Andere wählen"
+          }
         }
       }
     },
@@ -1236,6 +1656,12 @@
           }
         },
         "pt-br": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clean and Press"
+          }
+        },
+        "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Clean and Press"
@@ -1256,6 +1682,12 @@
             "state": "translated",
             "value": "Limpar busca"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suche löschen"
+          }
         }
       }
     },
@@ -1272,6 +1704,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Treinador"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trainer"
           }
         }
       }
@@ -1290,6 +1728,12 @@
             "state": "translated",
             "value": "Com treinador"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mit Trainer"
+          }
         }
       }
     },
@@ -1307,6 +1751,12 @@
             "state": "translated",
             "value": "Treinadores"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trainer"
+          }
         }
       }
     },
@@ -1322,6 +1772,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Opções de treinador"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trainer-Optionen"
           }
         }
       }
@@ -1339,6 +1795,12 @@
             "state": "translated",
             "value": "Treinadores integrados"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trainer, integriert"
+          }
         }
       }
     },
@@ -1354,6 +1816,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Concluir série %lld"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satz %lld abschließen"
           }
         }
       }
@@ -1371,6 +1839,12 @@
             "state": "translated",
             "value": "Continuar"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weiter"
+          }
         }
       }
     },
@@ -1387,6 +1861,12 @@
             "state": "translated",
             "value": "Continuar treino"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Training fortsetzen"
+          }
         }
       }
     },
@@ -1400,6 +1880,12 @@
           }
         },
         "pt-br": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Core"
+          }
+        },
+        "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Core"
@@ -1421,6 +1907,12 @@
             "state": "translated",
             "value": "Não foi possível criar o arquivo de backup."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Backup-Datei konnte nicht erstellt werden."
+          }
         }
       }
     },
@@ -1437,6 +1929,12 @@
             "state": "translated",
             "value": "Criar"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erstellen"
+          }
         }
       }
     },
@@ -1452,6 +1950,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Criar \"%@\""
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "„%@“ erstellen"
           }
         }
       }
@@ -1470,6 +1974,12 @@
             "state": "translated",
             "value": "Crie um treino ou comece por uma divisão pronta."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erstelle ein Training oder starte mit einem fertigen Split."
+          }
         }
       }
     },
@@ -1487,6 +1997,12 @@
             "state": "translated",
             "value": "Personalizado"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eigene"
+          }
         }
       }
     },
@@ -1503,6 +2019,12 @@
             "state": "translated",
             "value": "Personalize seus exercícios"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Passe deine Übungen an"
+          }
         }
       }
     },
@@ -1518,6 +2040,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Escuro"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dunkel"
           }
         }
       }
@@ -1536,6 +2064,12 @@
             "state": "translated",
             "value": "Dados"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daten"
+          }
         }
       }
     },
@@ -1552,6 +2086,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Levantamento terra"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kreuzheben"
           }
         }
       }
@@ -1570,6 +2110,12 @@
             "state": "translated",
             "value": "Descanso padrão"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard-Pause"
+          }
         }
       }
     },
@@ -1585,6 +2131,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Excluir %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ löschen"
           }
         }
       }
@@ -1602,6 +2154,12 @@
             "state": "translated",
             "value": "Excluir série"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satz löschen"
+          }
         }
       }
     },
@@ -1617,6 +2175,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Excluir treino?"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Training löschen?"
           }
         }
       }
@@ -1635,6 +2199,12 @@
             "state": "translated",
             "value": "Paralelas"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dips"
+          }
         }
       }
     },
@@ -1650,6 +2220,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Descartar"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verwerfen"
           }
         }
       }
@@ -1667,6 +2243,12 @@
             "state": "translated",
             "value": "Descartar este treino?"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieses Training verwerfen?"
+          }
         }
       }
     },
@@ -1682,6 +2264,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Descartar treino"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Training verwerfen"
           }
         }
       }
@@ -1699,6 +2287,12 @@
             "state": "translated",
             "value": "Pronto"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fertig"
+          }
         }
       }
     },
@@ -1714,6 +2308,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Arraste para reordenar"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zum Umsortieren ziehen"
           }
         }
       }
@@ -1732,6 +2332,12 @@
             "state": "translated",
             "value": "Halteres"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kurzhanteln"
+          }
         }
       }
     },
@@ -1748,6 +2354,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Supino com halteres"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kurzhantel-Bankdrücken"
           }
         }
       }
@@ -1766,6 +2378,12 @@
             "state": "translated",
             "value": "Rosca com halteres"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kurzhantel-Curls"
+          }
         }
       }
     },
@@ -1782,6 +2400,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Remada unilateral com halter"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kurzhantelrudern"
           }
         }
       }
@@ -1800,6 +2424,12 @@
             "state": "translated",
             "value": "Desenvolvimento com halteres"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kurzhantel-Schulterdrücken"
+          }
         }
       }
     },
@@ -1817,6 +2447,12 @@
             "state": "translated",
             "value": "Duração"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dauer"
+          }
         }
       }
     },
@@ -1832,6 +2468,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Editar"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bearbeiten"
           }
         }
       }
@@ -1849,6 +2491,12 @@
             "state": "translated",
             "value": "Editar exercício"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Übung bearbeiten"
+          }
         }
       }
     },
@@ -1865,6 +2513,12 @@
             "state": "translated",
             "value": "Começar"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los geht’s"
+          }
         }
       }
     },
@@ -1880,6 +2534,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "O 1RM estimado usa a fórmula de Epley — um guia, não uma medida médica."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das geschätzte 1RM nutzt die Epley-Formel — ein Richtwert, keine medizinische Messung."
           }
         }
       }
@@ -1898,6 +2558,12 @@
             "state": "translated",
             "value": "Todos os exercícios têm treinador"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jede Übung hat einen Trainer"
+          }
         }
       }
     },
@@ -1914,6 +2580,12 @@
             "state": "translated",
             "value": "Nome do exercício"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Übungsname"
+          }
         }
       }
     },
@@ -1929,6 +2601,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tenho experiência"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erfahren"
           }
         }
       }
@@ -1947,6 +2625,12 @@
             "state": "translated",
             "value": "Exportar backup"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Backup exportieren"
+          }
         }
       }
     },
@@ -1963,6 +2647,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Falha ao exportar"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export fehlgeschlagen"
           }
         }
       }
@@ -1981,6 +2671,12 @@
             "state": "translated",
             "value": "Face pull"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Face Pull"
+          }
         }
       }
     },
@@ -1996,6 +2692,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Favorito"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favorit"
           }
         }
       }
@@ -2014,6 +2716,12 @@
             "state": "translated",
             "value": "Favoritos"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favoriten"
+          }
         }
       }
     },
@@ -2030,6 +2738,12 @@
             "state": "translated",
             "value": "Buscar um treinador de %@"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trainer für %@ finden"
+          }
         }
       }
     },
@@ -2045,6 +2759,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Buscar um treinador"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trainer finden"
           }
         }
       }
@@ -2063,6 +2783,12 @@
             "state": "translated",
             "value": "Buscar treinador"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trainer finden"
+          }
         }
       }
     },
@@ -2078,6 +2804,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Encontre seu treinador de %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finde deinen Trainer für %@"
           }
         }
       }
@@ -2095,6 +2827,12 @@
             "state": "translated",
             "value": "Finalizar"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beenden"
+          }
         }
       }
     },
@@ -2111,6 +2849,12 @@
             "state": "translated",
             "value": "Finalizar e salvar"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beenden & speichern"
+          }
         }
       }
     },
@@ -2126,6 +2870,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Finalizar treino?"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Training beenden?"
           }
         }
       }
@@ -2144,6 +2894,12 @@
             "state": "translated",
             "value": "Os treinos finalizados aparecem aqui com volume, séries e recordes."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beendete Trainings erscheinen hier mit Volumen, Sätzen und Rekorden."
+          }
         }
       }
     },
@@ -2161,6 +2917,12 @@
             "state": "translated",
             "value": "Agachamento frontal"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frontkniebeuge"
+          }
         }
       }
     },
@@ -2177,6 +2939,12 @@
             "state": "translated",
             "value": "Corpo inteiro"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ganzkörper"
+          }
         }
       }
     },
@@ -2192,6 +2960,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dê um nome — você adicionará exercícios em seguida."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gib ihm einen Namen — Übungen fügst du als Nächstes hinzu."
           }
         }
       }
@@ -2210,6 +2984,12 @@
             "state": "translated",
             "value": "Glúteos"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gesäß"
+          }
         }
       }
     },
@@ -2225,6 +3005,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Boa tarde"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guten Tag"
           }
         }
       }
@@ -2242,6 +3028,12 @@
             "state": "translated",
             "value": "Boa noite"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guten Abend"
+          }
         }
       }
     },
@@ -2257,6 +3049,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bom dia"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guten Morgen"
           }
         }
       }
@@ -2275,6 +3073,12 @@
             "state": "translated",
             "value": "Agachamento hack"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hackenschmidt-Kniebeuge"
+          }
         }
       }
     },
@@ -2291,6 +3095,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Rosca martelo"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hammer-Curls"
           }
         }
       }
@@ -2309,6 +3119,12 @@
             "state": "translated",
             "value": "Posteriores de coxa"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beinbeuger"
+          }
         }
       }
     },
@@ -2325,6 +3141,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Elevação de pernas na barra"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hängendes Beinheben"
           }
         }
       }
@@ -2343,6 +3165,12 @@
             "state": "translated",
             "value": "Com treinador"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mit Trainer"
+          }
         }
       }
     },
@@ -2359,6 +3187,12 @@
             "state": "translated",
             "value": "Tem um link?"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hast du einen Link?"
+          }
         }
       }
     },
@@ -2374,6 +3208,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Olá, %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hi %@"
           }
         }
       }
@@ -2392,6 +3232,12 @@
             "state": "translated",
             "value": "Elevação de quadril"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hip Thrust"
+          }
         }
       }
     },
@@ -2407,6 +3253,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Histórico"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verlauf"
           }
         }
       }
@@ -2424,6 +3276,12 @@
             "state": "translated",
             "value": "Quanto você já treinou?"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wie viel hast du schon trainiert?"
+          }
         }
       }
     },
@@ -2440,6 +3298,12 @@
             "state": "translated",
             "value": "Como obter uma chave"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "So bekommst du einen Schlüssel"
+          }
         }
       }
     },
@@ -2455,6 +3319,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Eu mesmo configuro"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ich richte es selbst ein"
           }
         }
       }
@@ -2473,6 +3343,12 @@
             "state": "translated",
             "value": "Importar backup"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Backup importieren"
+          }
         }
       }
     },
@@ -2489,6 +3365,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Importação concluída"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import abgeschlossen"
           }
         }
       }
@@ -2507,6 +3389,12 @@
             "state": "translated",
             "value": "Falha na importação"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import fehlgeschlagen"
+          }
         }
       }
     },
@@ -2522,6 +3410,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "A busca do YouTube no app é opcional. Sem uma chave, você ainda pode colar qualquer link do YouTube e abrir «Buscar no YouTube» — isso sempre funciona."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die YouTube-Suche in der App ist optional. Ohne Schlüssel kannst du trotzdem jeden YouTube-Link einfügen und „Auf YouTube suchen“ öffnen — das funktioniert immer."
           }
         }
       }
@@ -2540,6 +3434,12 @@
             "state": "translated",
             "value": "Supino inclinado com barra"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schrägbankdrücken mit Langhantel"
+          }
         }
       }
     },
@@ -2557,6 +3457,12 @@
             "state": "translated",
             "value": "Supino inclinado com halteres"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schrägbankdrücken mit Kurzhanteln"
+          }
         }
       }
     },
@@ -2573,6 +3479,12 @@
             "state": "translated",
             "value": "Continuar treinando"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weitertrainieren"
+          }
         }
       }
     },
@@ -2586,6 +3498,12 @@
           }
         },
         "pt-br": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kettlebell"
+          }
+        },
+        "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Kettlebell"
@@ -2607,6 +3525,12 @@
             "state": "translated",
             "value": "Swing com kettlebell"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kettlebell Swing"
+          }
         }
       }
     },
@@ -2622,6 +3546,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ÚLTIMA VEZ"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "LETZTES MAL"
           }
         }
       }
@@ -2639,6 +3569,12 @@
             "state": "translated",
             "value": "Última %@"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Letztes %@"
+          }
         }
       }
     },
@@ -2654,6 +3590,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Última vez · %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Letztes Mal · %@"
           }
         }
       }
@@ -2672,6 +3614,12 @@
             "state": "translated",
             "value": "Puxada frontal"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Latzug"
+          }
         }
       }
     },
@@ -2688,6 +3636,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Elevação lateral"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seitheben"
           }
         }
       }
@@ -2706,6 +3660,12 @@
             "state": "translated",
             "value": "Mesa flexora"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beinbeuger (Maschine)"
+          }
         }
       }
     },
@@ -2722,6 +3682,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cadeira extensora"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beinstrecker"
           }
         }
       }
@@ -2740,6 +3706,12 @@
             "state": "translated",
             "value": "Leg press"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beinpresse"
+          }
         }
       }
     },
@@ -2755,6 +3727,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Biblioteca"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bibliothek"
           }
         }
       }
@@ -2772,6 +3750,12 @@
             "state": "translated",
             "value": "Claro"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hell"
+          }
         }
       }
     },
@@ -2787,6 +3771,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Registrar este exercício"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diese Übung protokollieren"
           }
         }
       }
@@ -2805,6 +3795,12 @@
             "state": "translated",
             "value": "Máquina"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maschine"
+          }
         }
       }
     },
@@ -2822,6 +3818,12 @@
             "state": "translated",
             "value": "Desenvolvimento na máquina"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schulterdrücken an der Maschine"
+          }
         }
       }
     },
@@ -2837,6 +3839,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Marcar série %lld como incompleta"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satz %lld als unvollständig markieren"
           }
         }
       }
@@ -2854,6 +3862,12 @@
             "state": "translated",
             "value": "Mesclar mantém o que você tem e adiciona o que faltar. Substituir apaga seus dados atuais primeiro."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zusammenführen behält, was du hast, und ergänzt Fehlendes. Ersetzen löscht zuerst deine aktuellen Daten."
+          }
         }
       }
     },
@@ -2869,6 +3883,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mesclar com meus dados"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mit meinen Daten zusammenführen"
           }
         }
       }
@@ -2887,6 +3907,12 @@
             "state": "translated",
             "value": "Mobilidade"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mobilität"
+          }
         }
       }
     },
@@ -2904,6 +3930,12 @@
             "state": "translated",
             "value": "Mobilidade / Aquecimento"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mobilität / Aufwärmen"
+          }
         }
       }
     },
@@ -2920,6 +3952,12 @@
             "state": "translated",
             "value": "Meus treinadores"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meine Trainer"
+          }
         }
       }
     },
@@ -2935,6 +3973,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "PRÓXIMO TREINO"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NÄCHSTES TRAINING"
           }
         }
       }
@@ -2953,6 +3997,12 @@
             "state": "translated",
             "value": "Nome"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name"
+          }
         }
       }
     },
@@ -2968,6 +4018,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nome (ex.: Segunda)"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name (z. B. Montag)"
           }
         }
       }
@@ -2986,6 +4042,12 @@
             "state": "translated",
             "value": "Sem treinador"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ohne Trainer"
+          }
         }
       }
     },
@@ -3001,6 +4063,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Novo exercício"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neue Übung"
           }
         }
       }
@@ -3018,6 +4086,12 @@
             "state": "translated",
             "value": "Estou começando"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neu im Training"
+          }
         }
       }
     },
@@ -3033,6 +4107,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Novo treino"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neues Training"
           }
         }
       }
@@ -3051,6 +4131,12 @@
             "state": "translated",
             "value": "Próximo"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weiter"
+          }
         }
       }
     },
@@ -3068,6 +4154,12 @@
             "state": "translated",
             "value": "Sem exercícios"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Übungen"
+          }
         }
       }
     },
@@ -3083,6 +4175,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ainda não há exercícios"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch keine Übungen"
           }
         }
       }
@@ -3101,6 +4199,12 @@
             "state": "translated",
             "value": "Ainda não há favoritos"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch keine Favoriten"
+          }
         }
       }
     },
@@ -3117,6 +4221,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nenhum arquivo foi selecionado."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es wurde keine Datei ausgewählt."
           }
         }
       }
@@ -3135,6 +4245,12 @@
             "state": "translated",
             "value": "Ainda não há histórico"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noch kein Verlauf"
+          }
         }
       }
     },
@@ -3150,6 +4266,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nota"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notiz"
           }
         }
       }
@@ -3168,6 +4290,12 @@
             "state": "translated",
             "value": "Nada encontrado"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nichts gefunden"
+          }
         }
       }
     },
@@ -3183,6 +4311,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nada desta sessão será salvo."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Von dieser Sitzung wird nichts gespeichert."
           }
         }
       }
@@ -3201,6 +4335,12 @@
             "state": "translated",
             "value": "Nenhum resultado"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Treffer"
+          }
         }
       }
     },
@@ -3218,6 +4358,12 @@
             "state": "translated",
             "value": "Nada para treinar"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nichts zu trainieren"
+          }
         }
       }
     },
@@ -3230,6 +4376,12 @@
           }
         },
         "pt-br": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "de": {
           "stringUnit": {
             "state": "translated",
             "value": "OK"
@@ -3250,6 +4402,12 @@
             "state": "translated",
             "value": "Desativado"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aus"
+          }
         }
       }
     },
@@ -3265,6 +4423,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ativado"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ein"
           }
         }
       }
@@ -3282,6 +4446,12 @@
             "state": "translated",
             "value": "Uma sessão trabalha o corpo todo. Ideal para treinar 2–3× por semana."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine Einheit trainiert alles. Ideal 2–3× pro Woche."
+          }
         }
       }
     },
@@ -3297,6 +4467,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Abra qualquer exercício e salve o vídeo que melhor o explica. Três formas de encontrar:"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Öffne eine beliebige Übung und speichere das Video, das sie am besten erklärt. Drei Wege, eines zu finden:"
           }
         }
       }
@@ -3314,6 +4490,12 @@
             "state": "translated",
             "value": "Abrir canal"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kanal öffnen"
+          }
         }
       }
     },
@@ -3330,6 +4512,12 @@
             "state": "translated",
             "value": "Abrir no YouTube"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In YouTube öffnen"
+          }
         }
       }
     },
@@ -3345,6 +4533,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Abre o YouTube para «%@». Escolha um vídeo que você goste, toque em Compartilhar → TubeTrainer (ou copie o link e cole acima) para defini-lo como seu treinador."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Öffnet YouTube für „%@“. Wähle ein Video, das dir gefällt, tippe auf Teilen → TubeTrainer (oder kopiere den Link und füge ihn oben ein), um es als deinen Trainer festzulegen."
           }
         }
       }
@@ -3363,6 +4557,12 @@
             "state": "translated",
             "value": "Outro"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonstige"
+          }
         }
       }
     },
@@ -3380,6 +4580,12 @@
             "state": "translated",
             "value": "Extensão de tríceps acima da cabeça"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trizeps-Überkopfdrücken"
+          }
         }
       }
     },
@@ -3395,6 +4601,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ANT"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VORH"
           }
         }
       }
@@ -3412,6 +4624,12 @@
             "state": "translated",
             "value": "Cole o link do YouTube"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "YouTube-Link einfügen"
+          }
         }
       }
     },
@@ -3427,6 +4645,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Colar chave"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schlüssel einfügen"
           }
         }
       }
@@ -3445,6 +4669,12 @@
             "state": "translated",
             "value": "Voador (pec deck)"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pec Deck (Butterfly)"
+          }
         }
       }
     },
@@ -3462,6 +4692,12 @@
             "state": "translated",
             "value": "Recordes pessoais"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Persönliche Rekorde"
+          }
         }
       }
     },
@@ -3477,6 +4713,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Escolha uma estrutura de treino"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wähle eine Trainingsstruktur"
           }
         }
       }
@@ -3495,6 +4737,12 @@
             "state": "translated",
             "value": "Prancha"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unterarmstütz"
+          }
         }
       }
     },
@@ -3511,6 +4759,12 @@
             "state": "translated",
             "value": "Reproduzir vídeo de treino: %@"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trainingsvideo abspielen: %@"
+          }
         }
       }
     },
@@ -3526,6 +4780,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prefere os resultados aqui mesmo? Adicione uma chave gratuita em Ajustes → Chave de busca do YouTube."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lieber Ergebnisse direkt hier? Füge in Einstellungen → YouTube-Suchschlüssel einen kostenlosen Schlüssel hinzu."
           }
         }
       }
@@ -3544,6 +4804,12 @@
             "state": "translated",
             "value": "Mantenha pressionado qualquer exercício para adicioná-lo aqui — útil para movimentos fora da sua divisão habitual."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Halte eine Übung gedrückt, um sie hier hinzuzufügen — praktisch für Übungen außerhalb deines üblichen Splits."
+          }
         }
       }
     },
@@ -3561,6 +4827,12 @@
             "state": "translated",
             "value": "Anterior"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zurück"
+          }
         }
       }
     },
@@ -3576,6 +4848,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Privacidade"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datenschutz"
           }
         }
       }
@@ -3594,6 +4872,12 @@
             "state": "translated",
             "value": "Perfil"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profil"
+          }
         }
       }
     },
@@ -3611,6 +4895,12 @@
             "state": "translated",
             "value": "Barra fixa"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klimmzug"
+          }
         }
       }
     },
@@ -3623,6 +4913,12 @@
           }
         },
         "pt-br": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Push / Pull / Legs"
+          }
+        },
+        "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Push / Pull / Legs"
@@ -3644,6 +4940,12 @@
             "state": "translated",
             "value": "Flexão"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liegestütze"
+          }
         }
       }
     },
@@ -3661,6 +4963,12 @@
             "state": "translated",
             "value": "Quadríceps"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quadrizeps"
+          }
         }
       }
     },
@@ -3676,6 +4984,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "PRONTO"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BEREIT"
           }
         }
       }
@@ -3693,6 +5007,12 @@
             "state": "translated",
             "value": "RECARREGANDO"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ERHOLUNG"
+          }
         }
       }
     },
@@ -3708,6 +5028,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "REPS"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WDH"
           }
         }
       }
@@ -3726,6 +5052,12 @@
             "state": "translated",
             "value": "Crucifixo inverso"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reverse Fly"
+          }
         }
       }
     },
@@ -3743,6 +5075,12 @@
             "state": "translated",
             "value": "Vídeos recentes"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zuletzt hinzugefügt"
+          }
         }
       }
     },
@@ -3758,6 +5096,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Remover"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entfernen"
           }
         }
       }
@@ -3775,6 +5119,12 @@
             "state": "translated",
             "value": "Remover treinador"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trainer entfernen"
+          }
         }
       }
     },
@@ -3790,6 +5140,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Remover dos favoritos"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aus Favoriten entfernen"
           }
         }
       }
@@ -3807,6 +5163,12 @@
             "state": "translated",
             "value": "Remover dos favoritos"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aus Favoriten entfernen"
+          }
         }
       }
     },
@@ -3822,6 +5184,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Remover chave"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schlüssel entfernen"
           }
         }
       }
@@ -3839,6 +5207,12 @@
             "state": "translated",
             "value": "Remove seus treinos atuais e cria %@. Seu histórico registrado é mantido."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entfernt deine aktuellen Trainings und erstellt %@. Dein protokollierter Verlauf bleibt erhalten."
+          }
         }
       }
     },
@@ -3854,6 +5228,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Renomear treino"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Training umbenennen"
           }
         }
       }
@@ -3871,6 +5251,12 @@
             "state": "translated",
             "value": "Substituir tudo"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alles ersetzen"
+          }
         }
       }
     },
@@ -3886,6 +5272,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Substituir por %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durch %@ ersetzen"
           }
         }
       }
@@ -3903,6 +5295,12 @@
             "state": "translated",
             "value": "Substitua seus treinos por uma divisão"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ersetze deine Trainings durch einen Split"
+          }
         }
       }
     },
@@ -3919,6 +5317,12 @@
             "state": "translated",
             "value": "Redefinir sua divisão?"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deinen Split zurücksetzen?"
+          }
         }
       }
     },
@@ -3934,6 +5338,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Descanso"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pause"
           }
         }
       }
@@ -3952,6 +5362,12 @@
             "state": "translated",
             "value": "Som de aviso de descanso"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausen-Signalton"
+          }
         }
       }
     },
@@ -3967,6 +5383,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Timer de descanso"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausen-Timer"
           }
         }
       }
@@ -3984,6 +5406,12 @@
             "state": "translated",
             "value": "Restaurar backup"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Backup wiederherstellen"
+          }
         }
       }
     },
@@ -4000,6 +5428,12 @@
             "state": "translated",
             "value": "%lld itens restaurados."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Einträge wiederhergestellt."
+          }
         }
       }
     },
@@ -4015,6 +5449,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tentar novamente"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erneut versuchen"
           }
         }
       }
@@ -4033,6 +5473,12 @@
             "state": "translated",
             "value": "Levantamento terra romeno"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rumänisches Kreuzheben"
+          }
         }
       }
     },
@@ -4050,6 +5496,12 @@
             "state": "translated",
             "value": "Máquina de remo"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rudergerät"
+          }
         }
       }
     },
@@ -4065,6 +5517,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "SÉRIE"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SATZ"
           }
         }
       }
@@ -4082,6 +5540,12 @@
             "state": "translated",
             "value": "Salvar"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speichern"
+          }
         }
       }
     },
@@ -4097,6 +5561,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Salvar chave"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schlüssel speichern"
           }
         }
       }
@@ -4114,6 +5584,12 @@
             "state": "translated",
             "value": "Salve os melhores vídeos de exercícios que encontrar no YouTube e deixe-os sempre à mão durante o treino."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speichere die besten Übungsvideos, die du auf YouTube findest, und hab sie direkt neben deinem Training."
+          }
         }
       }
     },
@@ -4129,6 +5605,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Salve a explicação que faz este exercício fazer sentido para você."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speichere die Erklärung, die dir diese Übung verständlich macht."
           }
         }
       }
@@ -4147,6 +5629,12 @@
             "state": "translated",
             "value": "Buscar"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suchen"
+          }
         }
       }
     },
@@ -4162,6 +5650,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Buscar no YouTube"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auf YouTube suchen"
           }
         }
       }
@@ -4180,6 +5674,12 @@
             "state": "translated",
             "value": "Buscar treinadores no YouTube"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trainer auf YouTube suchen"
+          }
         }
       }
     },
@@ -4197,6 +5697,12 @@
             "state": "translated",
             "value": "Buscar exercícios"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Übungen suchen"
+          }
         }
       }
     },
@@ -4212,6 +5718,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Buscar no YouTube"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auf YouTube suchen"
           }
         }
       }
@@ -4230,6 +5742,12 @@
             "state": "translated",
             "value": "Buscar seus exercícios"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deine Übungen suchen"
+          }
         }
       }
     },
@@ -4245,6 +5763,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Assento 4. Mantenha os cotovelos levemente à frente."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sitz 4. Ellbogen leicht nach vorne."
           }
         }
       }
@@ -4263,6 +5787,12 @@
             "state": "translated",
             "value": "Remada sentada na polia"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sitzendes Kabelrudern"
+          }
         }
       }
     },
@@ -4280,6 +5810,12 @@
             "state": "translated",
             "value": "Panturrilha sentado"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sitzendes Wadenheben"
+          }
         }
       }
     },
@@ -4295,6 +5831,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Série %lld"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Satz %lld"
           }
         }
       }
@@ -4312,6 +5854,12 @@
             "state": "translated",
             "value": "Definir como meu treinador"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Als meinen Trainer festlegen"
+          }
         }
       }
     },
@@ -4324,6 +5872,12 @@
           }
         },
         "pt-br": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Short"
+          }
+        },
+        "de": {
           "stringUnit": {
             "state": "translated",
             "value": "Short"
@@ -4345,6 +5899,12 @@
             "state": "translated",
             "value": "Ombros"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schultern"
+          }
         }
       }
     },
@@ -4360,6 +5920,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pular"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Überspringen"
           }
         }
       }
@@ -4377,6 +5943,12 @@
             "state": "translated",
             "value": "Agora não"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jetzt nicht"
+          }
         }
       }
     },
@@ -4392,6 +5964,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pular descanso"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pause überspringen"
           }
         }
       }
@@ -4410,6 +5988,12 @@
             "state": "translated",
             "value": "Tríceps testa"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skull Crusher"
+          }
         }
       }
     },
@@ -4425,6 +6009,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tenho alguma experiência"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Etwas Erfahrung"
           }
         }
       }
@@ -4443,6 +6033,12 @@
             "state": "translated",
             "value": "Panturrilha em pé"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stehendes Wadenheben"
+          }
         }
       }
     },
@@ -4458,6 +6054,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Começar treino"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Training starten"
           }
         }
       }
@@ -4475,6 +6077,12 @@
             "state": "translated",
             "value": "Começar o vídeo em um momento específico"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Video an einer bestimmten Stelle starten"
+          }
         }
       }
     },
@@ -4490,6 +6098,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Comece do zero e monte do seu jeito."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leer starten und nach deinen Vorstellungen aufbauen."
           }
         }
       }
@@ -4507,6 +6121,12 @@
             "state": "translated",
             "value": "Começar por uma divisão"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mit einem Split starten"
+          }
         }
       }
     },
@@ -4522,6 +6142,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Começa em %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Startet bei %@"
           }
         }
       }
@@ -4540,6 +6166,12 @@
             "state": "translated",
             "value": "Bicicleta ergométrica"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ergometer"
+          }
         }
       }
     },
@@ -4555,6 +6187,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sistema"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System"
           }
         }
       }
@@ -4573,6 +6211,12 @@
             "state": "translated",
             "value": "Não foi possível ler o arquivo."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diese Datei konnte nicht gelesen werden."
+          }
         }
       }
     },
@@ -4588,6 +6232,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "A clássica divisão de força de 3 dias."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der klassische 3-Tage-Kraft-Split."
           }
         }
       }
@@ -4606,6 +6256,12 @@
             "state": "translated",
             "value": "Tema"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Design"
+          }
         }
       }
     },
@@ -4622,6 +6278,12 @@
             "state": "translated",
             "value": "Isto remove o treino. Seu histórico registrado é mantido."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das entfernt das Training. Dein protokollierter Verlauf bleibt erhalten."
+          }
         }
       }
     },
@@ -4637,6 +6299,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Isto ajusta as sugestões iniciais. Você pode mudar tudo depois."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das passt die Startvorschläge an. Du kannst später alles ändern."
           }
         }
       }
@@ -4655,6 +6323,12 @@
             "state": "translated",
             "value": "Este treino não tem exercícios."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieses Training hat keine Übungen."
+          }
         }
       }
     },
@@ -4670,6 +6344,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hoje"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heute"
           }
         }
       }
@@ -4688,6 +6368,12 @@
             "state": "translated",
             "value": "Treinar"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trainieren"
+          }
         }
       }
     },
@@ -4704,6 +6390,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Treino"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Training"
           }
         }
       }
@@ -4722,6 +6414,12 @@
             "state": "translated",
             "value": "Esteira"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laufband"
+          }
         }
       }
     },
@@ -4738,6 +6436,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tríceps"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trizeps"
           }
         }
       }
@@ -4756,6 +6460,12 @@
             "state": "translated",
             "value": "Tríceps na polia"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trizepsdrücken am Kabel"
+          }
         }
       }
     },
@@ -4772,6 +6482,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tente outras palavras ou crie um exercício personalizado."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versuche andere Wörter oder erstelle eine eigene Übung."
           }
         }
       }
@@ -4790,6 +6506,12 @@
             "state": "translated",
             "value": "Tente outras palavras ou cole um link que você já tem."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versuche andere Wörter oder füge einen Link ein, den du schon hast."
+          }
         }
       }
     },
@@ -4805,6 +6527,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "O TubeTrainer não tem conta, servidor nem analytics. Tudo o que você registra fica localmente no app e só sai do seu dispositivo se você exportar um backup. \n\nO app se conecta ao YouTube apenas para encontrar, pré-visualizar e abrir os vídeos de treino que você escolher. Nunca baixamos nem armazenamos os vídeos em si — apenas links e dados básicos como título e miniatura.\n\nSe você adicionar sua própria chave de API do YouTube para a busca no app, ela é salva localmente neste dispositivo e usada apenas para se comunicar com o serviço YouTube do Google."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TubeTrainer hat kein Konto, keinen Server und keine Analytics. Alles, was du protokollierst, bleibt lokal in der App und verlässt dein Gerät nur, wenn du selbst ein Backup exportierst.\n\nDie App spricht mit YouTube nur, um die von dir gewählten Trainingsvideos zu finden, in der Vorschau zu zeigen und zu öffnen. Wir laden oder speichern die Videos nie selbst — nur Links und grundlegende Metadaten wie Titel und Vorschaubild.\n\nWenn du deinen eigenen YouTube-API-Schlüssel für die In-App-Suche hinzufügst, wird er lokal auf diesem Gerät gespeichert und ausschließlich für die Kommunikation mit Googles YouTube-Dienst genutzt."
           }
         }
       }
@@ -4823,6 +6551,12 @@
             "state": "translated",
             "value": "Unidades"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einheiten"
+          }
         }
       }
     },
@@ -4840,6 +6574,12 @@
             "state": "translated",
             "value": "Erro desconhecido."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unbekannter Fehler."
+          }
         }
       }
     },
@@ -4855,6 +6595,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Atualizar chave"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schlüssel aktualisieren"
           }
         }
       }
@@ -4872,6 +6618,12 @@
             "state": "translated",
             "value": "Superior / Inferior"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oberkörper / Unterkörper"
+          }
         }
       }
     },
@@ -4888,6 +6640,12 @@
             "state": "translated",
             "value": "Usar padrão"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard verwenden"
+          }
         }
       }
     },
@@ -4903,6 +6661,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Usar isto para %@?"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dies für %@ verwenden?"
           }
         }
       }
@@ -4921,6 +6685,12 @@
             "state": "translated",
             "value": "Versão"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version"
+          }
         }
       }
     },
@@ -4936,6 +6706,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vídeo"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Video"
           }
         }
       }
@@ -4953,6 +6729,12 @@
             "state": "translated",
             "value": "Vídeo indisponível no momento"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Video derzeit nicht verfügbar"
+          }
         }
       }
     },
@@ -4968,6 +6750,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ver plano"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plan ansehen"
           }
         }
       }
@@ -4986,6 +6774,12 @@
             "state": "translated",
             "value": "Volume"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volumen"
+          }
         }
       }
     },
@@ -5001,6 +6795,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "TREINO"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TRAINING"
           }
         }
       }
@@ -5019,6 +6819,12 @@
             "state": "translated",
             "value": "Afundo caminhando"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gehende Ausfallschritte"
+          }
         }
       }
     },
@@ -5034,6 +6840,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vamos manter as metas de séries simples."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wir halten die Satz-Ziele einfach."
           }
         }
       }
@@ -5051,6 +6863,12 @@
             "state": "translated",
             "value": "Vamos usá-lo para te cumprimentar. Opcional — você pode adicionar ou mudar quando quiser na seção Você."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wir nutzen ihn, um dich zu begrüßen. Optional — du kannst ihn jederzeit im Bereich „Du“ hinzufügen oder ändern."
+          }
         }
       }
     },
@@ -5066,6 +6884,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Como devemos te chamar?"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wie sollen wir dich nennen?"
           }
         }
       }
@@ -5084,6 +6908,12 @@
             "state": "translated",
             "value": "Com quem você aprende?"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Von wem lernst du?"
+          }
         }
       }
     },
@@ -5101,6 +6931,12 @@
             "state": "translated",
             "value": "Séries de trabalho"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arbeitssätze"
+          }
         }
       }
     },
@@ -5117,6 +6953,12 @@
             "state": "translated",
             "value": "Nome do treino"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trainingsname"
+          }
         }
       }
     },
@@ -5130,6 +6972,12 @@
           }
         },
         "pt-br": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "World's Greatest Stretch"
+          }
+        },
+        "de": {
           "stringUnit": {
             "state": "translated",
             "value": "World's Greatest Stretch"
@@ -5150,6 +6998,12 @@
             "state": "translated",
             "value": "CHAVE DE API DO YOUTUBE"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "YOUTUBE-DATA-API-SCHLÜSSEL"
+          }
         }
       }
     },
@@ -5165,6 +7019,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ontem"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gestern"
           }
         }
       }
@@ -5182,6 +7042,12 @@
             "state": "translated",
             "value": "Você"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Du"
+          }
         }
       }
     },
@@ -5197,6 +7063,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você pode trocar o vídeo escolhido quando quiser."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Du kannst dein gewähltes Video jederzeit ändern."
           }
         }
       }
@@ -5214,6 +7086,12 @@
             "state": "translated",
             "value": "Você já sabe o que faz."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Du kennst dich aus."
+          }
         }
       }
     },
@@ -5229,6 +7107,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Busca do YouTube"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "YouTube-Suche"
           }
         }
       }
@@ -5247,6 +7131,12 @@
             "state": "translated",
             "value": "Chave de busca do YouTube"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "YouTube-Suchschlüssel"
+          }
         }
       }
     },
@@ -5264,6 +7154,12 @@
             "state": "translated",
             "value": "Seu catálogo está vazio."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dein Katalog ist leer."
+          }
         }
       }
     },
@@ -5280,6 +7176,12 @@
             "state": "translated",
             "value": "Seus treinadores.\nSeus exercícios.\nSeu progresso."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deine Trainer.\nDeine Übungen.\nDein Fortschritt."
+          }
         }
       }
     },
@@ -5295,6 +7197,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sua biblioteca de treinadores"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deine Trainer-Bibliothek"
           }
         }
       }
@@ -5313,6 +7221,12 @@
             "state": "translated",
             "value": "Seus dados atuais não foram alterados."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deine vorhandenen Daten wurden nicht geändert."
+          }
         }
       }
     },
@@ -5330,6 +7244,12 @@
             "state": "translated",
             "value": "Sua primeira sessão começa aqui"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deine erste Sitzung beginnt hier"
+          }
         }
       }
     },
@@ -5346,6 +7266,12 @@
             "state": "translated",
             "value": "Seu nome"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dein Name"
+          }
         }
       }
     },
@@ -5361,6 +7287,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Suas séries de %@ aparecerão aqui."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deine Sätze für %@ erscheinen hier."
           }
         }
       }
@@ -5379,6 +7311,12 @@
             "state": "translated",
             "value": "Toda a sua biblioteca tem treinador. Boa!"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deine ganze Bibliothek hat Trainer. Stark!"
+          }
         }
       }
     },
@@ -5396,6 +7334,12 @@
             "state": "translated",
             "value": "Seus treinos"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deine Trainings"
+          }
         }
       }
     },
@@ -5411,6 +7355,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Seus treinos ficam no seu dispositivo."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deine Trainings bleiben auf deinem Gerät."
           }
         }
       }
@@ -5428,6 +7378,12 @@
             "state": "translated",
             "value": "ex.: 2:14 ou 134"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "z. B. 2:14 oder 134"
+          }
         }
       }
     },
@@ -5443,6 +7399,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "ex.: Jeff Nippard"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "z. B. Jeff Nippard"
           }
         }
       }
@@ -5460,6 +7422,12 @@
             "state": "translated",
             "value": "ex.: RDL, stiff"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "z. B. RDL, gestreckt"
+          }
         }
       }
     },
@@ -5476,6 +7444,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "de %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "von %@"
           }
         }
       }
@@ -5495,6 +7469,12 @@
             "state": "translated",
             "value": "✓ Usar padrão (%@)"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ Standard verwenden (%@)"
+          }
         }
       }
     },
@@ -5510,6 +7490,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Treinos"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trainings"
           }
         }
       }
@@ -5527,6 +7513,12 @@
             "state": "translated",
             "value": "Séries"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sätze"
+          }
         }
       }
     },
@@ -5542,6 +7534,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Esta semana"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diese Woche"
           }
         }
       }
