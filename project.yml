@@ -10,10 +10,13 @@ settings:
     SWIFT_VERSION: "5.0"
     DEVELOPMENT_TEAM: "7XY8PA34AM"
     CODE_SIGN_STYLE: Automatic
-    MARKETING_VERSION: "1.0"
-    CURRENT_PROJECT_VERSION: "3"
+    MARKETING_VERSION: "1.1"
+    CURRENT_PROJECT_VERSION: "4"
     ENABLE_USER_SCRIPT_SANDBOXING: YES
     GENERATE_INFOPLIST_FILE: YES
+    # Compiler extracts Text()/String(localized:) literals into the String Catalog,
+    # so re-running a build refreshes Localizable.xcstrings when UI strings change.
+    SWIFT_EMIT_LOC_STRINGS: YES
 targets:
   TubeTrainer:
     type: application
@@ -80,15 +83,28 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: app.tubetrainer.ios.tests
         GENERATE_INFOPLIST_FILE: YES
+  TubeTrainerUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: TubeTrainerUITests
+    dependencies:
+      - target: TubeTrainer
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.tubetrainer.ios.uitests
+        GENERATE_INFOPLIST_FILE: YES
 schemes:
   TubeTrainer:
     build:
       targets:
         TubeTrainer: all
         TubeTrainerTests: [test]
+        TubeTrainerUITests: [test]
     test:
       targets:
         - TubeTrainerTests
+        - TubeTrainerUITests
       gatherCoverageData: false
       disableMainThreadChecker: true
       environmentVariables:

@@ -19,6 +19,15 @@ final class AppSettings {
         static let youtubeAPIKey = "tt.youtubeAPIKey"
         static let restAlertSound = "tt.restAlertSound"
         static let nickname = "tt.nickname"
+        static let appLanguage = "tt.appLanguage"
+    }
+
+    /// In-app language override. "" = follow the device/system language (default).
+    var appLanguage: String {
+        didSet {
+            defaults.set(appLanguage, forKey: Key.appLanguage)
+            AppLanguage.apply(appLanguage.isEmpty ? nil : appLanguage)
+        }
     }
 
     /// Optional first name used in the Today greeting. Empty => greeting only.
@@ -89,6 +98,15 @@ final class AppSettings {
         onboardingComplete = defaults.bool(forKey: Key.onboarded)
         youtubeAPIKey = defaults.string(forKey: Key.youtubeAPIKey) ?? ""
         nickname = defaults.string(forKey: Key.nickname) ?? ""
+        // Under UI-test seeding, ignore any saved override entirely (both the bundle
+        // redirect and the environment locale) so the harness drives language purely
+        // via -AppleLanguages. Otherwise load + apply the user's stored choice.
+        if ProcessInfo.processInfo.arguments.contains("-seedSample") {
+            appLanguage = ""
+        } else {
+            appLanguage = defaults.string(forKey: Key.appLanguage) ?? ""
+            AppLanguage.apply(appLanguage.isEmpty ? nil : appLanguage)
+        }
     }
 
     /// Common rest presets in seconds.

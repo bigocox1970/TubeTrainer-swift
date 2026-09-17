@@ -65,7 +65,7 @@ struct TTVideoHero: View {
                         Spacer()
                         HStack {
                             Spacer()
-                            TTBadge(text: "Starts \(TTFormat.rest(start))", systemImage: "clock.fill", style: .neutral)
+                            TTBadge(text: String(localized: "Starts \(TTFormat.rest(start))"), systemImage: "clock.fill", style: .neutral)
                                 .padding(TTSpace.xs)
                         }
                     }

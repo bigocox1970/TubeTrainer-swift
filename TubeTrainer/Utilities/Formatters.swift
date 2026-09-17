@@ -7,13 +7,20 @@ enum TTFormat {
         "\(number(value)) \(unit.label)"
     }
 
+    /// Locale-aware decimal: integers show clean, fractions up to 2 dp using the
+    /// user's decimal separator (e.g. "12,5" in es/de, "12.5" in en). No grouping —
+    /// these are gym weights, not large numbers.
+    private static let decimal: NumberFormatter = {
+        let f = NumberFormatter()
+        f.numberStyle = .decimal
+        f.minimumFractionDigits = 0
+        f.maximumFractionDigits = 2
+        f.usesGroupingSeparator = false
+        return f
+    }()
+
     static func number(_ value: Double) -> String {
-        if value == value.rounded() {
-            return String(Int(value))
-        }
-        return String(format: "%.2f", value)
-            .replacingOccurrences(of: "0$", with: "", options: .regularExpression)
-            .replacingOccurrences(of: "\\.$", with: "", options: .regularExpression)
+        decimal.string(from: NSNumber(value: value)) ?? String(value)
     }
 
     /// "80 × 8"
@@ -33,11 +40,18 @@ enum TTFormat {
         return String(format: "%d:%02d", m, sec)
     }
 
-    /// Duration in human words: "54 min", "1 hr 12 min".
+    /// Duration in human words, localized: "54 min", "1h 12m" (units follow locale).
+    private static let durationFormatter: DateComponentsFormatter = {
+        let f = DateComponentsFormatter()
+        f.allowedUnits = [.hour, .minute]
+        f.unitsStyle = .abbreviated
+        f.zeroFormattingBehavior = .dropAll
+        return f
+    }()
+
     static func duration(_ seconds: Int) -> String {
-        let m = max(0, seconds) / 60
-        if m < 60 { return "\(m) min" }
-        return "\(m / 60) hr \(m % 60) min"
+        // Floor at one minute so a short session never renders empty.
+        durationFormatter.string(from: TimeInterval(max(60, seconds))) ?? ""
     }
 
     /// Rest presets label "1:30", "2:00".
@@ -55,31 +69,28 @@ enum TTFormat {
         return f
     }()
 
-    /// "Last trained Monday" style — weekday within a week, else relative.
+    /// "Last trained Monday" style — weekday within a week, else relative. All locale-aware.
     static func lastTrained(_ date: Date, now: Date = .now) -> String {
         let cal = Calendar.current
-        if cal.isDateInToday(date) { return "Today" }
-        if cal.isDateInYesterday(date) { return "Yesterday" }
+        if cal.isDateInToday(date) { return String(localized: "Today") }
+        if cal.isDateInYesterday(date) { return String(localized: "Yesterday") }
         let days = cal.dateComponents([.day], from: cal.startOfDay(for: date), to: cal.startOfDay(for: now)).day ?? 0
         if days < 7 {
-            let f = DateFormatter()
-            f.dateFormat = "EEEE"
-            return f.string(from: date)
+            return date.formatted(.dateTime.weekday(.wide))   // localized weekday name
         }
         return relative.localizedString(for: date, relativeTo: now)
     }
 
     static func mediumDate(_ date: Date) -> String {
-        let f = DateFormatter()
-        f.dateStyle = .medium
-        f.timeStyle = .none
-        return f.string(from: date)
+        date.formatted(date: .abbreviated, time: .omitted)     // locale medium date
     }
 
+    /// Localized weekday + day + month + time, e.g. "Mon 8 Sep · 14:30" / "lun 8 sept, 14:30".
+    /// Word order and 12/24-hour follow the user's locale.
     static func dayAndTime(_ date: Date) -> String {
-        let f = DateFormatter()
-        f.dateFormat = "EEE d MMM · HH:mm"
-        return f.string(from: date)
+        let day = date.formatted(.dateTime.weekday(.abbreviated).day().month(.abbreviated))
+        let time = date.formatted(date: .omitted, time: .shortened)
+        return "\(day) · \(time)"
     }
 }
 

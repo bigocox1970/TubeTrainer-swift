@@ -1,5 +1,16 @@
 import SwiftUI
 
+// MARK: - Localization helper
+
+/// Localize an English string that is used as its own String Catalog key.
+/// Returns the translation when one exists, otherwise the English key itself —
+/// so base language, missing translations, and user-entered text (e.g. custom
+/// exercise names) all render safely with zero risk of a raw key leaking to the UI.
+/// This is the single choke-point for data-driven (non-literal) localization.
+func TTLocalized(_ english: String) -> String {
+    NSLocalizedString(english, comment: "")
+}
+
 // MARK: - Muscle / body categories
 
 enum MuscleCategory: String, Codable, CaseIterable, Identifiable, Hashable {
@@ -19,11 +30,14 @@ enum MuscleCategory: String, Codable, CaseIterable, Identifiable, Hashable {
 
     var id: String { rawValue }
 
+    /// Localized full name (rawValue is the English key, and stays the stable stored value).
+    var displayName: String { TTLocalized(rawValue) }
+
     var shortName: String {
         switch self {
-        case .mobility: return "Mobility"
-        case .fullBody: return "Full Body"
-        default: return rawValue
+        case .mobility: return TTLocalized("Mobility")
+        case .fullBody: return TTLocalized("Full Body")
+        default: return displayName
         }
     }
 
@@ -55,6 +69,9 @@ enum Equipment: String, Codable, CaseIterable, Identifiable, Hashable {
     case other = "Other"
 
     var id: String { rawValue }
+
+    /// Localized equipment name (rawValue is the English key + stable stored value).
+    var displayName: String { TTLocalized(rawValue) }
 }
 
 // MARK: - Coaching content
@@ -69,8 +86,8 @@ enum VideoContentType: String, Codable {
 
     var label: String {
         switch self {
-        case .video: return "Video"
-        case .short: return "Short"
+        case .video: return String(localized: "Video")
+        case .short: return String(localized: "Short")
         }
     }
 }
@@ -114,9 +131,9 @@ enum AppearancePreference: String, Codable, CaseIterable, Identifiable {
 
     var label: String {
         switch self {
-        case .system: return "System"
-        case .dark: return "Dark"
-        case .light: return "Light"
+        case .system: return String(localized: "System")
+        case .dark: return String(localized: "Dark")
+        case .light: return String(localized: "Light")
         }
     }
 
@@ -140,17 +157,17 @@ enum ExperienceLevel: String, Codable, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .new: return "New to training"
-        case .some: return "Some experience"
-        case .experienced: return "Experienced"
+        case .new: return String(localized: "New to training")
+        case .some: return String(localized: "Some experience")
+        case .experienced: return String(localized: "Experienced")
         }
     }
 
     var blurb: String {
         switch self {
-        case .new: return "We'll keep set targets simple."
-        case .some: return "A balanced starting point."
-        case .experienced: return "You know your way around."
+        case .new: return String(localized: "We'll keep set targets simple.")
+        case .some: return String(localized: "A balanced starting point.")
+        case .experienced: return String(localized: "You know your way around.")
         }
     }
 }
@@ -168,21 +185,21 @@ enum TrainingStructure: String, Codable, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .fullBody: return "Full Body"
-        case .upperLower: return "Upper / Lower"
-        case .pushPullLegs: return "Push / Pull / Legs"
-        case .bodyPart: return "Body Part Split"
-        case .custom: return "Build My Own"
+        case .fullBody: return String(localized: "Full Body")
+        case .upperLower: return String(localized: "Upper / Lower")
+        case .pushPullLegs: return String(localized: "Push / Pull / Legs")
+        case .bodyPart: return String(localized: "Body Part Split")
+        case .custom: return String(localized: "Build My Own")
         }
     }
 
     var blurb: String {
         switch self {
-        case .fullBody: return "One session hits everything. Great 2–3× per week."
-        case .upperLower: return "Alternate upper- and lower-body days."
-        case .pushPullLegs: return "The classic 3-day strength split."
-        case .bodyPart: return "A focused day per muscle group."
-        case .custom: return "Start empty and build it your way."
+        case .fullBody: return String(localized: "One session hits everything. Great 2–3× per week.")
+        case .upperLower: return String(localized: "Alternate upper- and lower-body days.")
+        case .pushPullLegs: return String(localized: "The classic 3-day strength split.")
+        case .bodyPart: return String(localized: "A focused day per muscle group.")
+        case .custom: return String(localized: "Start empty and build it your way.")
         }
     }
 

@@ -72,7 +72,7 @@ struct HistoryView: View {
     private func statTile(_ value: String, _ label: String) -> some View {
         VStack(spacing: 4) {
             Text(value).font(TTFont.numeric(22, weight: .bold)).foregroundStyle(TTColor.textPrimary)
-            Text(label).font(TTFont.caption()).foregroundStyle(TTColor.textSecondary)
+            Text(TTLocalized(label)).font(TTFont.caption()).foregroundStyle(TTColor.textSecondary)
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, TTSpace.md)
@@ -107,7 +107,7 @@ struct SessionHistoryRow: View {
             }
             .frame(width: 50, height: 50)
             VStack(alignment: .leading, spacing: 2) {
-                Text(session.nameSnapshot).font(TTFont.headline()).foregroundStyle(TTColor.textPrimary)
+                Text(TTLocalized(session.nameSnapshot)).font(TTFont.headline()).foregroundStyle(TTColor.textPrimary)
                 Text("\(session.orderedExercises.count) exercises · \(session.completedSetCount) sets · \(TTFormat.duration(session.durationSeconds))")
                     .font(TTFont.caption()).foregroundStyle(TTColor.textSecondary)
             }
@@ -164,7 +164,7 @@ struct SessionDetailView: View {
                 .padding(TTSpace.md)
             }
         }
-        .navigationTitle(session.nameSnapshot)
+        .navigationTitle(TTLocalized(session.nameSnapshot))
         .navigationBarTitleDisplayMode(.inline)
     }
 }

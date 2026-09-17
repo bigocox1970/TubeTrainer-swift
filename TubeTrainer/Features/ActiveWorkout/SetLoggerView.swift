@@ -183,6 +183,7 @@ struct SetRow: View {
             }
             .buttonStyle(.plain)
             .accessibilityLabel(set.isCompleted ? "Mark set \(set.setNumber) incomplete" : "Complete set \(set.setNumber)")
+            .accessibilityIdentifier("completeSet")
         }
         .padding(.horizontal, TTSpace.xs)
         .padding(.vertical, 6)

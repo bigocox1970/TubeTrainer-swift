@@ -3,7 +3,7 @@ import SwiftUI
 // MARK: - Primary button (brand red, high-emphasis)
 
 struct TTPrimaryButton: View {
-    let title: String
+    let title: LocalizedStringKey
     var systemImage: String?
     var isLoading: Bool = false
     var fullWidth: Bool = true
@@ -39,7 +39,7 @@ struct TTPrimaryButton: View {
 // MARK: - Secondary button (surface, medium emphasis)
 
 struct TTSecondaryButton: View {
-    let title: String
+    let title: LocalizedStringKey
     var systemImage: String?
     var fullWidth: Bool = true
     let action: () -> Void
@@ -94,7 +94,7 @@ struct TTIconButton: View {
 // MARK: - Text link button
 
 struct TTTextButton: View {
-    let title: String
+    let title: LocalizedStringKey
     var color: Color = TTColor.brandRed
     let action: () -> Void
     var body: some View {

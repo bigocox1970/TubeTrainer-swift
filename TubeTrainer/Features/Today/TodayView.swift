@@ -98,14 +98,14 @@ struct TodayView: View {
     private var greeting: String {
         let name = settings.nickname.trimmingCharacters(in: .whitespaces)
         // With a name: keep the prefix tiny so long names still fit.
-        if !name.isEmpty { return "Hey \(name)" }
+        if !name.isEmpty { return String(localized: "Hey \(name)") }
         // No name: room for the full time-of-day greeting.
         let hour = Calendar.current.component(.hour, from: .now)
         switch hour {
-        case 5..<12: return "Good morning"
-        case 12..<17: return "Good afternoon"
-        case 17..<22: return "Good evening"
-        default: return "Good evening"
+        case 5..<12: return String(localized: "Good morning")
+        case 12..<17: return String(localized: "Good afternoon")
+        case 17..<22: return String(localized: "Good evening")
+        default: return String(localized: "Good evening")
         }
     }
 
@@ -122,7 +122,7 @@ struct TodayView: View {
                     .background(TTColor.brandRed.opacity(0.35), in: Circle())
                 VStack(alignment: .leading, spacing: 2) {
                     Text("Continue workout").font(TTFont.headline()).foregroundStyle(.white)
-                    Text("\(session.nameSnapshot) · \(session.completedSetCount) sets logged")
+                    Text("\(TTLocalized(session.nameSnapshot)) · \(session.completedSetCount) sets logged")
                         .font(TTFont.caption()).foregroundStyle(.white.opacity(0.8))
                 }
                 Spacer()
@@ -183,7 +183,7 @@ struct TodayView: View {
                 Text(isNext ? "NEXT WORKOUT" : "WORKOUT")
                     .font(TTFont.caption()).tracking(1.4)
                     .foregroundStyle(TTColor.brandRed)
-                Text(template.name.uppercased())
+                Text(TTLocalized(template.name).uppercased())
                     .font(TTFont.hero())
                     .foregroundStyle(TTColor.textPrimary)
                     .lineLimit(2).minimumScaleFactor(0.6)
@@ -440,7 +440,7 @@ struct WorkoutSummaryRow: View {
             }
             .frame(width: 46, height: 46)
             VStack(alignment: .leading, spacing: 2) {
-                Text(template.name).font(TTFont.headline()).foregroundStyle(TTColor.textPrimary)
+                Text(TTLocalized(template.name)).font(TTFont.headline()).foregroundStyle(TTColor.textPrimary)
                 Text("\(template.exercises.count) exercises")
                     .font(TTFont.caption()).foregroundStyle(TTColor.textSecondary)
             }
@@ -461,7 +461,7 @@ struct RecentCoachingCard: View {
                         contentType: exercise.primaryCoach?.contentType ?? .video)
                 .frame(width: 200, height: 112)
                 .clipShape(RoundedRectangle(cornerRadius: TTRadius.md, style: .continuous))
-            Text(exercise.name).font(TTFont.subheadline().weight(.semibold))
+            Text(exercise.displayName).font(TTFont.subheadline().weight(.semibold))
                 .foregroundStyle(TTColor.textPrimary).lineLimit(1)
             Text(exercise.primaryCoach?.channelName ?? "")
                 .font(TTFont.caption()).foregroundStyle(TTColor.textSecondary).lineLimit(1)

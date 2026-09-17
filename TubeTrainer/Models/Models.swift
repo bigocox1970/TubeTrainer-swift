@@ -24,6 +24,10 @@ final class Exercise {
     @Relationship(deleteRule: .cascade, inverse: \CoachingSource.exercise)
     var coachingSources: [CoachingSource]
 
+    /// Localized display name. Built-in exercises translate via the String Catalog
+    /// (the English name is the key); custom exercises show exactly what the user typed.
+    var displayName: String { isCustom ? name : TTLocalized(name) }
+
     init(
         id: UUID = UUID(),
         name: String,
@@ -315,7 +319,8 @@ final class ExerciseSession {
     }
 
     var displayName: String {
-        exercise?.name ?? exerciseNameSnapshot
+        // Prefer the live exercise (localizes built-ins); fall back to the stored snapshot.
+        exercise?.displayName ?? TTLocalized(exerciseNameSnapshot)
     }
 }
 

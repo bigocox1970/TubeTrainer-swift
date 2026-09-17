@@ -38,10 +38,10 @@ struct TTExerciseRow: View {
                             .foregroundStyle(TTColor.brandRed)
                             .accessibilityLabel("Favourite")
                     }
-                    Text(exercise.name)
+                    Text(exercise.displayName)
                         .font(TTFont.headline())
                         .foregroundStyle(TTColor.textPrimary)
-                        .lineLimit(1)
+                        .lineLimit(2)
                 }
                 HStack(spacing: TTSpace.xs) {
                     Text(exercise.category.shortName)

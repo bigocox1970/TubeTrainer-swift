@@ -49,12 +49,12 @@ struct OnboardingView: View {
 // MARK: - Shared chrome
 
 private struct OnboardingScaffold<Content: View>: View {
-    let title: String
-    var subtitle: String?
-    var primaryTitle: String = "Continue"
+    let title: LocalizedStringKey
+    var subtitle: LocalizedStringKey?
+    var primaryTitle: LocalizedStringKey = "Continue"
     var onPrimary: () -> Void
     var onBack: (() -> Void)?
-    var secondary: (title: String, action: () -> Void)?
+    var secondary: (title: LocalizedStringKey, action: () -> Void)?
     @ViewBuilder var content: Content
 
     var body: some View {

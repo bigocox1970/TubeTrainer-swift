@@ -119,7 +119,7 @@ struct ActiveWorkoutView: View {
 
             Spacer()
             VStack(spacing: 0) {
-                Text(session.nameSnapshot.uppercased())
+                Text(TTLocalized(session.nameSnapshot).uppercased())
                     .font(TTFont.caption()).tracking(1.2)
                     .foregroundStyle(TTColor.textSecondary)
                 Text(TTFormat.clock(elapsed))
@@ -192,7 +192,7 @@ struct ActiveWorkoutView: View {
                         .font(TTFont.largeTitle())
                         .foregroundStyle(TTColor.textPrimary)
                     if let exercise = exSession.exercise {
-                        Text("\(exercise.category.shortName) · \(exercise.equipment.rawValue)")
+                        Text("\(exercise.category.shortName) · \(exercise.equipment.displayName)")
                             .font(TTFont.subheadline())
                             .foregroundStyle(TTColor.textSecondary)
                     }
@@ -265,7 +265,7 @@ struct ActiveWorkoutView: View {
         }) {
             HStack(spacing: TTSpace.xs) {
                 if system == "chevron.left" { Image(systemName: system) }
-                Text(label).font(TTFont.headline())
+                Text(TTLocalized(label)).font(TTFont.headline())
                 if system == "chevron.right" { Image(systemName: system) }
             }
             .frame(maxWidth: .infinity)

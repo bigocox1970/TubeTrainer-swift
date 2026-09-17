@@ -77,7 +77,7 @@ struct CoachRow: View {
             .frame(width: 48, height: 48)
             VStack(alignment: .leading, spacing: 2) {
                 Text(coach.name).font(TTFont.headline()).foregroundStyle(TTColor.textPrimary)
-                Text(exerciseCount == 0 ? "No exercises yet" : "\(exerciseCount) exercise\(exerciseCount == 1 ? "" : "s")")
+                Text(exerciseCount == 0 ? "No exercises yet" : "\(exerciseCount) exercises")
                     .font(TTFont.caption()).foregroundStyle(TTColor.textSecondary)
             }
             Spacer()

@@ -48,7 +48,7 @@ struct YouView: View {
             }
         }
         .alert(item: $alert) { a in
-            Alert(title: Text(a.title), message: Text(a.message), dismissButton: .default(Text("OK")))
+            Alert(title: Text(TTLocalized(a.title)), message: Text(TTLocalized(a.message)), dismissButton: .default(Text("OK")))
         }
     }
 
@@ -154,6 +154,20 @@ struct YouView: View {
 
     private func appearanceSection(_ settings: AppSettings) -> some View {
         SettingsCard(title: "Appearance") {
+            SettingsRow(icon: "globe", title: "Language") {
+                Picker("", selection: Binding(
+                    get: { settings.appLanguage },
+                    set: { settings.appLanguage = $0 }
+                )) {
+                    // "System" localizes; language endonyms stay in their own language.
+                    ForEach(AppLanguage.options, id: \.code) { opt in
+                        (opt.code.isEmpty ? Text(opt.name) : Text(verbatim: opt.name)).tag(opt.code)
+                    }
+                }
+                .labelsHidden()
+                .tint(TTColor.textSecondary)
+                .accessibilityIdentifier("languagePicker")
+            }
             SettingsRow(icon: "circle.lefthalf.filled", title: "Theme") {
                 Picker("", selection: Binding(
                     get: { settings.appearance },
@@ -232,7 +246,7 @@ struct YouView: View {
         do {
             let count = try BackupService.importBackup(file, mode: mode, context: context)
             TTHaptics.workoutCompleted()
-            alert = SettingsAlert(title: "Import complete", message: "Restored \(count) items.")
+            alert = SettingsAlert(title: "Import complete", message: String(localized: "Restored \(count) items."))
         } catch {
             alert = SettingsAlert(title: "Import failed", message: "Your existing data was not changed.")
         }
@@ -275,7 +289,7 @@ struct SettingsRow<Trailing: View>: View {
                 .font(.system(size: 15, weight: .semibold))
                 .foregroundStyle(TTColor.brandRed)
                 .frame(width: 28)
-            Text(title).font(TTFont.body()).foregroundStyle(TTColor.textPrimary)
+            Text(TTLocalized(title)).font(TTFont.body()).foregroundStyle(TTColor.textPrimary)
             Spacer()
             trailing
         }

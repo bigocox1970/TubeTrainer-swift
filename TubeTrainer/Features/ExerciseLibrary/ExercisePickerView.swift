@@ -114,9 +114,9 @@ struct ExercisePickerView: View {
                 .frame(width: 36, height: 36)
                 .background(TTColor.controlFill, in: RoundedRectangle(cornerRadius: TTRadius.sm))
             VStack(alignment: .leading, spacing: 2) {
-                Text(exercise.name).font(TTFont.subheadline().weight(.semibold))
+                Text(exercise.displayName).font(TTFont.subheadline().weight(.semibold))
                     .foregroundStyle(TTColor.textPrimary)
-                Text(exercise.equipment.rawValue)
+                Text(exercise.equipment.displayName)
                     .font(TTFont.caption()).foregroundStyle(TTColor.textSecondary)
             }
             Spacer()
