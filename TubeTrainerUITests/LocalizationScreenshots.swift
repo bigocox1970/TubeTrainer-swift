@@ -118,16 +118,48 @@ final class LocalizationScreenshots: XCTestCase {
         if let dir = outDir { try? s.pngRepresentation.write(to: dir.appendingPathComponent("\(name).png")) }
     }
 
-    /// Active workout / set logger (opened via the app's -openActive hook).
-    func testActiveWorkout() {
-        let app = makeApp(extraArgs: ["-openActive"])
+    /// Website marketing screens: active workout (coach video + set logger), the
+    /// rest timer, and exercise details (records + find-a-coach). Named to match the
+    /// website's screenshot filenames so they drop straight in.
+    func testWebsiteActive() {
+        let app = makeApp(extraArgs: ["-openActive"])  // starts Push → Barbell Bench Press (coached)
+        app.launch()
+        sleep(3)                         // -openActive waits ~1.5s to seed + resume
+        shot("active-coach")             // active workout, coach video on bench press
+        app.swipeUp(); sleep(1)
+        shot("logged-sets")              // set logger with last-time values
+        let complete = app.buttons["completeSet"].firstMatch
+        if complete.waitForExistence(timeout: 3), complete.isHittable {
+            complete.tap(); sleep(1)
+            // First rest triggers the notification-permission dialog — dismiss it for a clean shot.
+            let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+            for label in ["Allow", "Don't Allow", "Permitir", "No permitir"] {
+                let b = springboard.buttons[label]
+                if b.waitForExistence(timeout: 2) { b.tap(); break }
+            }
+            sleep(1)
+            shot("rest-timer")           // completing a set auto-starts the rest timer
+        }
+    }
+
+    func testWebsiteDetails() {
+        let app = makeApp()
         app.launch()
         sleep(2)
-        shot("10-active-workout")
-        // Try to reveal the set logger / rest by tapping the first cell.
-        let firstCell = app.cells.firstMatch
-        if firstCell.waitForExistence(timeout: 3), firstCell.isHittable {
-            firstCell.tap(); sleep(1); shot("11-active-detail")
+        let tabs = app.tabBars.buttons
+        guard tabs.count >= 2 else { XCTFail("no tab bar"); return }
+        tabs.element(boundBy: 1).tap(); sleep(1)   // Library
+        // ~4th row = Barbell Bench Press (coached, has history) → records screen.
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.30, dy: 0.70)).tap(); sleep(1)
+        if app.navigationBars.buttons.firstMatch.exists {
+            shot("records")
+            app.navigationBars.buttons.firstMatch.tap(); sleep(1)
+        }
+        // 1st row = Ab Wheel (no coach) → find-a-coach discovery panel.
+        app.coordinate(withNormalizedOffset: CGVector(dx: 0.30, dy: 0.46)).tap(); sleep(1)
+        if app.navigationBars.buttons.firstMatch.exists {
+            shot("active-empty")
+            app.navigationBars.buttons.firstMatch.tap(); sleep(1)
         }
     }
 }
