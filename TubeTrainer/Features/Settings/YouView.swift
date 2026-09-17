@@ -154,6 +154,20 @@ struct YouView: View {
 
     private func appearanceSection(_ settings: AppSettings) -> some View {
         SettingsCard(title: "Appearance") {
+            SettingsRow(icon: "globe", title: "Language") {
+                Picker("", selection: Binding(
+                    get: { settings.appLanguage },
+                    set: { settings.appLanguage = $0 }
+                )) {
+                    // "System" localizes; language endonyms stay in their own language.
+                    ForEach(AppLanguage.options, id: \.code) { opt in
+                        (opt.code.isEmpty ? Text(opt.name) : Text(verbatim: opt.name)).tag(opt.code)
+                    }
+                }
+                .labelsHidden()
+                .tint(TTColor.textSecondary)
+                .accessibilityIdentifier("languagePicker")
+            }
             SettingsRow(icon: "circle.lefthalf.filled", title: "Theme") {
                 Picker("", selection: Binding(
                     get: { settings.appearance },

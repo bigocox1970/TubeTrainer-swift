@@ -89,6 +89,34 @@ final class LocalizationScreenshots: XCTestCase {
         app.swipeUp(); sleep(1); shot("07-you-bottom")
     }
 
+    /// Proves the in-app language picker switches the UI live (no relaunch).
+    /// Starts at the device language (no override), opens the You tab, switches to
+    /// German via the picker, and screenshots before/after.
+    func testLanguageSwitch() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-seedSample"] // device language, no override
+        app.launch()
+        sleep(2)
+        let tabs = app.tabBars.buttons
+        guard tabs.count >= 4 else { XCTFail("no tab bar"); return }
+        tabs.element(boundBy: 3).tap(); sleep(1)
+        writePNG("switch-01-device")
+
+        let picker = app.buttons["languagePicker"]
+        XCTAssertTrue(picker.waitForExistence(timeout: 5), "language picker not found")
+        picker.tap(); sleep(1)
+        let deutsch = app.buttons["Deutsch"]
+        XCTAssertTrue(deutsch.waitForExistence(timeout: 3), "Deutsch option not found")
+        deutsch.tap(); sleep(2)
+        writePNG("switch-02-after-de")
+    }
+
+    private func writePNG(_ name: String) {
+        let s = XCUIScreen.main.screenshot()
+        let att = XCTAttachment(screenshot: s); att.name = name; att.lifetime = .keepAlways; add(att)
+        if let dir = outDir { try? s.pngRepresentation.write(to: dir.appendingPathComponent("\(name).png")) }
+    }
+
     /// Active workout / set logger (opened via the app's -openActive hook).
     func testActiveWorkout() {
         let app = makeApp(extraArgs: ["-openActive"])

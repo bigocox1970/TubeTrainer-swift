@@ -14,6 +14,8 @@ struct TubeTrainerApp: App {
                 .environment(appEnvironment)
                 .preferredColorScheme(settings.appearance.colorScheme)
                 .tint(TTColor.brandRed)
+                .environment(\.locale, AppLanguage.locale(for: settings.appLanguage))
+                .id(settings.appLanguage)   // rebuild the tree when the language changes
                 .task { await seed() }
         }
         .modelContainer(container)
