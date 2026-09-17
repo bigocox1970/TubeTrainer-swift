@@ -117,7 +117,7 @@ struct AddCoachView: View {
                         .font(TTFont.subheadline()).foregroundStyle(TTColor.textSecondary)
 
                     labeledField("Coach / channel name") {
-                        TextField("e.g. Jeff Nippard", text: $name)
+                        TextField("e.g. Form First", text: $name)
                     }
                     labeledField("Channel link (optional)") {
                         TextField("https://youtube.com/@…", text: $channelURL)

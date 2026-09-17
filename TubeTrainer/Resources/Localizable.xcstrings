@@ -417,6 +417,7 @@
 
     },
     "A balanced starting point." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -439,6 +440,7 @@
       }
     },
     "A focused day per muscle group." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -884,6 +886,7 @@
       }
     },
     "Alternate upper- and lower-body days." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1255,6 +1258,7 @@
       }
     },
     "Body Part Split" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1300,6 +1304,7 @@
       }
     },
     "Build My Own" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2090,6 +2095,7 @@
       }
     },
     "Dark" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2717,6 +2723,7 @@
       }
     },
     "Experienced" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3054,6 +3061,7 @@
       }
     },
     "Full Body" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3167,6 +3175,7 @@
       }
     },
     "Good afternoon" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3189,6 +3198,7 @@
       }
     },
     "Good evening" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3211,6 +3221,7 @@
       }
     },
     "Good morning" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3370,6 +3381,7 @@
       }
     },
     "Hey %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3983,6 +3995,7 @@
       }
     },
     "Light" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4343,6 +4356,7 @@
       }
     },
     "New to training" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4770,6 +4784,7 @@
       }
     },
     "One session hits everything. Great 2–3× per week." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5264,6 +5279,7 @@
       }
     },
     "Push / Pull / Legs" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5798,6 +5814,7 @@
       }
     },
     "Restored %lld items." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6269,6 +6286,7 @@
       }
     },
     "Short" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6403,6 +6421,7 @@
       }
     },
     "Some experience" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6470,6 +6489,7 @@
       }
     },
     "Start empty and build it your way." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6536,6 +6556,7 @@
       }
     },
     "Starts %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6581,6 +6602,7 @@
       }
     },
     "System" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6626,6 +6648,7 @@
       }
     },
     "The classic 3-day strength split." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7057,6 +7080,7 @@
       }
     },
     "Upper / Lower" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7146,6 +7170,7 @@
       }
     },
     "Video" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7258,6 +7283,7 @@
       }
     },
     "We'll keep set targets simple." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7460,6 +7486,7 @@
       }
     },
     "Yesterday" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7526,6 +7553,7 @@
       }
     },
     "You know your way around." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7683,6 +7711,7 @@
       }
     },
     "Your sets for %@ will show up here." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
