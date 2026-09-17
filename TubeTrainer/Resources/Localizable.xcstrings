@@ -7587,7 +7587,7 @@
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dia de empurrar"
+            "value": "Treino Push"
           }
         }
       }
@@ -7609,7 +7609,7 @@
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dia de puxar"
+            "value": "Treino Pull"
           }
         }
       }
@@ -7625,13 +7625,13 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Bein-Tag"
+            "value": "Beintag"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dia de pernas"
+            "value": "Treino de pernas"
           }
         }
       }
@@ -7641,7 +7641,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Superior"
+            "value": "Tren superior"
           }
         },
         "de": {
@@ -7653,7 +7653,7 @@
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Superior"
+            "value": "Treino de superiores"
           }
         }
       }
@@ -7663,7 +7663,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Inferior"
+            "value": "Tren inferior"
           }
         },
         "de": {
@@ -7675,7 +7675,7 @@
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Inferior"
+            "value": "Treino de inferiores"
           }
         }
       }
