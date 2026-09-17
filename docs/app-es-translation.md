@@ -1,9 +1,7 @@
 # TubeTrainer app — Spanish (es) translation, for review
 
-_Every translated string currently in the app (`TubeTrainer/Resources/Localizable.xcstrings`).
-Paste into ChatGPT and ask it to critique the Spanish for a fitness/gym audience in Spain + Latin
-America. Placeholders **%@** (a word/name) and **%lld** (a number) MUST stay in the Spanish. Newlines
-are shown as ⏎. Neutral Spanish; "tracker/entrenador/serie" chosen to match the website._
+_All translated strings in the app, incl. built-in workout/day names (Push Day → …).
+%@ = word/name, %lld = number — keep them. Newlines = ⏎. Plurals (1)=singular/(n)=plural._
 
 ## 1. Exercise names & gym terms (75)
 | English | Spanish (es) |
@@ -84,17 +82,16 @@ are shown as ⏎. Neutral Spanish; "tracker/entrenador/serie" chosen to match th
 | Walking Lunge | Zancadas caminando |
 | World's Greatest Stretch | El mejor estiramiento del mundo |
 
-## 2. App interface (252)
+## 2. App interface & built-in content (266)
 | English | Spanish (es) |
 |---|---|
 | %@ Complete | %@ completado |
 | %@ · %lld sets logged | %@ · %lld series registradas |
 | %lld Personal %@ | %lld %@ personales |
-| %lld exercise%@ | %lld ejercicio%@ |
-| %lld exercises | %lld ejercicios |
+| %lld exercises | (1) %lld ejercicio / (n) %lld ejercicios |
 | %lld exercises · %lld sets · %@ | %lld ejercicios · %lld series · %@ |
 | %lld saved videos | %lld vídeos guardados |
-| %lld sets | %lld series |
+| %lld sets | (1) %lld serie / (n) %lld series |
 | %lld sets logged. | %lld series registradas. |
 | %lld sets · %@ | %lld series · %@ |
 | 1. Open Google Cloud Console and create a project. ⏎ 2. Enable “YouTube Data API v3”. ⏎ 3. Create an API key and (recommended) restrict it to the YouTube Data API and your iOS bundle id. ⏎  ⏎ The free tier allows roughly 100 searches per day. The key is stored only on this device. | 1. Abre Google Cloud Console y crea un proyecto. ⏎ 2. Activa «YouTube Data API v3». ⏎ 3. Crea una clave API y (recomendado) restríngela a la YouTube Data API y al bundle id de tu app iOS. ⏎  ⏎ El plan gratuito permite unas 100 búsquedas al día. La clave se guarda solo en este dispositivo. |
@@ -120,6 +117,7 @@ are shown as ⏎. Neutral Spanish; "tracker/entrenador/serie" chosen to match th
 | Already have trainers you trust? | ¿Ya tienes entrenadores en los que confías? |
 | Alternate upper- and lower-body days. | Alterna días de tren superior e inferior. |
 | Appearance | Apariencia |
+| Arms | Brazos |
 | Attach a coach whenever a video makes an exercise click. | Adjunta un entrenador cuando un vídeo te haga entender un ejercicio. |
 | Auto-start rest timer | Iniciar descanso automáticamente |
 | Backup from %@ · v%lld | Copia de %@ · v%lld |
@@ -160,11 +158,11 @@ are shown as ⏎. Neutral Spanish; "tracker/entrenador/serie" chosen to match th
 | Duration | Duración |
 | Edit | Editar |
 | Edit exercise | Editar ejercicio |
-| Enter TubeTrainer | Entrar en TubeTrainer |
+| Enter TubeTrainer | Empezar |
 | Estimated 1RM uses the Epley formula — a guide, not a medical measure. | El 1RM estimado usa la fórmula de Epley: una guía, no una medida médica. |
 | Every exercise has a coach | Todos los ejercicios tienen entrenador |
 | Exercise name | Nombre del ejercicio |
-| Experienced | Con experiencia |
+| Experienced | Tengo experiencia |
 | Export backup | Exportar copia |
 | Export failed | Error al exportar |
 | Favourite | Favorito |
@@ -177,6 +175,8 @@ are shown as ⏎. Neutral Spanish; "tracker/entrenador/serie" chosen to match th
 | Finish & Save | Terminar y guardar |
 | Finish workout? | ¿Terminar entrenamiento? |
 | Finished workouts show up here with volume, sets and records. | Los entrenamientos terminados aparecen aquí con volumen, series y récords. |
+| Full Body A | Cuerpo completo A |
+| Full Body B | Cuerpo completo B |
 | Give it a name — you'll add exercises next. | Ponle un nombre; después añadirás ejercicios. |
 | Good afternoon | Buenas tardes |
 | Good evening | Buenas noches |
@@ -194,21 +194,27 @@ are shown as ⏎. Neutral Spanish; "tracker/entrenador/serie" chosen to match th
 | In-app YouTube search is optional. Without a key, you can still paste any YouTube link and open Search on YouTube — that always works. | La búsqueda de YouTube en la app es opcional. Sin clave, puedes pegar cualquier enlace de YouTube y abrir «Buscar en YouTube»: eso siempre funciona. |
 | Keep training | Seguir entrenando |
 | LAST TIME | ÚLTIMA VEZ |
+| Language | Idioma |
 | Last %@ | Última %@ |
 | Last time · %@ | Última vez · %@ |
+| Leg Day | Día de piernas |
+| Legs | Piernas |
 | Library | Biblioteca |
 | Light | Claro |
 | Log this exercise | Registrar este ejercicio |
+| Lower | Inferior |
 | Mark set %lld incomplete | Marcar serie %lld como incompleta |
 | Merge keeps what you have and adds anything missing. Replace clears your current data first. | Combinar mantiene lo que tienes y añade lo que falte. Reemplazar borra primero tus datos actuales. |
 | Merge with my data | Combinar con mis datos |
 | My Coaches | Mis entrenadores |
+| My Workout | Mi entrenamiento |
 | NEXT WORKOUT | PRÓXIMO ENTRENAMIENTO |
 | Name | Nombre |
 | Name (e.g. Monday) | Nombre (p. ej. Lunes) |
 | Needs Coach | Sin entrenador |
+| New Workout | Nuevo entrenamiento |
 | New exercise | Nuevo ejercicio |
-| New to training | Nuevo en el entrenamiento |
+| New to training | Estoy empezando |
 | New workout | Nuevo entrenamiento |
 | Next | Siguiente |
 | No exercises | Sin ejercicios |
@@ -222,8 +228,8 @@ are shown as ⏎. Neutral Spanish; "tracker/entrenador/serie" chosen to match th
 | Nothing matches | No hay coincidencias |
 | Nothing to train | Nada que entrenar |
 | OK | OK |
-| Off | No |
-| On | Sí |
+| Off | Desactivado |
+| On | Activado |
 | One session hits everything. Great 2–3× per week. | Una sesión trabaja todo. Ideal 2–3× por semana. |
 | Open any exercise and save the video that explains it best. Three ways to find one: | Abre cualquier ejercicio y guarda el vídeo que mejor lo explique. Tres formas de encontrarlo: |
 | Open channel | Abrir canal |
@@ -240,7 +246,9 @@ are shown as ⏎. Neutral Spanish; "tracker/entrenador/serie" chosen to match th
 | Previous | Anterior |
 | Privacy | Privacidad |
 | Profile | Perfil |
-| Push / Pull / Legs | Empuje / Tirón / Pierna |
+| Pull Day | Día de tirón |
+| Push / Pull / Legs | Empuje / Tirón / Piernas |
+| Push Day | Día de empuje |
 | READY | LISTO |
 | RECHARGING | RECARGANDO |
 | REPS | REPS |
@@ -276,14 +284,15 @@ are shown as ⏎. Neutral Spanish; "tracker/entrenador/serie" chosen to match th
 | Seat 4. Keep elbows slightly forward. | Asiento 4. Mantén los codos ligeramente adelantados. |
 | Set %lld | Serie %lld |
 | Set as My Coach | Poner como mi entrenador |
+| Sets | Series |
 | Short | Short |
-| Skip | Omitir |
-| Skip for now | Omitir por ahora |
-| Skip rest | Omitir descanso |
-| Some experience | Algo de experiencia |
+| Skip | Saltar |
+| Skip for now | Ahora no |
+| Skip rest | Saltar descanso |
+| Some experience | Tengo algo de experiencia |
 | Start Workout | Empezar entrenamiento |
 | Start coaching at a specific time | Empezar el vídeo en un momento concreto |
-| Start empty and build it your way. | Empieza vacío y créalo a tu manera. |
+| Start empty and build it your way. | Empieza desde cero y créalo a tu manera. |
 | Start from a split | Empezar desde una rutina |
 | Starts %@ | Empieza en %@ |
 | System | Sistema |
@@ -292,6 +301,7 @@ are shown as ⏎. Neutral Spanish; "tracker/entrenador/serie" chosen to match th
 | Theme | Tema |
 | This removes the workout. Your logged history is kept. | Esto elimina el entrenamiento. Tu historial registrado se conserva. |
 | This tunes starting suggestions. You can change anything later. | Esto ajusta las sugerencias iniciales. Puedes cambiar todo después. |
+| This week | Esta semana |
 | This workout has no exercises. | Este entrenamiento no tiene ejercicios. |
 | Today | Hoy |
 | Train | Entrenar |
@@ -302,6 +312,7 @@ are shown as ⏎. Neutral Spanish; "tracker/entrenador/serie" chosen to match th
 | Units | Unidades |
 | Unknown error. | Error desconocido. |
 | Update key | Actualizar clave |
+| Upper | Superior |
 | Upper / Lower | Superior / Inferior |
 | Use default | Usar predeterminado |
 | Use this for %@? | ¿Usar esto para %@? |
@@ -317,14 +328,15 @@ are shown as ⏎. Neutral Spanish; "tracker/entrenador/serie" chosen to match th
 | Who do you learn from? | ¿De quién aprendes? |
 | Working sets | Series efectivas |
 | Workout name | Nombre del entrenamiento |
-| YOUTUBE DATA API KEY | CLAVE DE LA YOUTUBE DATA API |
+| Workouts | Entrenamientos |
+| YOUTUBE DATA API KEY | CLAVE DE API DE YOUTUBE |
 | Yesterday | Ayer |
 | You | Tú |
 | You can change your chosen video whenever you like. | Puedes cambiar el vídeo elegido cuando quieras. |
-| You know your way around. | Te desenvuelves bien. |
+| You know your way around. | Ya sabes lo que haces. |
 | YouTube search | Búsqueda de YouTube |
 | YouTube search key | Clave de búsqueda de YouTube |
-| Your catalog looks empty. | Tu catálogo parece vacío. |
+| Your catalog looks empty. | Tu catálogo está vacío. |
 | Your coaches. ⏎ Your exercises. ⏎ Your progress. | Tus entrenadores. ⏎ Tus ejercicios. ⏎ Tu progreso. |
 | Your coaching library | Tu biblioteca de entrenadores |
 | Your existing data was not changed. | Tus datos actuales no se modificaron. |
@@ -339,9 +351,3 @@ are shown as ⏎. Neutral Spanish; "tracker/entrenador/serie" chosen to match th
 | e.g. RDL, stiff-leg | p. ej. RDL, peso muerto rígido |
 | of %@ | de %@ |
 | ✓ Use default (%@) | ✓ Usar predeterminado (%@) |
-
-## Notes for the reviewer
-- Confirm gym terminology reads naturally (e.g. press de banca, sentadilla, peso muerto, curl, serie, PR).
-- Register is informal **tú** throughout — confirm that's right for the audience.
-- Flag anything that sounds machine-translated or too formal; give the preferred wording.
-- Do NOT change %@ / %lld placeholders or reorder them in a way that breaks meaning.

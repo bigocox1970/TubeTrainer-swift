@@ -1,10 +1,7 @@
 # TubeTrainer app — German (de) translation, for review
 
-_Every translated string in the app (`TubeTrainer/Resources/Localizable.xcstrings`).
-Paste into ChatGPT and ask it to critique the German for a fitness/gym audience (Germany/DACH).
-Placeholders **%@** (word/name) and **%lld** (number) MUST stay in the German. Newlines shown as ⏎.
-Plurals shown as (1)=singular / (n)=plural. Informal **du**; terminology matches the DE website
-(Trainer, Training, Satz/Sätze, Tracker)._
+_All translated strings in the app, incl. built-in workout/day names (Push Day → …).
+%@ = word/name, %lld = number — keep them. Newlines = ⏎. Plurals (1)=singular/(n)=plural._
 
 ## 1. Exercise names & gym terms (75)
 | English | German (de) |
@@ -21,11 +18,11 @@ Plurals shown as (1)=singular / (n)=plural. Informal **du**; terminology matches
 | Barbell Row | Langhantelrudern |
 | Biceps | Bizeps |
 | Bodyweight | Körpergewicht |
-| Bulgarian Split Squat | Bulgarische Kniebeuge |
+| Bulgarian Split Squat | Bulgarian Split Squat |
 | Cable | Kabelzug |
 | Cable Crunch | Kabel-Crunch |
 | Cable Curl | Kabel-Curls |
-| Cable Fly | Kabelzug-Fliegende |
+| Cable Fly | Fliegende am Kabelzug |
 | Calves | Waden |
 | Cardio | Cardio |
 | Cat-Cow | Katze-Kuh |
@@ -44,7 +41,7 @@ Plurals shown as (1)=singular / (n)=plural. Informal **du**; terminology matches
 | Face Pull | Face Pull |
 | Front Squat | Frontkniebeuge |
 | Full Body | Ganzkörper |
-| Glutes | Gesäß |
+| Glutes | Gluteus |
 | Hack Squat | Hackenschmidt-Kniebeuge |
 | Hammer Curl | Hammer-Curls |
 | Hamstrings | Beinbeuger |
@@ -85,16 +82,16 @@ Plurals shown as (1)=singular / (n)=plural. Informal **du**; terminology matches
 | Walking Lunge | Gehende Ausfallschritte |
 | World's Greatest Stretch | World's Greatest Stretch |
 
-## 2. App interface (254)
+## 2. App interface & built-in content (266)
 | English | German (de) |
 |---|---|
 | %@ Complete | %@ abgeschlossen |
 | %@ · %lld sets logged | %@ · %lld Sätze protokolliert |
 | %lld Personal %@ | %lld persönliche %@ |
-| %lld exercises | (1) %lld Übung  /  (n) %lld Übungen |
+| %lld exercises | (1) %lld Übung / (n) %lld Übungen |
 | %lld exercises · %lld sets · %@ | %lld Übungen · %lld Sätze · %@ |
 | %lld saved videos | %lld gespeicherte Videos |
-| %lld sets | (1) %lld Satz  /  (n) %lld Sätze |
+| %lld sets | (1) %lld Satz / (n) %lld Sätze |
 | %lld sets logged. | %lld Sätze protokolliert. |
 | %lld sets · %@ | %lld Sätze · %@ |
 | 1. Open Google Cloud Console and create a project. ⏎ 2. Enable “YouTube Data API v3”. ⏎ 3. Create an API key and (recommended) restrict it to the YouTube Data API and your iOS bundle id. ⏎  ⏎ The free tier allows roughly 100 searches per day. The key is stored only on this device. | 1. Öffne die Google Cloud Console und erstelle ein Projekt. ⏎ 2. Aktiviere die „YouTube Data API v3“. ⏎ 3. Erstelle einen API-Schlüssel und beschränke ihn (empfohlen) auf die YouTube Data API und deine iOS-Bundle-ID. ⏎  ⏎ Das kostenlose Kontingent erlaubt etwa 100 Suchen pro Tag. Der Schlüssel wird nur auf diesem Gerät gespeichert. |
@@ -107,11 +104,11 @@ Plurals shown as (1)=singular / (n)=plural. Informal **du**; terminology matches
 | Add a note | Notiz hinzufügen |
 | Add coach | Trainer hinzufügen |
 | Add exercise | Übung hinzufügen |
-| Add favourite YouTube coaches so their videos get prioritised — or skip and discover as you go. | Füge YouTube-Lieblingstrainer hinzu, damit ihre Videos Vorrang bekommen — oder überspringe und entdecke unterwegs. |
+| Add favourite YouTube coaches so their videos get prioritised — or skip and discover as you go. | Füge deine Lieblings-Trainer auf YouTube hinzu, damit ihre Videos bevorzugt angezeigt werden — oder überspringe und entdecke unterwegs. |
 | Add set | Satz hinzufügen |
 | Add the YouTube trainers you already trust — or skip this and discover videos exercise by exercise. | Füge die YouTube-Trainer hinzu, denen du schon vertraust — oder überspringe das und entdecke Videos Übung für Übung. |
 | Add the movements you want in this workout. | Füge die Übungen hinzu, die du in diesem Training haben möchtest. |
-| Add the name of a YouTube trainer you trust. When you find coaching, theirs gets prioritised. | Füge den Namen eines YouTube-Trainers hinzu, dem du vertraust. Wenn du Videos findest, bekommen seine Vorrang. |
+| Add the name of a YouTube trainer you trust. When you find coaching, theirs gets prioritised. | Füge einen YouTube-Trainer hinzu, dem du vertraust. Seine Videos werden bei der Suche bevorzugt. |
 | Add to Favourites | Zu Favoriten hinzufügen |
 | Add to favourites | Zu Favoriten hinzufügen |
 | Add, remove or reorder. Seeded with sensible basics. | Hinzufügen, entfernen oder umsortieren. Mit sinnvollen Basics vorbelegt. |
@@ -120,6 +117,7 @@ Plurals shown as (1)=singular / (n)=plural. Informal **du**; terminology matches
 | Already have trainers you trust? | Hast du schon Trainer, denen du vertraust? |
 | Alternate upper- and lower-body days. | Wechsle zwischen Oberkörper- und Unterkörper-Tagen. |
 | Appearance | Darstellung |
+| Arms | Arme |
 | Attach a coach whenever a video makes an exercise click. | Ein Video gefunden, das die Übung gut erklärt? Speichere es als deinen Trainer. |
 | Auto-start rest timer | Pausen-Timer automatisch starten |
 | Backup from %@ · v%lld | Backup von %@ · v%lld |
@@ -136,7 +134,7 @@ Plurals shown as (1)=singular / (n)=plural. Informal **du**; terminology matches
 | Coached | Mit Trainer |
 | Coaching | Trainer |
 | Coaching options | Trainer-Optionen |
-| Coaching, built in | Trainer, integriert |
+| Coaching, built in | Trainer direkt integriert |
 | Complete set %lld | Satz %lld abschließen |
 | Continue | Weiter |
 | Continue workout | Training fortsetzen |
@@ -164,7 +162,7 @@ Plurals shown as (1)=singular / (n)=plural. Informal **du**; terminology matches
 | Estimated 1RM uses the Epley formula — a guide, not a medical measure. | Das geschätzte 1RM nutzt die Epley-Formel — ein Richtwert, keine medizinische Messung. |
 | Every exercise has a coach | Jede Übung hat einen Trainer |
 | Exercise name | Übungsname |
-| Experienced | Erfahren |
+| Experienced | Ich habe Erfahrung |
 | Export backup | Backup exportieren |
 | Export failed | Export fehlgeschlagen |
 | Favourite | Favorit |
@@ -177,6 +175,8 @@ Plurals shown as (1)=singular / (n)=plural. Informal **du**; terminology matches
 | Finish & Save | Beenden & speichern |
 | Finish workout? | Training beenden? |
 | Finished workouts show up here with volume, sets and records. | Beendete Trainings erscheinen hier mit Volumen, Sätzen und Rekorden. |
+| Full Body A | Ganzkörper A |
+| Full Body B | Ganzkörper B |
 | Give it a name — you'll add exercises next. | Gib ihm einen Namen — Übungen fügst du als Nächstes hinzu. |
 | Good afternoon | Guten Tag |
 | Good evening | Guten Abend |
@@ -194,21 +194,27 @@ Plurals shown as (1)=singular / (n)=plural. Informal **du**; terminology matches
 | In-app YouTube search is optional. Without a key, you can still paste any YouTube link and open Search on YouTube — that always works. | Die YouTube-Suche in der App ist optional. Ohne Schlüssel kannst du trotzdem jeden YouTube-Link einfügen und „Auf YouTube suchen“ öffnen — das funktioniert immer. |
 | Keep training | Weitertrainieren |
 | LAST TIME | LETZTES MAL |
+| Language | Sprache |
 | Last %@ | Letztes %@ |
 | Last time · %@ | Letztes Mal · %@ |
+| Leg Day | Bein-Tag |
+| Legs | Beine |
 | Library | Bibliothek |
 | Light | Hell |
 | Log this exercise | Diese Übung protokollieren |
+| Lower | Unterkörper |
 | Mark set %lld incomplete | Satz %lld als unvollständig markieren |
 | Merge keeps what you have and adds anything missing. Replace clears your current data first. | Zusammenführen behält, was du hast, und ergänzt Fehlendes. Ersetzen löscht zuerst deine aktuellen Daten. |
 | Merge with my data | Mit meinen Daten zusammenführen |
 | My Coaches | Meine Trainer |
+| My Workout | Mein Training |
 | NEXT WORKOUT | NÄCHSTES TRAINING |
 | Name | Name |
 | Name (e.g. Monday) | Name (z. B. Montag) |
 | Needs Coach | Ohne Trainer |
+| New Workout | Neues Training |
 | New exercise | Neue Übung |
-| New to training | Neu im Training |
+| New to training | Ich fange gerade an |
 | New workout | Neues Training |
 | Next | Weiter |
 | No exercises | Keine Übungen |
@@ -218,7 +224,7 @@ Plurals shown as (1)=singular / (n)=plural. Informal **du**; terminology matches
 | No history yet | Noch kein Verlauf |
 | Note | Notiz |
 | Nothing found | Nichts gefunden |
-| Nothing from this session will be saved. | Von dieser Sitzung wird nichts gespeichert. |
+| Nothing from this session will be saved. | Von diesem Training wird nichts gespeichert. |
 | Nothing matches | Keine Treffer |
 | Nothing to train | Nichts zu trainieren |
 | OK | OK |
@@ -240,10 +246,12 @@ Plurals shown as (1)=singular / (n)=plural. Informal **du**; terminology matches
 | Previous | Zurück |
 | Privacy | Datenschutz |
 | Profile | Profil |
+| Pull Day | Pull-Tag |
 | Push / Pull / Legs | Push / Pull / Legs |
+| Push Day | Push-Tag |
 | READY | BEREIT |
 | RECHARGING | ERHOLUNG |
-| REPS | WDH |
+| REPS | WDH. |
 | Recent coaching | Zuletzt hinzugefügt |
 | Remove | Entfernen |
 | Remove coach | Trainer entfernen |
@@ -265,7 +273,7 @@ Plurals shown as (1)=singular / (n)=plural. Informal **du**; terminology matches
 | SET | SATZ |
 | Save | Speichern |
 | Save key | Schlüssel speichern |
-| Save the best exercise coaching you find on YouTube and keep it right beside your workout. | Speichere die besten Übungsvideos, die du auf YouTube findest, und hab sie direkt neben deinem Training. |
+| Save the best exercise coaching you find on YouTube and keep it right beside your workout. | Speichere die besten Übungsvideos, die du auf YouTube findest, und hab sie beim Training immer griffbereit. |
 | Save the explanation that makes this exercise click for you. | Speichere die Erklärung, die dir diese Übung verständlich macht. |
 | Search | Suchen |
 | Search YouTube | Auf YouTube suchen |
@@ -281,10 +289,10 @@ Plurals shown as (1)=singular / (n)=plural. Informal **du**; terminology matches
 | Skip | Überspringen |
 | Skip for now | Jetzt nicht |
 | Skip rest | Pause überspringen |
-| Some experience | Etwas Erfahrung |
+| Some experience | Ich habe etwas Erfahrung |
 | Start Workout | Training starten |
 | Start coaching at a specific time | Video an einer bestimmten Stelle starten |
-| Start empty and build it your way. | Leer starten und nach deinen Vorstellungen aufbauen. |
+| Start empty and build it your way. | Starte bei null und stell dir dein Training selbst zusammen. |
 | Start from a split | Mit einem Split starten |
 | Starts %@ | Startet bei %@ |
 | System | System |
@@ -304,6 +312,7 @@ Plurals shown as (1)=singular / (n)=plural. Informal **du**; terminology matches
 | Units | Einheiten |
 | Unknown error. | Unbekannter Fehler. |
 | Update key | Schlüssel aktualisieren |
+| Upper | Oberkörper |
 | Upper / Lower | Oberkörper / Unterkörper |
 | Use default | Standard verwenden |
 | Use this for %@? | Dies für %@ verwenden? |
@@ -313,14 +322,14 @@ Plurals shown as (1)=singular / (n)=plural. Informal **du**; terminology matches
 | View plan | Plan ansehen |
 | Volume | Volumen |
 | WORKOUT | TRAINING |
-| We'll keep set targets simple. | Wir halten die Satz-Ziele einfach. |
+| We'll keep set targets simple. | Wir halten die Satzziele einfach. |
 | We'll use it to greet you. Optional — you can add or change it anytime in You. | Wir nutzen ihn, um dich zu begrüßen. Optional — du kannst ihn jederzeit im Bereich „Du“ hinzufügen oder ändern. |
 | What should we call you? | Wie sollen wir dich nennen? |
 | Who do you learn from? | Von wem lernst du? |
 | Working sets | Arbeitssätze |
 | Workout name | Trainingsname |
 | Workouts | Trainings |
-| YOUTUBE DATA API KEY | YOUTUBE-DATA-API-SCHLÜSSEL |
+| YOUTUBE DATA API KEY | YOUTUBE-API-SCHLÜSSEL |
 | Yesterday | Gestern |
 | You | Du |
 | You can change your chosen video whenever you like. | Du kannst dein gewähltes Video jederzeit ändern. |
@@ -331,7 +340,7 @@ Plurals shown as (1)=singular / (n)=plural. Informal **du**; terminology matches
 | Your coaches. ⏎ Your exercises. ⏎ Your progress. | Deine Trainer. ⏎ Deine Übungen. ⏎ Dein Fortschritt. |
 | Your coaching library | Deine Trainer-Bibliothek |
 | Your existing data was not changed. | Deine vorhandenen Daten wurden nicht geändert. |
-| Your first session starts here | Deine erste Sitzung beginnt hier |
+| Your first session starts here | Dein erstes Training beginnt hier |
 | Your name | Dein Name |
 | Your sets for %@ will show up here. | Deine Sätze für %@ erscheinen hier. |
 | Your whole library is coached. Nice work. | Deine ganze Bibliothek hat Trainer. Stark! |
@@ -342,10 +351,3 @@ Plurals shown as (1)=singular / (n)=plural. Informal **du**; terminology matches
 | e.g. RDL, stiff-leg | z. B. RDL, gestreckt |
 | of %@ | von %@ |
 | ✓ Use default (%@) | ✓ Standard verwenden (%@) |
-
-## Notes for the reviewer
-- Confirm German gym terminology (Bankdrücken, Kniebeuge, Kreuzheben, Satz/Sätze, Wdh., etc.).
-- Register is informal **du** throughout — confirm it's right for the audience.
-- Watch for length: German compounds are long — flag anything likely to truncate on a button/label.
-- Flag anything machine-translated or overly formal; give the preferred wording.
-- Do NOT change/reorder %@ / %lld placeholders.
