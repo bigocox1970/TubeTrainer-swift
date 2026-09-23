@@ -10,6 +10,7 @@ struct TubeTrainerApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
+                .checkForAppUpdate()
                 .environment(settings)
                 .environment(appEnvironment)
                 .preferredColorScheme(settings.appearance.colorScheme)
